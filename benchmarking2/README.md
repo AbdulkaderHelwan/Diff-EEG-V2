@@ -35,7 +35,7 @@ same 50,000-segment test subset (6.7% seizure prevalence). Download each file an
 it at the path shown, which is where the scripts expect it.
 
 | Model | Params | Test AUROC | PR-AUC | Macro F1 | Sens. | Spec. |
-|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|
 | DiffEEG, fine-tuned with RL | 9.67M | 0.859 | 0.492 | 0.638 | 0.750 | 0.835 | `results/diffeeg_ft_tusz_rl-on/best.pth` |
 | EEGNet, from scratch | 2,738 | 0.880 | 0.481 | 0.550 | 0.073 | 0.998 | `results/supervised_eegnet_tusz/best.pth` | 
 | ST-Transformer, from scratch | 3.43M | 0.832 | 0.404 | 0.594 | 0.742 | 0.784 | `results/supervised_sttransformer_tusz/best.pth` | 
