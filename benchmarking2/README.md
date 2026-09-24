@@ -26,6 +26,39 @@ at the exact commit used here and installs our EEGMamba additions:
 
 It then lists the pretrained weights to download for EEGMamba, EEGDM and CBraMod.
 
+## Model weights
+
+### Our trained models
+
+Binary seizure detection on TUH Seizure, all four trained and evaluated by us on the
+same 50,000-segment test subset (6.7% seizure prevalence). Download each file and place
+it at the path shown, which is where the scripts expect it.
+
+| Model | Params | Test AUROC | PR-AUC | Macro F1 | Sens. | Spec. | Place at | Download |
+|---|---|---|---|---|---|---|---|---|
+| DiffEEG, fine-tuned with RL | 9.67M | 0.859 | 0.492 | 0.638 | 0.750 | 0.835 | `results/diffeeg_ft_tusz_rl-on/best.pth` | [Download](ADD_ONEDRIVE_LINK) |
+| EEGNet, from scratch | 2,738 | 0.880 | 0.481 | 0.550 | 0.073 | 0.998 | `results/supervised_eegnet_tusz/best.pth` | [Download](ADD_ONEDRIVE_LINK) |
+| ST-Transformer, from scratch | 3.43M | 0.832 | 0.404 | 0.594 | 0.742 | 0.784 | `results/supervised_sttransformer_tusz/best.pth` | [Download](ADD_ONEDRIVE_LINK) |
+| EEG-Conformer, from scratch | 0.97M | 0.780 | 0.265 | 0.576 | 0.651 | 0.784 | `results/supervised_conformer_tusz/best.pth` | [Download](ADD_ONEDRIVE_LINK) |
+
+Metrics are from each model's `results/<model>/result.json`. EEGNet has the highest AUROC
+but a sensitivity of 0.073: at the default threshold it catches about 7% of seizures, so
+its ranking is good while its operating point is not.
+
+Each run directory also holds a `ckpt.pth` with the optimiser state, needed only to
+resume training; it is not published.
+
+### Third-party pretrained models
+
+These are published by their authors and are not redistributed here.
+
+| Model | Source | Place at |
+|---|---|---|
+| EEGDM | [Hugging Face](https://huggingface.co/jhpuah/eegdm) | `EEGDM_ref/checkpoint/pretrain/backbone.ckpt` |
+| CBraMod | [Hugging Face](https://huggingface.co/weighting666/CBraMod) | `CBraMod/pretrained_weights/pretrained_weights.pth` |
+| EEGMamba | [Hugging Face](https://huggingface.co/weighting666/EEGMamba) | `EEGMamba/pretrained_weights/pretrained_EEGMamba.pth` |
+| BIOT, LaBraM | included in their repositories | fetched by `setup_third_party.sh` |
+
 ## Layout
 
 | Path | Contents |
