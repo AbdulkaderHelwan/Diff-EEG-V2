@@ -21,7 +21,7 @@ EEG Generic Representations*, [arXiv:2607.11578](https://arxiv.org/abs/2607.1157
 | Pre-training data | 1,445,392 unlabelled segments: TUH Seizure (non-seizure), CHB-MIT (non-seizure), TUAB (normal) |
 | Embedding | encoder probed at timesteps {50, 250, 500, 750, 950}, each level average-pooled and concatenated → 4,800-d |
 
-## Model weights
+## Model weights ([link](https://lauedu74602-my.sharepoint.com/:f:/g/personal/abedelkader_helwan_lau_edu_lb/IgA6exIChUv-T4c7WWJdo-b4AT3dD_1_SkWII2RXbeya_yY?e=pnUv3l))
 
 The checkpoints are 187–466 MB each, over GitHub's 100 MB file limit, so they are hosted
 on OneDrive. Download each file and place it at the path shown, which is where the
