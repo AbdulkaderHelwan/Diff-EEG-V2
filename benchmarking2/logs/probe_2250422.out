@@ -1,0 +1,8 @@
+
+=== tuab5s: frozen linear probe ===
+model         dim       C       accuracy      roc_auc       pr_auc  f1_weighted     f1_macro  sensitivity  specificity
+--------------------------------------------------------------------------------------------------------------------
+diffeeg      2400   100.0         0.7029       0.7603       0.7184       0.6996       0.6960       0.5988       0.7919
+
+  saved -> /home/abdulh/scratch/benchmarking2/results/probe_tuab5s_diffeeg.json
+Done: Wed Sep  2 08:32:22 EDT 2026

@@ -1,0 +1,8 @@
+device: NVIDIA A100-SXM4-40GB  total 39.5 GiB
+
+--- labram ---
+  LaBraM loaded: 5,819,936 params (missing 2, unexpected 2)
+  2943.6 samples/s at batch 32, peak 84 MiB, max feasible batch probed 256
+
+saved -> /home/abdulh/scratch/benchmarking2/results/efficiency_labram.json
+Done: Wed Sep  2 08:36:20 EDT 2026

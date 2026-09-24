@@ -1,0 +1,7 @@
+===== diffeeg / bonn =====
+Model initialized with 9,674,710 parameters
+  DiffEEG backbone params: 9,674,710
+  train  (360, 2400)  labels [288  72]
+  val    (40, 2400)  labels [32  8]
+  test   (100, 2400)  labels [80 20]
+Done: Thu Sep  3 03:38:44 EDT 2026

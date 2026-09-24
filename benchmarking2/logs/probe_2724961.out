@@ -1,0 +1,20 @@
+
+=== tusz: frozen linear probe ===
+model         dim       C       accuracy      roc_auc       pr_auc  f1_weighted     f1_macro  sensitivity  specificity
+--------------------------------------------------------------------------------------------------------------------
+    [warn] diffeeg: best C=1000.0 is at a grid boundary
+diffeeg      2400  1000.0         0.7598       0.8129       0.3005       0.8166       0.5748       0.7276       0.7622
+    [warn] diffeeg_noised: best C=1000.0 is at a grid boundary
+diffeeg_noised   2400  1000.0         0.7290       0.7475       0.2165       0.7943       0.5411       0.6468       0.7351
+
+  DiffEEG - diffeeg_noised (test prevalence 0.069):
+    accuracy      +0.0307   DiffEEG [0.756,0.763]  diffeeg_noised [0.725,0.733]  95% CI disjoint
+    roc_auc       +0.0654   DiffEEG [0.804,0.820]  diffeeg_noised [0.738,0.756]  95% CI disjoint
+    pr_auc        +0.0840   DiffEEG [0.286,0.315]  diffeeg_noised [0.205,0.229]  95% CI disjoint
+    f1_weighted   +0.0223   DiffEEG [0.814,0.819]  diffeeg_noised [0.791,0.797]  95% CI disjoint
+    f1_macro      +0.0337   DiffEEG [0.569,0.580]  diffeeg_noised [0.536,0.546]  95% CI disjoint
+    sensitivity   +0.0807   DiffEEG [0.713,0.742]  diffeeg_noised [0.631,0.662]  95% CI disjoint
+    specificity   +0.0270   DiffEEG [0.758,0.766]  diffeeg_noised [0.731,0.739]  95% CI disjoint
+
+  saved -> /home/abdulh/scratch/benchmarking2/results/probe_tusz_diffeeg-diffeeg_noised.json
+Done: Wed Sep  9 10:35:49 EDT 2026

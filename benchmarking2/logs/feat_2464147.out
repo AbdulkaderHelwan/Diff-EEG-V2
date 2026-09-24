@@ -1,0 +1,6 @@
+===== cbramod / bonn =====
+  CBraMod loaded: 4,924,000 params (missing 0, unexpected 0)
+  train  (360, 200)  labels [288  72]
+  val    (40, 200)  labels [32  8]
+  test   (100, 200)  labels [80 20]
+Done: Sat Sep  5 07:17:10 EDT 2026

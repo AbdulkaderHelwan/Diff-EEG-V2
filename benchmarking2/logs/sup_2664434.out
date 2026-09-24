@@ -1,0 +1,47 @@
+{'train': 100000, 'val': 20000, 'test': 50000}
+  conformer: 973,826 params (trained from scratch, no pretrained weights)
+  ep 00 loss 0.6728  val AUROC 0.7643  (296s)
+  >> new best (epoch 0)
+  ep 01 loss 0.5955  val AUROC 0.8040  (36s)
+  >> new best (epoch 1)
+  ep 02 loss 0.5600  val AUROC 0.7950  (36s)
+  ep 03 loss 0.5454  val AUROC 0.8490  (36s)
+  >> new best (epoch 3)
+  ep 04 loss 0.5275  val AUROC 0.8470  (36s)
+  ep 05 loss 0.5089  val AUROC 0.8407  (37s)
+  ep 06 loss 0.5059  val AUROC 0.8535  (36s)
+  >> new best (epoch 6)
+  ep 07 loss 0.4875  val AUROC 0.8773  (37s)
+  >> new best (epoch 7)
+  ep 08 loss 0.4830  val AUROC 0.8158  (37s)
+  ep 09 loss 0.4791  val AUROC 0.8629  (36s)
+  ep 10 loss 0.4671  val AUROC 0.8493  (36s)
+  ep 11 loss 0.4634  val AUROC 0.8876  (36s)
+  >> new best (epoch 11)
+  ep 12 loss 0.4548  val AUROC 0.8406  (36s)
+  ep 13 loss 0.4456  val AUROC 0.8589  (36s)
+  ep 14 loss 0.4441  val AUROC 0.8193  (36s)
+  ep 15 loss 0.4387  val AUROC 0.8805  (36s)
+  ep 16 loss 0.4340  val AUROC 0.8495  (36s)
+  ep 17 loss 0.4325  val AUROC 0.8979  (36s)
+  >> new best (epoch 17)
+  ep 18 loss 0.4260  val AUROC 0.9031  (36s)
+  >> new best (epoch 18)
+  ep 19 loss 0.4197  val AUROC 0.8667  (36s)
+  ep 20 loss 0.4099  val AUROC 0.9066  (36s)
+  >> new best (epoch 20)
+  ep 21 loss 0.4123  val AUROC 0.8813  (37s)
+  ep 22 loss 0.4048  val AUROC 0.9007  (37s)
+  ep 23 loss 0.4009  val AUROC 0.8652  (36s)
+  ep 24 loss 0.3940  val AUROC 0.8699  (37s)
+  ep 25 loss 0.3925  val AUROC 0.8941  (37s)
+  ep 26 loss 0.3882  val AUROC 0.8928  (36s)
+  ep 27 loss 0.3836  val AUROC 0.8768  (36s)
+  ep 28 loss 0.3772  val AUROC 0.9012  (36s)
+  early stop at epoch 28
+
+     accuracy      roc_auc       pr_auc  f1_weighted     f1_macro  sensitivity  specificity
+       0.7750       0.7795       0.2650       0.8264       0.5757       0.6509       0.7842
+
+saved -> /home/abdulh/scratch/benchmarking2/results/supervised_conformer_tusz/result.json
+Done: Tue Sep  8 10:07:03 EDT 2026

@@ -1,0 +1,20 @@
+train (30000, 2400)  val (20000, 2400)  test (50000, 2400)  prevalence 0.0689
+
+configuration                   dims      C    AUROC   PR-AUC     acc   95% CI AUROC
+------------------------------------------------------------------------------------------------
+full descriptor                 2400    1.0   0.8160   0.2827  0.7593   [0.808,0.824]
+drop level 1                    2240    1.0   0.8140   0.2811  0.7563   [0.806,0.822]  overlaps full
+levels 3+4, all timesteps       1920    1.0   0.8173   0.2793  0.7618   [0.809,0.825]  overlaps full
+level 4, all timesteps          1280    1.0   0.8068   0.2649  0.7534   [0.798,0.814]  overlaps full
+one timestep, all levels         480    1.0   0.8108   0.2761  0.7610   [0.802,0.819]  overlaps full
+one timestep, levels 2-4         448    1.0   0.8126   0.2761  0.7666   [0.804,0.821]  overlaps full
+one timestep, levels 3+4         384    1.0   0.8125   0.2728  0.7672   [0.804,0.820]  overlaps full
+one timestep, level 4 only       256    1.0   0.8020   0.2584  0.7592   [0.793,0.809]  overlaps full
+two timesteps, level 4           512    1.0   0.8074   0.2679  0.7580   [0.799,0.815]  overlaps full
+
+PCA at matched width (is the structure doing any work?)
+PCA components                  dims      C    AUROC   PR-AUC     acc
+PCA-64                            64    0.1   0.7402   0.1923  0.7273
+PCA-128                          128    1.0   0.7902   0.2447  0.7502
+PCA-256                          256    1.0   0.8110   0.2716  0.7568
+PCA-480                          480    1.0   0.8052   0.2696  0.7559

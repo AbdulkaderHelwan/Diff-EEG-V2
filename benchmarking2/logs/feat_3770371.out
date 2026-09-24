@@ -1,0 +1,11 @@
+===== diffeeg_tok / tusz =====
+Model initialized with 9,674,710 parameters
+  DiffEEG backbone params: 9,674,710 | token readout: 8 windows x 960 (mean+std, 4 levels), t=50
+    train 25600/100000
+    train 51200/100000
+    train 76800/100000
+  train  (100000, 8, 960)  labels [50000 50000]
+  val    (20000, 8, 960)  labels [10000 10000]
+    test 25600/50000
+  test   (50000, 8, 960)  labels [46557  3443]
+Done: Wed Sep 23 07:10:38 EDT 2026

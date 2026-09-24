@@ -1,0 +1,8 @@
+===== cbramod / siena =====
+  CBraMod loaded: 4,924,000 params (missing 0, unexpected 0)
+    train 25600/74512
+    train 51200/74512
+  train  (74512, 200)  labels [74045   467]
+  val    (8279, 200)  labels [8227   52]
+  test   (18729, 200)  labels [18597   132]
+Done: Sat Sep  5 07:19:44 EDT 2026

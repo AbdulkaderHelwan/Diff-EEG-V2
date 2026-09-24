@@ -1,0 +1,9 @@
+===== diffeeg_tok / siena =====
+Model initialized with 9,674,710 parameters
+  DiffEEG backbone params: 9,674,710 | token readout: 8 windows x 960 (mean+std, 4 levels), t=50
+    train 25600/74512
+    train 51200/74512
+  train  (74512, 8, 960)  labels [74045   467]
+  val    (8279, 8, 960)  labels [8227   52]
+  test   (18729, 8, 960)  labels [18597   132]
+Done: Wed Sep 23 06:25:51 EDT 2026

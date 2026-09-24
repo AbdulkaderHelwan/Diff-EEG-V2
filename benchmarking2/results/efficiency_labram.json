@@ -1,0 +1,14 @@
+{
+  "device": "NVIDIA A100-SXM4-40GB",
+  "common_batch": 32,
+  "iters": 20,
+  "results": {
+    "labram": {
+      "batch": 32,
+      "s_per_batch": 0.010871209145989269,
+      "samples_per_s": 2943.5548125578844,
+      "peak_mib_at_common_batch": 83.68603515625,
+      "max_batch_probed": 256
+    }
+  }
+}

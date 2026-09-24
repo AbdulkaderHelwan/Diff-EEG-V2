@@ -1,0 +1,38 @@
+tusz: train (30000, 2400)  test (50000, 2400)  prevalence 0.0689
+
+full 2,400-d descriptor: AUROC 0.8107  acc 0.7622
+
+==================================================================
+LEVEL (the untested axis) axis
+==================================================================
+  block                 AUROC   PR-AUC   acc@0.5
+  level1 (32ch)        0.5873   0.0849    0.6104
+  level2 (64ch)        0.6707   0.1087    0.6450
+  level3 (128ch)       0.7845   0.2228    0.7431
+  level4 (256ch)       0.8050   0.2606    0.7565
+
+  linear CKA between blocks (1.00 = same representation):
+    mean 0.8883   min 0.8243   max 0.9520
+  correlation of block predictions: mean 0.2710  min 0.1310
+
+  best single block accuracy : 0.7565
+  ORACLE per-sample router   : 0.9524   headroom +0.1959
+
+==================================================================
+TIMESTEP (negative control) axis
+==================================================================
+  block                 AUROC   PR-AUC   acc@0.5
+  t=50                 0.8083   0.2668    0.7658
+  t=250                0.8090   0.2682    0.7684
+  t=500                0.8081   0.2713    0.7669
+  t=750                0.8084   0.2688    0.7566
+  t=950                0.8107   0.2732    0.7579
+
+  linear CKA between blocks (1.00 = same representation):
+    mean 0.9999   min 0.9998   max 1.0000
+  correlation of block predictions: mean 0.9593  min 0.9379
+
+  best single block accuracy : 0.7684
+  ORACLE per-sample router   : 0.8210   headroom +0.0525
+
+saved -> /home/abdulh/scratch/benchmarking2/moe/block_separability_tusz.json

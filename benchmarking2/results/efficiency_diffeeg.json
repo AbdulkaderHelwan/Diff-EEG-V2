@@ -1,0 +1,14 @@
+{
+  "device": "NVIDIA A100-SXM4-40GB",
+  "common_batch": 32,
+  "iters": 20,
+  "results": {
+    "diffeeg": {
+      "batch": 32,
+      "s_per_batch": 0.02728117279475555,
+      "samples_per_s": 1172.9701006897908,
+      "peak_mib_at_common_batch": 95.8798828125,
+      "max_batch_probed": 256
+    }
+  }
+}

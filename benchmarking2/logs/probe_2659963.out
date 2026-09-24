@@ -1,0 +1,50 @@
+
+=== tusz: frozen linear probe ===
+model         dim       C       accuracy      roc_auc       pr_auc  f1_weighted     f1_macro  sensitivity  specificity
+--------------------------------------------------------------------------------------------------------------------
+    [warn] diffeeg: best C=1000.0 is at a grid boundary
+diffeeg      2400  1000.0         0.7598       0.8129       0.3005       0.8166       0.5748       0.7276       0.7622
+eegdm        2560     1.0         0.8296       0.8737       0.5266       0.8655       0.6422       0.7688       0.8341
+biot          256     1.0         0.7347       0.7603       0.2792       0.7983       0.5442       0.6401       0.7417
+labram        200     0.1         0.7723       0.8446       0.4162       0.8256       0.5886       0.7557       0.7735
+    [warn] cbramod: best C=1000.0 is at a grid boundary
+cbramod       200  1000.0         0.7625       0.8546       0.4551       0.8190       0.5855       0.7920       0.7603
+
+  DiffEEG - eegdm (test prevalence 0.069):
+    accuracy      -0.0698   DiffEEG [0.756,0.763]  eegdm [0.826,0.833]  95% CI disjoint
+    roc_auc       -0.0608   DiffEEG [0.804,0.820]  eegdm [0.866,0.881]  95% CI disjoint
+    pr_auc        -0.2261   DiffEEG [0.286,0.315]  eegdm [0.509,0.543]  95% CI disjoint
+    f1_weighted   -0.0488   DiffEEG [0.814,0.819]  eegdm [0.863,0.868]  95% CI disjoint
+    f1_macro      -0.0674   DiffEEG [0.569,0.580]  eegdm [0.636,0.648]  95% CI disjoint
+    sensitivity   -0.0412   DiffEEG [0.713,0.742]  eegdm [0.754,0.782]  95% CI disjoint
+    specificity   -0.0719   DiffEEG [0.758,0.766]  eegdm [0.831,0.837]  95% CI disjoint
+
+  DiffEEG - biot (test prevalence 0.069):
+    accuracy      +0.0251   DiffEEG [0.756,0.763]  biot [0.731,0.738]  95% CI disjoint
+    roc_auc       +0.0526   DiffEEG [0.804,0.820]  biot [0.752,0.768]  95% CI disjoint
+    pr_auc        +0.0213   DiffEEG [0.286,0.315]  biot [0.263,0.296]  95% CI OVERLAP
+    f1_weighted   +0.0183   DiffEEG [0.814,0.819]  biot [0.795,0.801]  95% CI disjoint
+    f1_macro      +0.0306   DiffEEG [0.569,0.580]  biot [0.539,0.549]  95% CI disjoint
+    sensitivity   +0.0874   DiffEEG [0.713,0.742]  biot [0.624,0.655]  95% CI disjoint
+    specificity   +0.0204   DiffEEG [0.758,0.766]  biot [0.738,0.746]  95% CI disjoint
+
+  DiffEEG - labram (test prevalence 0.069):
+    accuracy      -0.0125   DiffEEG [0.756,0.763]  labram [0.768,0.776]  95% CI disjoint
+    roc_auc       -0.0317   DiffEEG [0.804,0.820]  labram [0.837,0.851]  95% CI disjoint
+    pr_auc        -0.1157   DiffEEG [0.286,0.315]  labram [0.397,0.434]  95% CI disjoint
+    f1_weighted   -0.0090   DiffEEG [0.814,0.819]  labram [0.823,0.828]  95% CI disjoint
+    f1_macro      -0.0138   DiffEEG [0.569,0.580]  labram [0.583,0.593]  95% CI disjoint
+    sensitivity   -0.0282   DiffEEG [0.713,0.742]  labram [0.740,0.769]  95% CI OVERLAP
+    specificity   -0.0114   DiffEEG [0.758,0.766]  labram [0.769,0.777]  95% CI disjoint
+
+  DiffEEG - cbramod (test prevalence 0.069):
+    accuracy      -0.0027   DiffEEG [0.756,0.763]  cbramod [0.759,0.766]  95% CI OVERLAP
+    roc_auc       -0.0417   DiffEEG [0.804,0.820]  cbramod [0.847,0.862]  95% CI disjoint
+    pr_auc        -0.1546   DiffEEG [0.286,0.315]  cbramod [0.437,0.473]  95% CI disjoint
+    f1_weighted   -0.0024   DiffEEG [0.814,0.819]  cbramod [0.816,0.822]  95% CI OVERLAP
+    f1_macro      -0.0107   DiffEEG [0.569,0.580]  cbramod [0.580,0.590]  95% CI disjoint
+    sensitivity   -0.0645   DiffEEG [0.713,0.742]  cbramod [0.778,0.805]  95% CI disjoint
+    specificity   +0.0019   DiffEEG [0.758,0.766]  cbramod [0.756,0.764]  95% CI OVERLAP
+
+  saved -> /home/abdulh/scratch/benchmarking2/results/probe_tusz.json
+Done: Tue Sep  8 08:32:04 EDT 2026

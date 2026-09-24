@@ -1,0 +1,9 @@
+===== eegdm / bonn =====
+[KeOps] Compiling cuda jit compiler engine ... OK
+[pyKeOps] Compiling nvrtc binder for python ... OK
+  EEGDM backbone params: 11,863,298
+[KeOps] Generating code for Sum_Reduction reduction (with parameters 0) of formula ComplexMult(a,ComplexExp(ComplexMult(b,c))) with a=Var(0,2,1), b=Var(1,2,1), c=Var(2,2,0) ... OK
+  train  (360, 2560)  labels [288  72]
+  val    (40, 2560)  labels [32  8]
+  test   (100, 2560)  labels [80 20]
+Done: Thu Sep  3 03:39:23 EDT 2026

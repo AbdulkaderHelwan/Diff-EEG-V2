@@ -1,0 +1,9 @@
+
+=== tuab5s: frozen linear probe ===
+model         dim       C       accuracy      roc_auc       pr_auc  f1_weighted     f1_macro  sensitivity  specificity
+--------------------------------------------------------------------------------------------------------------------
+biot          256     1.0         0.7747       0.8468       0.8492       0.7738       0.7718       0.7192       0.8220
+labram        200     1.0         0.7176       0.7876       0.7848       0.7165       0.7139       0.6556       0.7706
+
+  saved -> /home/abdulh/scratch/benchmarking2/results/probe_tuab5s_biot-labram.json
+Done: Wed Sep  2 08:24:11 EDT 2026

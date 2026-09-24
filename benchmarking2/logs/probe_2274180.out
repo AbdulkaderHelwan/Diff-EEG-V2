@@ -1,0 +1,39 @@
+
+=== siena: frozen linear probe ===
+model         dim       C       accuracy      roc_auc       pr_auc  f1_weighted     f1_macro  sensitivity  specificity
+--------------------------------------------------------------------------------------------------------------------
+diffeeg      2400    10.0         0.9206       0.7774       0.0571       0.9523       0.5217       0.5227       0.9234
+eegdm        2560  0.0001         0.9164       0.9152       0.2484       0.9502       0.5337       0.7424       0.9177
+biot          256     0.1         0.7800       0.7073       0.0203       0.8699       0.4548       0.5455       0.7816
+    [warn] labram: best C=1000.0 is at a grid boundary
+labram        200  1000.0         0.8333       0.7970       0.0563       0.9026       0.4778       0.5833       0.8350
+
+  DiffEEG - eegdm (test prevalence 0.007):
+    accuracy      +0.0041   DiffEEG [0.917,0.924]  eegdm [0.912,0.920]  95% CI OVERLAP
+    roc_auc       -0.1379   DiffEEG [0.724,0.827]  eegdm [0.889,0.938]  95% CI disjoint
+    pr_auc        -0.1913   DiffEEG [0.039,0.088]  eegdm [0.179,0.328]  95% CI disjoint
+    f1_weighted   +0.0021   DiffEEG [0.950,0.955]  eegdm [0.948,0.953]  95% CI OVERLAP
+    f1_macro      -0.0121   DiffEEG [0.512,0.531]  eegdm [0.524,0.544]  95% CI OVERLAP
+    sensitivity   -0.2197   DiffEEG [0.431,0.614]  eegdm [0.667,0.817]  95% CI disjoint
+    specificity   +0.0057   DiffEEG [0.920,0.927]  eegdm [0.914,0.921]  95% CI OVERLAP
+
+  DiffEEG - biot (test prevalence 0.007):
+    accuracy      +0.1406   DiffEEG [0.917,0.924]  biot [0.774,0.786]  95% CI disjoint
+    roc_auc       +0.0701   DiffEEG [0.724,0.827]  biot [0.657,0.755]  95% CI OVERLAP
+    pr_auc        +0.0368   DiffEEG [0.039,0.088]  biot [0.015,0.029]  95% CI disjoint
+    f1_weighted   +0.0824   DiffEEG [0.950,0.955]  biot [0.866,0.874]  95% CI disjoint
+    f1_macro      +0.0669   DiffEEG [0.512,0.531]  biot [0.450,0.459]  95% CI disjoint
+    sensitivity   -0.0227   DiffEEG [0.431,0.614]  biot [0.457,0.635]  95% CI OVERLAP
+    specificity   +0.1417   DiffEEG [0.920,0.927]  biot [0.776,0.788]  95% CI disjoint
+
+  DiffEEG - labram (test prevalence 0.007):
+    accuracy      +0.0873   DiffEEG [0.917,0.924]  labram [0.828,0.839]  95% CI disjoint
+    roc_auc       -0.0196   DiffEEG [0.724,0.827]  labram [0.756,0.836]  95% CI OVERLAP
+    pr_auc        +0.0008   DiffEEG [0.039,0.088]  labram [0.034,0.097]  95% CI OVERLAP
+    f1_weighted   +0.0498   DiffEEG [0.950,0.955]  labram [0.899,0.906]  95% CI disjoint
+    f1_macro      +0.0439   DiffEEG [0.512,0.531]  labram [0.472,0.483]  95% CI disjoint
+    sensitivity   -0.0606   DiffEEG [0.431,0.614]  labram [0.491,0.664]  95% CI OVERLAP
+    specificity   +0.0883   DiffEEG [0.920,0.927]  labram [0.830,0.841]  95% CI disjoint
+
+  saved -> /home/abdulh/scratch/benchmarking2/results/probe_siena.json
+Done: Thu Sep  3 04:49:36 EDT 2026

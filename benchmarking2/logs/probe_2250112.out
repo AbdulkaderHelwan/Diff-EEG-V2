@@ -1,0 +1,20 @@
+
+=== tuab5s: frozen linear probe ===
+model         dim       C       accuracy      roc_auc       pr_auc  f1_weighted     f1_macro  sensitivity  specificity
+--------------------------------------------------------------------------------------------------------------------
+    [warn] diffeeg: best C=10.0 is at a grid boundary
+diffeeg      2400    10.0         0.7028       0.7596       0.7206       0.6999       0.6965       0.6063       0.7852
+eegdm        2560     1.0         0.7945       0.8686       0.8624       0.7941       0.7925       0.7560       0.8274
+biot       features missing
+
+  DiffEEG - eegdm (test prevalence 0.461):
+    accuracy      -0.0917   DiffEEG [0.699,0.707]  eegdm [0.791,0.798]  95% CI disjoint
+    roc_auc       -0.1089   DiffEEG [0.756,0.764]  eegdm [0.865,0.872]  95% CI disjoint
+    pr_auc        -0.1418   DiffEEG [0.714,0.727]  eegdm [0.858,0.866]  95% CI disjoint
+    f1_weighted   -0.0942   DiffEEG [0.696,0.704]  eegdm [0.791,0.798]  95% CI disjoint
+    f1_macro      -0.0960   DiffEEG [0.693,0.701]  eegdm [0.789,0.796]  95% CI disjoint
+    sensitivity   -0.1496   DiffEEG [0.600,0.613]  eegdm [0.751,0.762]  95% CI disjoint
+    specificity   -0.0421   DiffEEG [0.780,0.790]  eegdm [0.823,0.832]  95% CI disjoint
+
+  saved -> /home/abdulh/scratch/benchmarking2/results/probe_tuab5s.json
+Done: Wed Sep  2 07:47:37 EDT 2026

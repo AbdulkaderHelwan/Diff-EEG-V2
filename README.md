@@ -92,6 +92,8 @@ saliency map and 4,800-d embeddings of TUEV, Siena and Bonn segments), not raw E
 | `dataset_tools/`, `Data-Processing/` | per-corpus preprocessing |
 | `Binary_finetune_*`, `TUHSZ_Res/`, `TUAB_Res/` | TUH Seizure and TUAB runs: configs, histories, scores |
 | `Benchmarking/` | external-corpus runs and the prevalence-matched literature comparison |
+| `benchmarking2/` | controlled comparison against EEGDM, BIOT, LaBraM, CBraMod and EEGMamba (see its README) |
+| `sync_benchmarking2.sh` | refreshes `benchmarking2/` from the working copy on the cluster |
 | `paper/` | V2 paper draft and analysis figures |
 | `logs/` | SLURM output and error logs |
 | `PROJECT_LOG.md` | full experiment log |

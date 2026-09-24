@@ -1,0 +1,31 @@
+device: cuda
+=== tuab5s: non-linear (MLP) head on frozen features ===
+model         dim       accuracy      roc_auc       pr_auc  f1_weighted     f1_macro  sensitivity  specificity
+------------------------------------------------------------------------------------------------------------
+  [diffeeg]
+    lr=0.001 wd=0.0001: val AUROC 0.7665  (32s)
+    lr=0.001 wd=0.01: val AUROC 0.7674  (24s)
+    lr=0.0003 wd=0.0001: val AUROC 0.7638  (24s)
+    lr=0.0003 wd=0.01: val AUROC 0.7633  (24s)
+diffeeg      2400         0.6883       0.7464       0.7284       0.6850       0.6812       0.5856       0.7761
+  [eegdm]
+    lr=0.001 wd=0.0001: val AUROC 0.9464  (25s)
+    lr=0.001 wd=0.01: val AUROC 0.9462  (25s)
+    lr=0.0003 wd=0.0001: val AUROC 0.9436  (24s)
+    lr=0.0003 wd=0.01: val AUROC 0.9438  (24s)
+eegdm        2560         0.8014       0.8764       0.8805       0.8010       0.7994       0.7626       0.8345
+  [biot]
+    lr=0.001 wd=0.0001: val AUROC 0.9329  (19s)
+    lr=0.001 wd=0.01: val AUROC 0.9328  (19s)
+    lr=0.0003 wd=0.0001: val AUROC 0.9317  (19s)
+    lr=0.0003 wd=0.01: val AUROC 0.9318  (19s)
+biot          256         0.7803       0.8479       0.8513       0.7794       0.7774       0.7232       0.8291
+  [labram]
+    lr=0.001 wd=0.0001: val AUROC 0.8653  (13s)
+    lr=0.001 wd=0.01: val AUROC 0.8664  (13s)
+    lr=0.0003 wd=0.0001: val AUROC 0.8662  (19s)
+    lr=0.0003 wd=0.01: val AUROC 0.8659  (19s)
+labram        200         0.7396       0.8030       0.8075       0.7381       0.7355       0.6676       0.8012
+
+  saved -> /home/abdulh/scratch/benchmarking2/results/mlp_head_tuab5s.json
+Done: Wed Sep  2 23:14:48 EDT 2026

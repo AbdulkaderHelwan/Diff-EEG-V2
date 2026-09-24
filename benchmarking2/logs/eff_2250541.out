@@ -1,0 +1,8 @@
+device: NVIDIA A100-SXM4-40GB  total 39.5 GiB
+
+--- biot ---
+  BIOT loaded: 3,186,706 params (missing 0, unexpected 0)
+  3875.5 samples/s at batch 32, peak 79 MiB, max feasible batch probed 256
+
+saved -> /home/abdulh/scratch/benchmarking2/results/efficiency_biot.json
+Done: Wed Sep  2 08:36:06 EDT 2026

@@ -1,0 +1,25 @@
+=== extract ===
+EEGMamba loaded: 3,277,243 params | unfused path on 12 Mamba2 blocks
+  train  (360, 200)  labels [288  72]
+  val    (40, 200)  labels [32  8]
+  test   (100, 200)  labels [80 20]
+=== probe (eegmamba only) ===
+
+=== bonn: frozen linear probe ===
+model         dim       C       accuracy      roc_auc       pr_auc  f1_weighted     f1_macro  sensitivity  specificity
+--------------------------------------------------------------------------------------------------------------------
+    [warn] eegmamba: best C=1000.0 is at a grid boundary
+eegmamba      200  1000.0         0.9400       0.9475       0.9188       0.9400       0.9062       0.8500       0.9625
+diffeeg      2400     0.1         0.9400       0.9819       0.9374       0.9420       0.9126       0.9500       0.9375
+
+  DiffEEG - eegmamba (test prevalence 0.200):
+    accuracy      +0.0000   DiffEEG [0.890,0.980]  eegmamba [0.890,0.980]  95% CI OVERLAP
+    roc_auc       +0.0344   DiffEEG [0.954,0.999]  eegmamba [0.867,1.000]  95% CI OVERLAP
+    pr_auc        +0.0187   DiffEEG [0.832,0.995]  eegmamba [0.807,1.000]  95% CI OVERLAP
+    f1_weighted   +0.0020   DiffEEG [0.892,0.980]  eegmamba [0.889,0.980]  95% CI OVERLAP
+    f1_macro      +0.0063   DiffEEG [0.831,0.971]  eegmamba [0.824,0.971]  95% CI OVERLAP
+    sensitivity   +0.1000   DiffEEG [0.833,1.000]  eegmamba [0.667,1.000]  95% CI OVERLAP
+    specificity   -0.0250   DiffEEG [0.877,0.987]  eegmamba [0.918,1.000]  95% CI OVERLAP
+
+  saved -> /home/abdulh/scratch/benchmarking2/results/probe_bonn_eegmamba-diffeeg.json
+Done: Tue Sep 15 07:42:41 EDT 2026

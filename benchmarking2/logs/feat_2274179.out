@@ -1,0 +1,8 @@
+===== labram / siena =====
+  LaBraM loaded: 5,819,936 params (missing 2, unexpected 2)
+    train 25600/74512
+    train 51200/74512
+  train  (74512, 200)  labels [74045   467]
+  val    (8279, 200)  labels [8227   52]
+  test   (18729, 200)  labels [18597   132]
+Done: Thu Sep  3 03:49:03 EDT 2026

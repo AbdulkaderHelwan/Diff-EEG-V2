@@ -1,0 +1,11 @@
+===== diffeeg_noised / tusz =====
+Model initialized with 9,674,710 parameters
+  DiffEEG(noised) params: 9,674,710; sqrt(1-abar) at probes = [0.091, 0.393, 0.713, 0.926, 0.997]
+    train 25600/100000
+    train 51200/100000
+    train 76800/100000
+  train  (100000, 2400)  labels [50000 50000]
+  val    (20000, 2400)  labels [10000 10000]
+    test 25600/50000
+  test   (50000, 2400)  labels [46557  3443]
+Done: Wed Sep  9 09:05:53 EDT 2026

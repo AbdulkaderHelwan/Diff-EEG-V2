@@ -1,0 +1,11 @@
+===== diffeeg_win / tusz =====
+Model initialized with 9,674,710 parameters
+  DiffEEG backbone params: 9,674,710 | windowed readout: 5 windows, mean+std, t=50
+    train 25600/100000
+    train 51200/100000
+    train 76800/100000
+  train  (100000, 4800)  labels [50000 50000]
+  val    (20000, 4800)  labels [10000 10000]
+    test 25600/50000
+  test   (50000, 4800)  labels [46557  3443]
+Done: Wed Sep 23 07:10:48 EDT 2026

@@ -1,0 +1,36 @@
+41 recordings, 14 patients: ['PN00', 'PN01', 'PN03', 'PN05', 'PN06', 'PN07', 'PN09', 'PN10', 'PN11', 'PN12', 'PN13', 'PN14', 'PN16', 'PN17']
+PN00: C=10.0 thr=0.7955 innerAUROC=0.797 seizures=5 warned=0 medlead=nans FA/h=0.89 (clean 2.2h)
+PN01: C=10.0 thr=0.7316 innerAUROC=0.816 seizures=2 warned=0 medlead=nans FA/h=0.53 (clean 13.1h)
+PN03: C=1.0 thr=0.7625 innerAUROC=0.804 seizures=2 warned=0 medlead=nans FA/h=2.14 (clean 23.8h)
+PN05: C=0.1 thr=0.7658 innerAUROC=0.803 seizures=3 warned=1 medlead=360s FA/h=1.27 (clean 5.5h)
+PN06: C=10.0 thr=0.8005 innerAUROC=0.779 seizures=5 warned=0 medlead=nans FA/h=0.99 (clean 11.2h)
+PN07: C=0.1 thr=0.7959 innerAUROC=0.793 seizures=1 warned=1 medlead=450s FA/h=7.84 (clean 8.5h)
+PN09: C=1.0 thr=0.7681 innerAUROC=0.796 seizures=3 warned=0 medlead=nans FA/h=0.95 (clean 6.3h)
+PN10: C=0.1 thr=0.7493 innerAUROC=0.763 seizures=9 warned=0 medlead=nans FA/h=0.12 (clean 17.1h)
+PN11: C=0.1 thr=0.7692 innerAUROC=0.811 seizures=1 warned=0 medlead=nans FA/h=0.45 (clean 2.2h)
+PN12: C=1.0 thr=0.7627 innerAUROC=0.812 seizures=4 warned=0 medlead=nans FA/h=1.12 (clean 5.3h)
+PN13: C=1.0 thr=0.7469 innerAUROC=0.829 seizures=3 warned=0 medlead=nans FA/h=2.35 (clean 8.1h)
+PN14: C=1.0 thr=0.7540 innerAUROC=0.846 seizures=4 warned=0 medlead=nans FA/h=0.86 (clean 19.7h)
+PN16: C=10.0 thr=0.7270 innerAUROC=0.835 seizures=2 warned=0 medlead=nans FA/h=8.04 (clean 4.5h)
+PN17: C=10.0 thr=0.7742 innerAUROC=0.837 seizures=2 warned=0 medlead=nans FA/h=0.42 (clean 4.7h)
+
+=== SUMMARY ===
+{
+  "n_seizures": 46,
+  "n_warned": 2,
+  "sensitivity_pre_onset": 0.043478260869565216,
+  "median_lead_s": 405.0,
+  "mean_lead_s": 405.0,
+  "iqr_lead_s": [
+    382.5,
+    427.5
+  ],
+  "max_lead_s": 450.0,
+  "fa_per_hour": 1.766982349054526,
+  "horizon_s": 600.0,
+  "smooth_windows": 6,
+  "persist": 3,
+  "window_s": 5.0,
+  "target_fa": 1.0
+}
+Done: Sat Sep 12 07:11:43 EDT 2026

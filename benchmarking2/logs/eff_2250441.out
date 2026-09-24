@@ -1,0 +1,11 @@
+device: NVIDIA A100-SXM4-40GB  total 39.5 GiB
+
+--- eegdm ---
+[KeOps] Compiling cuda jit compiler engine ... OK
+[pyKeOps] Compiling nvrtc binder for python ... OK
+  EEGDM backbone params: 11,863,298
+[KeOps] Generating code for Sum_Reduction reduction (with parameters 0) of formula ComplexMult(a,ComplexExp(ComplexMult(b,c))) with a=Var(0,2,1), b=Var(1,2,1), c=Var(2,2,0) ... OK
+  46.3 samples/s at batch 32, peak 14844 MiB, max feasible batch probed 64
+
+saved -> /home/abdulh/scratch/benchmarking2/results/efficiency_eegdm.json
+Done: Wed Sep  2 08:03:57 EDT 2026

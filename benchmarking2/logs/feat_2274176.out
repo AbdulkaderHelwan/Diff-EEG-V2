@@ -1,0 +1,9 @@
+===== diffeeg / siena =====
+Model initialized with 9,674,710 parameters
+  DiffEEG backbone params: 9,674,710
+    train 25600/74512
+    train 51200/74512
+  train  (74512, 2400)  labels [74045   467]
+  val    (8279, 2400)  labels [8227   52]
+  test   (18729, 2400)  labels [18597   132]
+Done: Thu Sep  3 03:45:16 EDT 2026

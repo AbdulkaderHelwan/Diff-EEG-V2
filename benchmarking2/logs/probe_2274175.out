@@ -1,0 +1,38 @@
+
+=== bonn: frozen linear probe ===
+model         dim       C       accuracy      roc_auc       pr_auc  f1_weighted     f1_macro  sensitivity  specificity
+--------------------------------------------------------------------------------------------------------------------
+diffeeg      2400     0.1         0.9400       0.9819       0.9374       0.9420       0.9126       0.9500       0.9375
+eegdm        2560  0.0001         0.9400       0.9944       0.9746       0.9427       0.9153       1.0000       0.9250
+biot          256     0.1         0.9300       0.9788       0.9492       0.9328       0.8996       0.9500       0.9250
+labram        200   0.001         0.9200       0.9950       0.9821       0.9246       0.8904       1.0000       0.9000
+
+  DiffEEG - eegdm (test prevalence 0.200):
+    accuracy      +0.0000   DiffEEG [0.890,0.980]  eegdm [0.890,0.980]  95% CI OVERLAP
+    roc_auc       -0.0125   DiffEEG [0.954,0.999]  eegdm [0.982,1.000]  95% CI OVERLAP
+    pr_auc        -0.0371   DiffEEG [0.832,0.995]  eegdm [0.919,1.000]  95% CI OVERLAP
+    f1_weighted   -0.0008   DiffEEG [0.892,0.980]  eegdm [0.898,0.980]  95% CI OVERLAP
+    f1_macro      -0.0027   DiffEEG [0.831,0.971]  eegdm [0.837,0.973]  95% CI OVERLAP
+    sensitivity   -0.0500   DiffEEG [0.833,1.000]  eegdm [1.000,1.000]  95% CI OVERLAP
+    specificity   +0.0125   DiffEEG [0.877,0.987]  eegdm [0.863,0.976]  95% CI OVERLAP
+
+  DiffEEG - biot (test prevalence 0.200):
+    accuracy      +0.0100   DiffEEG [0.890,0.980]  biot [0.880,0.970]  95% CI OVERLAP
+    roc_auc       +0.0031   DiffEEG [0.954,0.999]  biot [0.943,1.000]  95% CI OVERLAP
+    pr_auc        -0.0118   DiffEEG [0.832,0.995]  biot [0.873,1.000]  95% CI OVERLAP
+    f1_weighted   +0.0092   DiffEEG [0.892,0.980]  biot [0.888,0.971]  95% CI OVERLAP
+    f1_macro      +0.0129   DiffEEG [0.831,0.971]  biot [0.819,0.961]  95% CI OVERLAP
+    sensitivity   +0.0000   DiffEEG [0.833,1.000]  biot [0.833,1.000]  95% CI OVERLAP
+    specificity   +0.0125   DiffEEG [0.877,0.987]  biot [0.871,0.975]  95% CI OVERLAP
+
+  DiffEEG - labram (test prevalence 0.200):
+    accuracy      +0.0200   DiffEEG [0.890,0.980]  labram [0.870,0.970]  95% CI OVERLAP
+    roc_auc       -0.0131   DiffEEG [0.954,0.999]  labram [0.983,1.000]  95% CI OVERLAP
+    pr_auc        -0.0447   DiffEEG [0.832,0.995]  labram [0.939,1.000]  95% CI OVERLAP
+    f1_weighted   +0.0174   DiffEEG [0.892,0.980]  labram [0.879,0.971]  95% CI OVERLAP
+    f1_macro      +0.0222   DiffEEG [0.831,0.971]  labram [0.807,0.954]  95% CI OVERLAP
+    sensitivity   -0.0500   DiffEEG [0.833,1.000]  labram [1.000,1.000]  95% CI OVERLAP
+    specificity   +0.0375   DiffEEG [0.877,0.987]  labram [0.835,0.961]  95% CI OVERLAP
+
+  saved -> /home/abdulh/scratch/benchmarking2/results/probe_bonn.json
+Done: Thu Sep  3 03:47:55 EDT 2026

@@ -1,0 +1,18 @@
+{
+  "dataset": "bonn",
+  "seed": 0,
+  "caps": {
+    "train": 100000,
+    "val": 20000,
+    "test": 50000
+  },
+  "n": {
+    "train": 360,
+    "val": 40,
+    "test": 100
+  },
+  "classes": [
+    "normal",
+    "seizure"
+  ]
+}

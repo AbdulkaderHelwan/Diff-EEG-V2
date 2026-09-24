@@ -1,0 +1,9 @@
+device: NVIDIA A100-SXM4-40GB  total 39.5 GiB
+
+--- diffeeg ---
+Model initialized with 9,674,710 parameters
+  DiffEEG backbone params: 9,674,710
+  1173.0 samples/s at batch 32, peak 96 MiB, max feasible batch probed 256
+
+saved -> /home/abdulh/scratch/benchmarking2/results/efficiency_diffeeg.json
+Done: Wed Sep  2 08:03:10 EDT 2026

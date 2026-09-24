@@ -1,0 +1,18 @@
+{
+  "dataset": "siena",
+  "seed": 0,
+  "caps": {
+    "train": 100000,
+    "val": 20000,
+    "test": 50000
+  },
+  "n": {
+    "train": 74512,
+    "val": 8279,
+    "test": 18729
+  },
+  "classes": [
+    "non-seizure",
+    "seizure"
+  ]
+}

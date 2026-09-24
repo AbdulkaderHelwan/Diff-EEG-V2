@@ -1,0 +1,23 @@
+===== eegdm / siena =====
+[KeOps] Compiling cuda jit compiler engine ... OK
+[pyKeOps] Compiling nvrtc binder for python ... OK
+  EEGDM backbone params: 11,863,298
+[KeOps] Generating code for Sum_Reduction reduction (with parameters 0) of formula ComplexMult(a,ComplexExp(ComplexMult(b,c))) with a=Var(0,2,1), b=Var(1,2,1), c=Var(2,2,0) ... OK
+    train 6400/74512
+    train 12800/74512
+    train 19200/74512
+    train 25600/74512
+    train 32000/74512
+    train 38400/74512
+    train 44800/74512
+    train 51200/74512
+    train 57600/74512
+    train 64000/74512
+    train 70400/74512
+  train  (74512, 2560)  labels [74045   467]
+    val 6400/8279
+  val    (8279, 2560)  labels [8227   52]
+    test 6400/18729
+    test 12800/18729
+  test   (18729, 2560)  labels [18597   132]
+Done: Thu Sep  3 04:23:41 EDT 2026

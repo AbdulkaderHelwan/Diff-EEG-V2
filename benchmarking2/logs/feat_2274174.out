@@ -1,0 +1,6 @@
+===== labram / bonn =====
+  LaBraM loaded: 5,819,936 params (missing 2, unexpected 2)
+  train  (360, 200)  labels [288  72]
+  val    (40, 200)  labels [32  8]
+  test   (100, 200)  labels [80 20]
+Done: Thu Sep  3 03:42:44 EDT 2026

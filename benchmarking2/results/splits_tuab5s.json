@@ -1,0 +1,18 @@
+{
+  "dataset": "tuab5s",
+  "seed": 0,
+  "caps": {
+    "train": 100000,
+    "val": 20000,
+    "test": 50000
+  },
+  "n": {
+    "train": 100000,
+    "val": 20000,
+    "test": 50000
+  },
+  "classes": [
+    "normal",
+    "abnormal"
+  ]
+}

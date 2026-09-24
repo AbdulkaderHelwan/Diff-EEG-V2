@@ -1,0 +1,10 @@
+===== cbramod / tusz =====
+  CBraMod loaded: 4,924,000 params (missing 0, unexpected 0)
+    train 25600/100000
+    train 51200/100000
+    train 76800/100000
+  train  (100000, 200)  labels [50000 50000]
+  val    (20000, 200)  labels [10000 10000]
+    test 25600/50000
+  test   (50000, 200)  labels [46557  3443]
+Done: Tue Sep  8 06:33:07 EDT 2026
