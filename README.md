@@ -29,9 +29,9 @@ scripts expect it.
 
 | Checkpoint | Size | Place at | Download |
 |---|---|---|---|
-| Pre-trained backbone (epoch 26, best validation loss) | 466 MB | `training_diffusion_v2/best_EEGDIFF_V2.pth` | ADD_ONEDRIVE_LINK |
-| TUH Seizure detection, last two levels unfrozen, with RL | 187 MB | `Binary_finetune_unfrozen/run_last_two_levels_20260630_083121/best_classifier.pth` | ADD_ONEDRIVE_LINK |
-| TUAB abnormal detection, `unfreeze_3` | 187 MB | `TUAB_Res/run_20260702_034225/unfreeze_3/best.pth` | ADD_ONEDRIVE_LINK |
+| Pre-trained backbone (epoch 26, best validation loss) | 466 MB | `training_diffusion_v2/best_EEGDIFF_V2.pth` | (https://lauedu74602-my.sharepoint.com/:u:/g/personal/abedelkader_helwan_lau_edu_lb/IQAxsDKK45aFQKq4d7cWjAFGASe4yBa_WSTkasZ27cArqvE?e=nxesK2)|
+| TUH Seizure detection, last two levels unfrozen, with RL | 187 MB | `Binary_finetune_unfrozen/run_last_two_levels_20260630_083121/best_classifier.pth` | https://lauedu74602-my.sharepoint.com/:u:/g/personal/abedelkader_helwan_lau_edu_lb/IQCSJOf0xEWwQreoXq5KUjP2AftooFbwIypJQm3WP_3JZ2I?e=llldL2 |
+| TUAB abnormal detection, `unfreeze_3` | 187 MB | `TUAB_Res/run_20260702_034225/unfreeze_3/best.pth` | [ADD_ONEDRIVE_LINK ](https://lauedu74602-my.sharepoint.com/:u:/g/personal/abedelkader_helwan_lau_edu_lb/IQCrQg57h_tlRK1KQphKH9l_ARdB9C9_UUxJN_H0oGnt2nA?e=TA5exa)|
 
 ## Results
 
