@@ -34,7 +34,7 @@ Binary seizure detection on TUH Seizure, all four trained and evaluated by us on
 same 50,000-segment test subset (6.7% seizure prevalence). Download each file and place
 it at the path shown, which is where the scripts expect it.
 
-| Model | Params | Test AUROC | PR-AUC | Macro F1 | Sens. | Spec. | Place at | Download |
+| Model | Params | Test AUROC | PR-AUC | Macro F1 | Sens. | Spec. | Place at |
 |---|---|---|---|---|---|---|---|---|
 | DiffEEG, fine-tuned with RL | 9.67M | 0.859 | 0.492 | 0.638 | 0.750 | 0.835 | `results/diffeeg_ft_tusz_rl-on/best.pth` |
 | EEGNet, from scratch | 2,738 | 0.880 | 0.481 | 0.550 | 0.073 | 0.998 | `results/supervised_eegnet_tusz/best.pth` | 
