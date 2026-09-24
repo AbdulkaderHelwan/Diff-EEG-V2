@@ -9,6 +9,7 @@
 \usepackage{enumitem}
 \usepackage{tcolorbox}
 \usepackage[hidelinks]{hyperref}
+\def\UrlBreaks{\do\/\do\_\do\.\do\-}  % let long file paths wrap
 
 \definecolor{codebg}{RGB}{247,247,249}
 \definecolor{kw}{RGB}{0,90,160}
@@ -120,7 +121,7 @@ These use the same clinical montage the model was trained on, so the names
 already match (\texttt{EEG FP1-REF} $\rightarrow$ \texttt{FP1}) --- no aliases,
 just extract the 22 by name, resample $250\!\rightarrow\!256$\,Hz, and window.
 (Processed by a collaborator; the recipe is recorded in
-\texttt{TUAB/processed\_tuab/tuab\_processing\_report.json}.)
+\path{TUAB/processed_tuab/tuab_processing_report.json}.)
 \textbf{Result: 22/22 cups filled.}
 
 \subsection*{Bonn --- only one electrode exists}
@@ -154,7 +155,8 @@ def prepare_eegmmidb(raw_root, writer, args):
 
 \subsection*{TUEV (event types) --- same montage, but tiny event labels}
 Channel mapping is the same \texttt{project\_channels}. The special part is
-\emph{windowing}, and the confusing bit is worth stating clearly.
+\emph{windowing}. TUEV has been processed \textbf{twice}, with two different
+windowing methods, and only the second one matches how published papers use it.
 
 \begin{keybox}{The problem: it is the \emph{labels} that are 1 second, not the input}
 The EEG \textbf{recordings} are long and normal (e.g.\ 10 minutes). What is short
@@ -163,7 +165,9 @@ per-channel} chunks. Each \texttt{.rec} line is
 \texttt{channel, start\_sec, stop\_sec, label} --- e.g.\
 \texttt{14, 1.4, 2.4, 5} means ``on channel 14, seconds 1.4--2.4, label 5
 (artifact).'' So ``1 second'' is the \emph{granularity of the annotations}, not
-the size of the input we feed the model (which is still 5\,s).
+the size of the input we feed the model (which is still 5\,s). Every annotation
+is exactly 1.0\,s long, and the channel number (0--21) refers to the 22-channel
+TCP bipolar montage.
 \end{keybox}
 
 \noindent\textbf{Why that breaks the naive approach.} Our model eats
@@ -177,23 +181,107 @@ the size of the input we feed the model (which is still 5\,s).
   event at this window's center?'' --- the little 1-second markers almost never
   line up with the grid cells, so you throw away $\sim$98\% of windows.
 \end{itemize}
+Both methods below fix this by cutting windows \emph{around the events} instead
+of on a fixed grid. They differ in \textbf{how many windows each event produces}.
 
-\noindent\textbf{The fix (event-driven windowing).} Instead of a fixed grid, take
-each event and grab the \textbf{5 seconds centered on it}, labeling that window
-with the event. Every labeled event then becomes exactly one usable 5-second
-training window. (Because TUEV annotates \emph{per channel}, the same event
-appears on several channels at once, so we first run \texttt{merge\_events} to
-collapse those per-channel 1-second markers into single spans.)
+\paragraph{First attempt (used in V1-era benchmarking and V2; now retired).}
+Script: \path{dataset_tools/prepare_tuev.py}. It read the \texttt{.rec} rows
+but \textbf{ignored the channel column}, then ran \texttt{merge\_events} to join
+back-to-back rows with the same label into one long span, cut \textbf{one
+5-second window per span}, and dropped windows that started at the same time.
 \begin{lstlisting}
-def extract_event_windows(events, total_sec, window_sec):
-    spans = merge_events(events)                 # join touching same-label events
-    for s0, s1, lab in spans:
-        if (s1 - s0) <= window_sec:
-            start = center the window on the event   # event-driven, not a grid
-    ...
-# then: projected, missing = project_channels(data, raw.ch_names)  # same 22 cups
+events = [(start, stop, label) for _ch, start, stop, label in rows]  # channel thrown away
+spans  = merge_events(events)            # [0.4,1.4),[1.4,2.4),... -> [0.4, 6.4)
+for s0, s1, lab in spans:
+    start = center a 5 s window on the span   # ONE window per span
 \end{lstlisting}
-\textbf{Result: 22/22 cups (with per-session exceptions).}
+\textbf{Result: 2,665 windows} in total (V2's fine-tuning used 2,621 of them).
+Output folders: \path{processed_TUEV/} and \path{processed_TUEV_4class/}.
+\textbf{Do not use these for new experiments:} the numbers they produce cannot be
+compared with any published TUEV result.
+
+\paragraph{Current method: the BIOT/LaBraM protocol.}
+Script: \path{dataset_tools/prepare_tuev_events.py}. This is how BIOT defined
+TUEV, and LaBraM, CBraMod and EEGDM all copied it: \textbf{one sample per
+\texttt{.rec} row}. Each row's 1-second event gets a 5-second window, 2\,s before
+and 2\,s after, and the row's channel is kept as the ``offending channel.''
+\begin{lstlisting}
+for ch, s0, s1, label in parse_rec(rec_path):   # every row, no merging
+    start = s0 - 2.0                            # 2 s before the 1 s event
+    window = signal[:, start : start + 5.0]     # all 22 channels, 5 s
+    # clamp the window inside the recording if the event is near an edge
+    save(window, label, offending_channel=ch, clamped=...)
+\end{lstlisting}
+
+\begin{keybox}{Worked example: why the counts differ by 43$\times$}
+An artifact that lasts \textbf{6 seconds} and is marked on \textbf{3 channels}
+is written as $6 \times 3 = $ \textbf{18 rows} in the \texttt{.rec} file.
+\begin{itemize}[nosep,leftmargin=1.4em]
+  \item \textbf{First attempt:} the 18 rows are merged into one span
+  $\rightarrow$ about \textbf{1 window}.
+  \item \textbf{Current method:} each row is its own sample
+  $\rightarrow$ \textbf{18 samples}, each labeled with the channel it came from.
+\end{itemize}
+The question each sample asks also changes, from ``what is going on in this 5-s
+stretch?'' to ``what is this 1-second event on this channel, given the 5\,s
+around it?'' The second question is the one published TUEV results answer.
+\end{keybox}
+
+\begin{center}
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+ & First attempt & Current (BIOT protocol) \\
+\midrule
+Samples (train + test)          & 2,665          & \textbf{113,353} (83,932 + 29,421) \\
+Spike-and-slow-wave (spsw)      & $\sim$78 total & \textbf{645 train / 567 test} \\
+Which channel has the event     & discarded      & kept \\
+Comparable with published TUEV  & no             & \textbf{yes} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\medskip
+\noindent Class counts, current method (train / test):
+spsw 645 / 567, gped 11,254 / 4,677, pled 6,184 / 1,998, eyem 1,070 / 329,
+artf 11,053 / 2,204, bckg 53,726 / 19,646.
+
+\medskip
+\noindent\textbf{Where it is:}
+\path{Dataset/TUEV_v2.0.1/processed_TUEV_events/}, one folder per split and
+class (\texttt{train-spsw/}, \texttt{test-gped/}, \dots). Each
+\texttt{<class>\_batch\_NNNN.npy} holds \texttt{[N, 22, 1280]} windows and the
+matching \texttt{\_meta.npz} holds, per sample, \texttt{offending\_channel},
+\texttt{session}, \texttt{event\_start} and \texttt{clamped}.
+
+\medskip
+\noindent\textbf{Things to know before using it:}
+\begin{itemize}[nosep,leftmargin=1.4em]
+  \item \textbf{Volts, not normalized.} Values are around $10^{-5}$. Normalize
+  with TUEV's own statistics (golden rule 2 below), or the model sees a flat signal.
+  \item \textbf{Keep the train/test split.} It is TUEV's own and patient-disjoint.
+  \item \textbf{Samples overlap heavily, on purpose.} An event marked on several
+  channels produces the same 5\,s window once per channel: 113,353 samples come
+  from only 13,020 distinct windows. That is correct for classification but
+  \textbf{wrong for pre-training}, where the model would see some windows 22 times.
+  \item \textbf{Two deliberate differences from BIOT.} We keep our 22 monopolar
+  channels at 256\,Hz (BIOT converts to 16 bipolar channels at 200\,Hz). And for
+  events within 2\,s of a recording edge (6,959 samples, flagged
+  \texttt{clamped=1}), we shift the window to fit inside the recording; BIOT
+  instead wraps around and pastes in signal from the other end of the recording.
+\end{itemize}
+
+\paragraph{Also: TUEV as pre-training data for V3 (no labels).}
+Script: \path{diff-eeg-V3/data/build_pool.py}. For pre-training we do not want
+event windows at all, so the \textbf{raw continuous recordings} are cut into
+non-overlapping \textbf{30-second windows at 200\,Hz on 21 channels} (ROC dropped,
+see below). Result: \textbf{17,678 windows = 147 hours}, in
+\path{Dataset/V3_pool_30s_200hz/tuev/}. This folder is for pre-training only;
+it has no labels.
+
+\textbf{Result: 21/22 cups filled in every sample; ROC is filled in only about
+60\% of samples}, because many TUEV recordings do not include that eye channel.
+(This is also why V3 drops ROC and uses 21 channels.)
 
 \subsection*{Sleep-EDFx --- only 2 bipolar channels}
 The hardest case: only \textbf{2} EEG channels, both \emph{bipolar pairs}
@@ -272,7 +360,8 @@ TUSZ / TUAB & exact-name match & 22/22 & collaborator's (see report) \\
 Bonn        & single trace $\rightarrow$ FP1 & 1/22 & \texttt{prepare\_bonn} \\
 EEGMMIDB    & alias 19; labels from annotations & 19/22 & \texttt{prepare\_eegmmidb} \\
 Siena       & re-package; keep volts, use own stats & 19/22 & \texttt{convert\_siena\_npz.py} \\
-TUEV        & event-centered windows & 22/22 & \texttt{prepare\_tuev.py} \\
+TUEV        & one window per \texttt{.rec} row & 21--22/22 & \texttt{prepare\_tuev\_events.py} \\
+TUEV, V3 pre-train & 30\,s continuous, 21 ch & 21/21 & \texttt{build\_pool.py} \\
 Sleep-EDFx  & bipolar $\rightarrow$ midline aliases & 2/22 & \texttt{prepare\_sleep\_edfx} \\
 \bottomrule
 \end{tabular}

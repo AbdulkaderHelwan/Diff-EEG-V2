@@ -57,7 +57,8 @@ that never predicts a seizure scores 0.993.
    the epoch-26 checkpoint with the best validation loss, and both saved checkpoints were
    verified to contain only finite weights.
 2. **TUEV was windowed incorrectly.** `dataset_tools/prepare_tuev.py` merges adjacent
-   annotation rows into spans and extracts one window per span, which gives 2,621 windows.
+   annotation rows into spans and extracts one window per span, which gives 2,665 windows
+   (2,621 of them used in fine-tuning).
    The protocol used by BIOT, LaBraM, CBraMod and EEGDM extracts one window per `.rec`
    row, which gives 113,353 (83,932 train, 29,421 eval). The TUEV results above are
    therefore **not comparable with published TUEV numbers**. For the same reason, the

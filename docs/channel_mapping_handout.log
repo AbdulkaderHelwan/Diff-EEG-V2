@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.8.23)  4 AUG 2026 06:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.8.23)  24 SEP 2026 07:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -710,7 +710,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 tex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 38
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 39
 .
 
 (/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
@@ -725,24 +725,24 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 ) (./channel_mapping_handout.aux)
 \openout1 = `channel_mapping_handout.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -806,7 +806,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count315
-Package hyperref Info: Link coloring OFF on input line 38.
+Package hyperref Info: Link coloring OFF on input line 39.
 
 (/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
 tex/hyperref/nameref.sty
@@ -822,101 +822,103 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count316
 )
-LaTeX Info: Redefining \ref on input line 38.
-LaTeX Info: Redefining \pageref on input line 38.
-LaTeX Info: Redefining \nameref on input line 38.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
  (./channel_mapping_handout.out)
 (./channel_mapping_handout.out)
 \@outlinefile=\write6
 \openout6 = `channel_mapping_handout.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-0.
+1.
 
 (/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
 tex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-0.
+1.
 
 (/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
 tex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-40.
+41.
 
 (/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
 tex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-40.
+41.
 
 (/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
 tex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 40.
+(Font)              <12> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 40.
+(Font)              <8> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 40.
+(Font)              <6> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 45.
+(Font)              <10.95> on input line 46.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
-4.
+5.
 
 (/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
 tex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (11.07162pt too wide) in paragraph at lines 65--67
+Overfull \hbox (11.07162pt too wide) in paragraph at lines 66--68
 \T1/lmr/m/n/10.95 Almost ev-ery dataset goes through the same four steps (\T1/l
 mtt/m/n/10.95 dataset_tools/prepare_external_eeg.py\T1/lmr/m/n/10.95 ). 
  []
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 71.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 72.
 [1
 
 {/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/var/lib/texmf/fonts/map/pdf
-tex/updmap/pdftex.map}]
-Overfull \hbox (59.6752pt too wide) in paragraph at lines 119--125
-\T1/lmr/m/n/10.95 (Pro-cessed by a col-lab-o-ra-tor; the recipe is recorded in 
-\T1/lmtt/m/n/10.95 TUAB/processed_tuab/tuab_processing_report.json\T1/lmr/m/n/1
-0.95 .)
- []
-
-[2]
+tex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-72.
+76.
 
 (/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/tex/la
 tex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [3]
+)
+Overfull \hbox (5.53694pt too wide) in paragraph at lines 198--202
+\T1/lmr/bx/n/10.95 Result: 2,665 win-dows \T1/lmr/m/n/10.95 in to-tal (V2's fin
+e-tuning used 2,621 of them). Out-put fold-ers: $\T1/lmtt/m/n/10.95 processed _
+
+ []
+
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 206.
+[3]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 267.
+(Font)              <10> on input line 232.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 267.
+(Font)              <7> on input line 232.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 267.
- [4] [5] (./channel_mapping_handout.aux)
+(Font)              <5> on input line 232.
+ [4] [5] [6] (./channel_mapping_handout.aux)
 Package rerunfilecheck Info: File `channel_mapping_handout.out' has not changed
 .
 (rerunfilecheck)             Checksum: 4DDAAF106FA21CF49EF1B342B6155BEB;1265.
  ) 
 Here is how much of TeX's memory you used:
- 21434 strings out of 480884
- 388840 string characters out of 5900692
- 1104612 words of memory out of 5000000
- 38223 multiletter control sequences out of 15000+600000
- 476367 words of font info for 71 fonts, out of 8000000 for 9000
+ 21453 strings out of 480884
+ 389029 string characters out of 5900692
+ 1104584 words of memory out of 5000000
+ 38235 multiletter control sequences out of 15000+600000
+ 479680 words of font info for 73 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 112i,7n,116p,468b,1894s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 112i,7n,116p,468b,1857s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/font
 s/enc/dvips/lm/lm-ec.enc}{/cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/us
 r/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/cvmfs/soft.computecanada.
@@ -943,10 +945,10 @@ e1/public/lm/lmtk10.pfb></cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr
 a/gentoo/2023/x86-64-v3/usr/share/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></
 cvmfs/soft.computecanada.ca/gentoo/2023/x86-64-v3/usr/share/texmf-dist/fonts/ty
 pe1/public/lm/lmtti10.pfb>
-Output written on channel_mapping_handout.pdf (5 pages, 306379 bytes).
+Output written on channel_mapping_handout.pdf (6 pages, 316693 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 202 compressed objects within 3 object streams
- 93 named destinations out of 1000 (max. 500000)
+ 237 PDF objects out of 1000 (max. 8388607)
+ 212 compressed objects within 3 object streams
+ 100 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
