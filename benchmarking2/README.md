@@ -54,8 +54,8 @@ These are published by their authors and are not redistributed here.
 
 | Model | Source | Place at |
 |---|---|---|
-| EEGDM | [Hugging Face](https://huggingface.co/jhpuah/eegdm) | `(https://lauedu74602-my.sharepoint.com/:u:/g/personal/abedelkader_helwan_lau_edu_lb/IQDpZ5TgM20zQJnc11Udk4KVAaeCiuvz53Fiw9GH9QlNXPI?e=iO3WYa)` |
-| CBraMod | [Hugging Face](https://huggingface.co/weighting666/CBraMod) | `https://lauedu74602-my.sharepoint.com/:u:/g/personal/abedelkader_helwan_lau_edu_lb/IQCg-4gQ76buR44ImmLNCt0vAU2T8D4SXlgnLhAvLD5TYNQ?e=0v3ANS` |
+| EEGDM | [Hugging Face](https://huggingface.co/jhpuah/eegdm) | https://lauedu74602-my.sharepoint.com/:u:/g/personal/abedelkader_helwan_lau_edu_lb/IQDpZ5TgM20zQJnc11Udk4KVAaeCiuvz53Fiw9GH9QlNXPI?e=iO3WYa 
+| CBraMod | [Hugging Face](https://huggingface.co/weighting666/CBraMod) | https://lauedu74602-my.sharepoint.com/:u:/g/personal/abedelkader_helwan_lau_edu_lb/IQCg-4gQ76buR44ImmLNCt0vAU2T8D4SXlgnLhAvLD5TYNQ?e=0v3ANS |
 | EEGMamba | [Hugging Face](https://huggingface.co/weighting666/EEGMamba) | `EEGMamba/pretrained_weights/pretrained_EEGMamba.pth` |
 | BIOT| included in their repositories | https://lauedu74602-my.sharepoint.com/:u:/g/personal/abedelkader_helwan_lau_edu_lb/IQCLnZJ9YDz3TaQ8jCcDMnACAehGNHCh0Pao3BNQdJg72XM?e=DHYjA1
 | LaBraM | included in their repositories | [fetched by (https://lauedu74602-my.sharepoint.com/:u:/g/personal/abedelkader_helwan_lau_edu_lb/IQCLnZJ9YDz3TaQ8jCcDMnACAehGNHCh0Pao3BNQdJg72XM?e=DHYjA1) |
