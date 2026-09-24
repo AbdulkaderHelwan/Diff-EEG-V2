@@ -1,0 +1,47 @@
+{
+  "unfreeze": "none",
+  "backbone_lr": 5e-06,
+  "arch": {
+    "in_channels": 22,
+    "model_channels": 64,
+    "channel_multipliers": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "num_res_blocks": 3,
+    "time_emb_dim": 768,
+    "dropout": 0.1,
+    "attention_heads": 8
+  },
+  "epoch": 89,
+  "best_dev_auc": 0.8828398387681159,
+  "f1_optimal_threshold": 0.7010995149612427,
+  "splits": {
+    "val": {
+      "roc_auc": 0.8828398387681159,
+      "pr_auc": 0.4400319165639829,
+      "thr_0.5": {
+        "seizure_f1": 0.401896680808585,
+        "report": "              precision    recall  f1-score   support\n\n      Normal     0.9765    0.8912    0.9319     92000\n     Seizure     0.2869    0.6710    0.4019      6000\n\n    accuracy                         0.8777     98000\n   macro avg     0.6317    0.7811    0.6669     98000\nweighted avg     0.9343    0.8777    0.8995     98000\n"
+      },
+      "thr_optimal": {
+        "seizure_f1": 0.453968011020127,
+        "report": "              precision    recall  f1-score   support\n\n      Normal     0.9666    0.9554    0.9610     92000\n     Seizure     0.4197    0.4943    0.4540      6000\n\n    accuracy                         0.9272     98000\n   macro avg     0.6932    0.7249    0.7075     98000\nweighted avg     0.9331    0.9272    0.9300     98000\n"
+      }
+    },
+    "eval": {
+      "roc_auc": 0.8502603636700286,
+      "pr_auc": 0.42870303474571814,
+      "thr_0.5": {
+        "seizure_f1": 0.3676947774703692,
+        "report": "              precision    recall  f1-score   support\n\n      Normal     0.9752    0.8480    0.9072    213306\n     Seizure     0.2492    0.7008    0.3677     15361\n\n    accuracy                         0.8381    228667\n   macro avg     0.6122    0.7744    0.6374    228667\nweighted avg     0.9265    0.8381    0.8709    228667\n"
+      },
+      "thr_optimal": {
+        "seizure_f1": 0.4439741826261771,
+        "report": "              precision    recall  f1-score   support\n\n      Normal     0.9662    0.9341    0.9499    213306\n     Seizure     0.3739    0.5463    0.4440     15361\n\n    accuracy                         0.9081    228667\n   macro avg     0.6701    0.7402    0.6969    228667\nweighted avg     0.9264    0.9081    0.9159    228667\n"
+      }
+    }
+  }
+}

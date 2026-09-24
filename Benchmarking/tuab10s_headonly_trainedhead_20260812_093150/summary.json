@@ -1,0 +1,39 @@
+{
+  "dataset": "tuab10s_headonly",
+  "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/tuab_10s",
+  "backbone_ckpt": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth",
+  "classes": [
+    "normal",
+    "abnormal"
+  ],
+  "n_train": 40000,
+  "n_test": 36945,
+  "best_val_macro_f1": 0.8099404482852381,
+  "test_accuracy": 0.7122750033834078,
+  "test_macro_f1": 0.7074823125145371,
+  "test_weighted_f1": 0.7103899526293161,
+  "roc_auc": 0.7760291586066546,
+  "pr_auc": 0.7729777359134129,
+  "config": {
+    "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/tuab_10s",
+    "backbone_ckpt": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth",
+    "norm_stats_dir": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/tuab_10s/normalization",
+    "out_root": "/home/abdulh/scratch/EEGdiff_V2/Benchmarking",
+    "dataset_name": "tuab10s_headonly",
+    "epochs": 100,
+    "patience": 15,
+    "lr": 0.001,
+    "batch_size": 256,
+    "embed_batch_size": 32,
+    "val_frac": 0.15,
+    "seed": 42,
+    "classes": [
+      "normal",
+      "abnormal"
+    ],
+    "max_per_class": 20000,
+    "weight_power": 1.0,
+    "per_window_norm": false,
+    "pooled_random_split": false
+  }
+}

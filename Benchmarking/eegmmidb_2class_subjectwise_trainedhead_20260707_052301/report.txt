@@ -1,0 +1,19 @@
+eegmmidb_2class_subjectwise TRAINED-HEAD eval (frozen backbone embedding + freshly trained MLP head)
+classes: ['left_fist', 'right_fist']
+train n=3349  test n=792
+
+Test accuracy 0.5316   macro-F1 0.5211   weighted-F1 0.5233
+ROC-AUC 0.5857   PR-AUC 0.5864
+
+              precision    recall  f1-score   support
+
+   left_fist     0.5369    0.6593    0.5919       408
+  right_fist     0.5223    0.3958    0.4504       384
+
+    accuracy                         0.5316       792
+   macro avg     0.5296    0.5276    0.5211       792
+weighted avg     0.5299    0.5316    0.5233       792
+
+Confusion matrix ['left_fist', 'right_fist']:
+[[269 139]
+ [232 152]]

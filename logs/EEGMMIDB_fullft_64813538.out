@@ -1,0 +1,45 @@
+===== 2-class, OFFICIAL subject-wise split, per-window norm, FULL finetuning (unfreeze=all) =====
+Device: cuda | unfreeze=all
+Classes (2): ['left_fist', 'right_fist']
+Loading data...
+  train (3349, 22, 1280)  test (792, 22, 1280)
+  normalization: per-window
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 14,309,248
+Training...
+  epoch   1/40 | val macroF1 0.3912
+  epoch   2/40 | val macroF1 0.4309
+  epoch   3/40 | val macroF1 0.3429
+  epoch   4/40 | val macroF1 0.4024
+  epoch   5/40 | val macroF1 0.5600
+  epoch   6/40 | val macroF1 0.4494
+  epoch   7/40 | val macroF1 0.5179
+  epoch   8/40 | val macroF1 0.5208
+  epoch   9/40 | val macroF1 0.5069
+  epoch  10/40 | val macroF1 0.5812
+  epoch  11/40 | val macroF1 0.5571
+  epoch  12/40 | val macroF1 0.5290
+  epoch  13/40 | val macroF1 0.3998
+  epoch  14/40 | val macroF1 0.3512
+  epoch  15/40 | val macroF1 0.5583
+  epoch  16/40 | val macroF1 0.4115
+  epoch  17/40 | val macroF1 0.5278
+  epoch  18/40 | val macroF1 0.5556
+  early stop @ epoch 18
+
+Test accuracy 0.6149  macro-F1 0.6148  weighted-F1 0.6150
+              precision    recall  f1-score   support
+
+   left_fist     0.6310    0.6078    0.6192       408
+  right_fist     0.5990    0.6224    0.6105       384
+
+    accuracy                         0.6149       792
+   macro avg     0.6150    0.6151    0.6148       792
+weighted avg     0.6155    0.6149    0.6150       792
+
+Confusion matrix ['left_fist', 'right_fist'] 
+ [[248 160]
+ [145 239]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/eegmmidb_2class_subjectwise_finetuned_all_20260707_055150/

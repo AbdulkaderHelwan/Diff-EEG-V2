@@ -1,0 +1,27 @@
+sleep_edfx FINETUNED eval (backbone unfreeze=all + trained head)
+classes: ['wake', 'n1', 'n2', 'n3', 'n4', 'rem']
+train n=72000  test n=72000
+trainable backbone params: 14,309,248
+
+Test accuracy 0.5353   macro-F1 0.5381   weighted-F1 0.5381
+
+              precision    recall  f1-score   support
+
+        wake     0.9058    0.7529    0.8223     12000
+          n1     0.3732    0.4287    0.3990     12000
+          n2     0.4245    0.3282    0.3702     12000
+          n3     0.4405    0.4457    0.4431     12000
+          n4     0.6719    0.6843    0.6780     12000
+         rem     0.4702    0.5720    0.5161     12000
+
+    accuracy                         0.5353     72000
+   macro avg     0.5477    0.5353    0.5381     72000
+weighted avg     0.5477    0.5353    0.5381     72000
+
+Confusion matrix ['wake', 'n1', 'n2', 'n3', 'n4', 'rem']:
+[[9035 1746  163   28   97  931]
+ [ 502 5144 1846  739   97 3672]
+ [  73 2402 3939 2385  270 2931]
+ [  46  777 2113 5349 3526  189]
+ [  25   70  215 3467 8211   12]
+ [ 294 3644 1003  176   19 6864]]

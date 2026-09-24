@@ -1,0 +1,14 @@
+# Model weights: 165-466 MB each, over GitHub's 100 MB per-file limit.
+# Distributed via OneDrive instead -- see "Model weights" in README.md.
+*.pth
+*.pt
+*.ckpt
+
+# Python
+__pycache__/
+*.pyc
+
+# LaTeX build artefacts (the sources and the compiled PDF are kept)
+paper/*.aux
+paper/*.log
+paper/*.out

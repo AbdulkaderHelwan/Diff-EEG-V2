@@ -1,0 +1,121 @@
+===== TUEV 4-class: frozen baseline (no finetune) =====
+Device: cuda
+Classes (4): ['artf', 'bckg', 'epileptiform', 'eyem']
+Loading raw data...
+  train (1796, 22, 1280)  test (825, 22, 1280)
+  normalization: /scratch/linah03/EpilepticSeizureProject/Dataset/TUEV_v2.0.1/processed_TUEV_4class/normalization
+Loading frozen backbone...
+Model initialized with 40,679,574 parameters
+Extracting embeddings...
+  embeddings: train (1796, 4800)  test (825, 4800)
+  class weights (power=1.0): artf=1.43, bckg=1.04, epileptiform=0.52, eyem=2.36
+Training head...
+  early stop @ epoch 90 (best val macroF1 0.6144)
+
+Test accuracy 0.5600  macro-F1 0.4450  weighted-F1 0.5877
+              precision    recall  f1-score   support
+
+        artf     0.1235    0.1493    0.1351        67
+        bckg     0.3498    0.6389    0.4521       144
+epileptiform     0.8683    0.5762    0.6927       538
+        eyem     0.4032    0.6579    0.5000        76
+
+    accuracy                         0.5600       825
+   macro avg     0.4362    0.5056    0.4450       825
+weighted avg     0.6745    0.5600    0.5877       825
+
+Confusion matrix ['artf', 'bckg', 'epileptiform', 'eyem'] 
+ [[ 10  29  14  14]
+ [  8  92  27  17]
+ [ 59 126 310  43]
+ [  4  16   6  50]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/tuev_4class_trainedhead_20260708_071447/
+
+===== TUEV 4-class: full finetune + RL (softened weighting) =====
+Device: cuda | unfreeze=all | +RL (rl_weight=0.1)
+Classes (4): ['artf', 'bckg', 'epileptiform', 'eyem']
+Loading data...
+  train (1796, 22, 1280)  test (825, 22, 1280)
+  normalization: /scratch/linah03/EpilepticSeizureProject/Dataset/TUEV_v2.0.1/processed_TUEV_4class/normalization
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 14,309,248
+  class weights (power=0.5): artf=1.20, bckg=1.02, epileptiform=0.72, eyem=1.54
+Training...
+  epoch   1/100 | val macroF1 0.2102
+  epoch   2/100 | val macroF1 0.3058
+  epoch   3/100 | val macroF1 0.2534
+  epoch   4/100 | val macroF1 0.2722
+  epoch   5/100 | val macroF1 0.3230
+  epoch   6/100 | val macroF1 0.4667
+  epoch   7/100 | val macroF1 0.2991
+  epoch   8/100 | val macroF1 0.3147
+  epoch   9/100 | val macroF1 0.4882
+  epoch  10/100 | val macroF1 0.5445
+  epoch  11/100 | val macroF1 0.4880
+  epoch  12/100 | val macroF1 0.5004
+  epoch  13/100 | val macroF1 0.5180
+  epoch  14/100 | val macroF1 0.5187
+  epoch  15/100 | val macroF1 0.5257
+  epoch  16/100 | val macroF1 0.5322
+  epoch  17/100 | val macroF1 0.5595
+  epoch  18/100 | val macroF1 0.5756
+  epoch  19/100 | val macroF1 0.5786
+  epoch  20/100 | val macroF1 0.6019
+  epoch  21/100 | val macroF1 0.6223
+  epoch  22/100 | val macroF1 0.6060
+  epoch  23/100 | val macroF1 0.5786
+  epoch  24/100 | val macroF1 0.6007
+  epoch  25/100 | val macroF1 0.6279
+  epoch  26/100 | val macroF1 0.5955
+  epoch  27/100 | val macroF1 0.5464
+  epoch  28/100 | val macroF1 0.4581
+  epoch  29/100 | val macroF1 0.5700
+  epoch  30/100 | val macroF1 0.6086
+  epoch  31/100 | val macroF1 0.6131
+  epoch  32/100 | val macroF1 0.6532
+  epoch  33/100 | val macroF1 0.6512
+  epoch  34/100 | val macroF1 0.6472
+  epoch  35/100 | val macroF1 0.6712
+  epoch  36/100 | val macroF1 0.6429
+  epoch  37/100 | val macroF1 0.6561
+  epoch  38/100 | val macroF1 0.6610
+  epoch  39/100 | val macroF1 0.5994
+  epoch  40/100 | val macroF1 0.6443
+  epoch  41/100 | val macroF1 0.5721
+  epoch  42/100 | val macroF1 0.6048
+  epoch  43/100 | val macroF1 0.5994
+  epoch  44/100 | val macroF1 0.5798
+  epoch  45/100 | val macroF1 0.6074
+  epoch  46/100 | val macroF1 0.5899
+  epoch  47/100 | val macroF1 0.6224
+  epoch  48/100 | val macroF1 0.6179
+  epoch  49/100 | val macroF1 0.6227
+  epoch  50/100 | val macroF1 0.6463
+  epoch  51/100 | val macroF1 0.6368
+  epoch  52/100 | val macroF1 0.6238
+  epoch  53/100 | val macroF1 0.6056
+  epoch  54/100 | val macroF1 0.5768
+  epoch  55/100 | val macroF1 0.5699
+  early stop @ epoch 55
+
+Test accuracy 0.6061  macro-F1 0.4994  weighted-F1 0.6318
+              precision    recall  f1-score   support
+
+        artf     0.1111    0.1194    0.1151        67
+        bckg     0.3569    0.7361    0.4807       144
+epileptiform     0.9088    0.6115    0.7311       538
+        eyem     0.6064    0.7500    0.6706        76
+
+    accuracy                         0.6061       825
+   macro avg     0.4958    0.5543    0.4994       825
+weighted avg     0.7199    0.6061    0.6318       825
+
+Confusion matrix ['artf', 'bckg', 'epileptiform', 'eyem'] 
+ [[  8  39  12   8]
+ [  6 106  21  11]
+ [ 55 136 329  18]
+ [  3  16   0  57]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/tuev_4class_finetuned_all_RL_20260708_072026/

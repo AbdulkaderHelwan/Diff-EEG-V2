@@ -1,0 +1,33 @@
+{
+  "dataset": "siena",
+  "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/siena",
+  "backbone_ckpt": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth",
+  "classes": [
+    "normal",
+    "seizure"
+  ],
+  "n_train": 82791,
+  "n_test": 18729,
+  "best_val_macro_f1": 0.5771760029253217,
+  "test_accuracy": 0.9510384964493566,
+  "test_macro_f1": 0.5275452808605461,
+  "test_weighted_f1": 0.9685447296450818,
+  "roc_auc": 0.7337669321053738,
+  "pr_auc": 0.03485289580625333,
+  "config": {
+    "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/siena",
+    "backbone_ckpt": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth",
+    "norm_stats_dir": "/scratch/linah03/EpilepticSeizureProject/Dataset/Siena/processed_siena/normalization",
+    "out_root": "/home/abdulh/scratch/EEGdiff_V2/Benchmarking",
+    "dataset_name": "siena",
+    "epochs": 100,
+    "patience": 15,
+    "lr": 0.001,
+    "batch_size": 256,
+    "val_frac": 0.15,
+    "seed": 42,
+    "classes": null,
+    "per_window_norm": false,
+    "pooled_random_split": false
+  }
+}

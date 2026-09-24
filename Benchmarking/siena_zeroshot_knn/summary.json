@@ -1,0 +1,13 @@
+{
+  "dataset": "siena",
+  "classes": [
+    "normal",
+    "seizure"
+  ],
+  "k": 10,
+  "n_train_ref": 20000,
+  "n_test": 10000,
+  "balanced_accuracy": 0.5,
+  "accuracy": 0.993,
+  "roc_auc": 0.5237749964033951
+}

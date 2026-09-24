@@ -1,0 +1,71 @@
+Selecting one .cnt per (subject, session)...
+  subject 7 session 1: 2 files, using 7_1_20180411_repaired.cnt
+  48 recordings from 16 subjects
+  split-mode=trial (subject-DEPENDENT, CBraMod-style); clips >= index 10 -> test, rest -> train (all 16 subjects in both splits)
+  s01 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s01 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s01 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s02 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s02 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s02 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s03 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s03 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s03 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s04 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s04 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s04 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s05 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s05 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s05 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s06 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s06 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s06 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s07 sess1 -> train 1768 / test  975  (20/22 channels, missing ['A1', 'ROC'])
+  s07 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s07 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s08 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s08 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s08 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s09 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s09 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s09 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s10 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s10 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s10 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s11 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s11 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s11 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s12 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s12 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s12 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s13 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s13 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s13 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s14 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s14 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s14 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s15 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s15 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s15 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+  s16 sess1 -> train 1768 / test  975  (21/22 channels, missing ['ROC'])
+  s16 sess2 -> train 1498 / test  693  (21/22 channels, missing ['ROC'])
+  s16 sess3 -> train 1571 / test  854  (21/22 channels, missing ['ROC'])
+
+Window counts:
+  test-disgust :   6544
+  test-fear    :   7584
+  test-happy   :   6528
+  test-neutral :  10256
+  test-sad     :   9440
+  train-disgust :  13264
+  train-fear    :  16496
+  train-happy   :  12976
+  train-neutral :  13424
+  train-sad     :  21232
+
+TOTAL windows: 117744
+Normalization (SEED-V's OWN) -> /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/seedv_cbramod_1s/normalization
+  mean[:4] [ 2.e-06 -0.e+00 -0.e+00 -0.e+00]
+  std[:4]  [2.83e-04 8.60e-05 2.90e-05 2.70e-05]
+
+Saved -> /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/seedv_cbramod_1s/

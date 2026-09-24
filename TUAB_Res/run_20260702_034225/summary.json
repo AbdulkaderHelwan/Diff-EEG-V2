@@ -1,0 +1,95 @@
+{
+  "selection_metric": "f2",
+  "best": "unfreeze_3",
+  "results": [
+    {
+      "name": "unfreeze_2",
+      "best_val_score": 0.8311016762523183,
+      "best_threshold": 0.85,
+      "test_default": {
+        "threshold": 0.5,
+        "accuracy": 0.7727102958874441,
+        "precision": 0.7154090851253159,
+        "recall": 0.8426858513189197,
+        "specificity": 0.7127481955253985,
+        "f1": 0.7738490119594434,
+        "f2": 0.8137320170321654,
+        "balanced_acc": 0.7777170234221591,
+        "roc_auc": 0.8777031418711837,
+        "pr_auc": 0.8772841849079904,
+        "tp": 28112,
+        "tn": 27748,
+        "fp": 11183,
+        "fn": 5248
+      },
+      "test_tuned": {
+        "threshold": 0.85,
+        "accuracy": 0.7933214369700129,
+        "precision": 0.7895249772076837,
+        "recall": 0.7528177458033348,
+        "specificity": 0.8280290770850781,
+        "f1": 0.7707345512042906,
+        "f2": 0.7598835694490657,
+        "balanced_acc": 0.7904234114442065,
+        "roc_auc": 0.8777031418711837,
+        "pr_auc": 0.8772841849079904,
+        "tp": 25114,
+        "tn": 32236,
+        "fp": 6695,
+        "fn": 8246
+      },
+      "unfrozen_backbone_params": 8076544
+    },
+    {
+      "name": "unfreeze_3",
+      "best_val_score": 0.8407645362887997,
+      "best_threshold": 0.7,
+      "test_default": {
+        "threshold": 0.5,
+        "accuracy": 0.7522651505719833,
+        "precision": 0.6834730567363935,
+        "recall": 0.8626798561150821,
+        "specificity": 0.6576507153681987,
+        "f1": 0.7626909770200471,
+        "f2": 0.8196950102251077,
+        "balanced_acc": 0.7601652857416404,
+        "roc_auc": 0.8621331242781071,
+        "pr_auc": 0.8541624440057587,
+        "tp": 28779,
+        "tn": 25603,
+        "fp": 13328,
+        "fn": 4581
+      },
+      "test_tuned": {
+        "threshold": 0.7,
+        "accuracy": 0.7888118852969139,
+        "precision": 0.7687212238229387,
+        "recall": 0.7757494004795932,
+        "specificity": 0.8000051372941667,
+        "f1": 0.7722193206488125,
+        "f2": 0.7743335026862905,
+        "balanced_acc": 0.7878772688868799,
+        "roc_auc": 0.8621331242781071,
+        "pr_auc": 0.8541624440057587,
+        "tp": 25879,
+        "tn": 31145,
+        "fp": 7786,
+        "fn": 7481
+      },
+      "unfrozen_backbone_params": 10640128
+    }
+  ],
+  "args": {
+    "epochs": 40,
+    "batch_size": 256,
+    "val_batch_size": 256,
+    "num_workers": 8,
+    "lr": 0.0005,
+    "backbone_lr_mult": 0.1,
+    "val_frac": 0.05,
+    "shuffle_buffer": 4000,
+    "patience": 10,
+    "experiments": "unfreeze_2,unfreeze_3",
+    "dryrun": false
+  }
+}

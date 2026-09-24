@@ -1,0 +1,24 @@
+train: 359 sessions
+  train: 50/359 sessions | windows so far: 370
+  train: 100/359 sessions | windows so far: 673
+  train: 150/359 sessions | windows so far: 885
+  train: 200/359 sessions | windows so far: 1177
+  train: 250/359 sessions | windows so far: 1376
+  train: 300/359 sessions | windows so far: 1562
+  train: 350/359 sessions | windows so far: 1753
+eval: 159 sessions
+  eval: 50/159 sessions | windows so far: 2068
+  eval: 100/159 sessions | windows so far: 2347
+  eval: 150/159 sessions | windows so far: 2592
+
+Total windows: 2621
+  spsw: 78
+  gped: 565
+  pled: 747
+  eyem: 268
+  artf: 381
+  bckg: 582
+Unlabeled (skipped): 0
+Missing .rec: 0  Read errors: 0
+
+✓ saved -> /scratch/linah03/EpilepticSeizureProject/Dataset/TUEV_v2.0.1/processed_TUEV/

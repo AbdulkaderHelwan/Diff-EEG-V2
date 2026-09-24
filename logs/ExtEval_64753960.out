@@ -1,0 +1,18 @@
+===== Bonn (binary) =====
+Model initialized with 40,679,574 parameters
+{
+  "threshold": 0.5,
+  "accuracy": 0.845999999998308,
+  "precision": 0.9999999999565218,
+  "recall": 0.2299999999977,
+  "specificity": 0.9999999999975,
+  "balanced_acc": 0.6149999999976,
+  "roc_auc": 0.71565,
+  "pr_auc": 0.647412179374132,
+  "tp": 23,
+  "tn": 400,
+  "fp": 0,
+  "fn": 77
+}
+Saved results to /home/abdulh/scratch/EEGdiff_V2/Benchmarking/bonn_binary/run_20260706_073812
+

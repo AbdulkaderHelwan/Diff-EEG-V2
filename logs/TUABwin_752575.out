@@ -1,0 +1,176 @@
+########## TUAB 5s: HEAD ONLY ##########
+Device: cuda
+Classes (2): ['normal', 'abnormal']
+Loading raw data...
+  train (40000, 22, 1280)  test (40000, 22, 1280)
+  normalization: /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/tuab_5s/normalization
+Loading frozen backbone...
+Model initialized with 40,679,574 parameters
+Extracting embeddings...
+  embeddings: train (40000, 4800)  test (40000, 4800)
+  class weights (power=1.0): normal=1.00, abnormal=1.00
+Training head...
+  early stop @ epoch 100 (best val macroF1 0.8867)
+
+Binary (positive class = 'abnormal'): ROC-AUC 0.7710  PR-AUC 0.7619
+
+Test accuracy 0.7047  macro-F1 0.7009  weighted-F1 0.7009
+              precision    recall  f1-score   support
+
+      normal     0.6669    0.8180    0.7348     20000
+    abnormal     0.7647    0.5915    0.6670     20000
+
+    accuracy                         0.7047     40000
+   macro avg     0.7158    0.7047    0.7009     40000
+weighted avg     0.7158    0.7047    0.7009     40000
+
+Confusion matrix ['normal', 'abnormal'] 
+ [[16360  3640]
+ [ 8170 11830]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/tuab5s_headonly_trainedhead_20260812_082311/
+########## TUAB 5s: FULL finetune ##########
+Device: cuda | unfreeze=all
+Classes (2): ['normal', 'abnormal']
+Loading data...
+  train (40000, 22, 1280)  test (40000, 22, 1280)
+  normalization: /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/tuab_5s/normalization
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 14,309,248
+  class weights (power=1.0): normal=1.00, abnormal=1.00
+Training...
+  epoch   1/30 | val macroF1 0.7963
+  epoch   2/30 | val macroF1 0.8569
+  epoch   3/30 | val macroF1 0.9018
+  epoch   4/30 | val macroF1 0.9158
+  epoch   5/30 | val macroF1 0.9333
+  epoch   6/30 | val macroF1 0.9468
+  epoch   7/30 | val macroF1 0.9563
+  epoch   8/30 | val macroF1 0.9433
+  epoch   9/30 | val macroF1 0.9537
+  epoch  10/30 | val macroF1 0.9533
+  epoch  11/30 | val macroF1 0.9595
+  epoch  12/30 | val macroF1 0.9598
+  epoch  13/30 | val macroF1 0.9575
+  epoch  14/30 | val macroF1 0.9663
+  epoch  15/30 | val macroF1 0.9672
+  epoch  16/30 | val macroF1 0.9620
+  epoch  17/30 | val macroF1 0.9693
+  epoch  18/30 | val macroF1 0.9610
+  epoch  19/30 | val macroF1 0.9642
+  epoch  20/30 | val macroF1 0.9678
+  epoch  21/30 | val macroF1 0.9710
+  epoch  22/30 | val macroF1 0.9710
+  epoch  23/30 | val macroF1 0.9713
+  epoch  24/30 | val macroF1 0.9720
+  epoch  25/30 | val macroF1 0.9708
+  epoch  26/30 | val macroF1 0.9720
+  epoch  27/30 | val macroF1 0.9715
+  epoch  28/30 | val macroF1 0.9718
+  epoch  29/30 | val macroF1 0.9700
+  epoch  30/30 | val macroF1 0.9715
+
+Test accuracy 0.7316  macro-F1 0.7306  weighted-F1 0.7306
+              precision    recall  f1-score   support
+
+      normal     0.7067    0.7920    0.7469     20000
+    abnormal     0.7634    0.6713    0.7144     20000
+
+    accuracy                         0.7316     40000
+   macro avg     0.7350    0.7316    0.7306     40000
+weighted avg     0.7350    0.7316    0.7306     40000
+
+Confusion matrix ['normal', 'abnormal'] 
+ [[15839  4161]
+ [ 6574 13426]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/tuab5s_finetuned_all_20260812_092736/
+########## TUAB 10s: HEAD ONLY ##########
+Device: cuda
+Classes (2): ['normal', 'abnormal']
+Loading raw data...
+  train (40000, 22, 2560)  test (36945, 22, 2560)
+  normalization: /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/tuab_10s/normalization
+Loading frozen backbone...
+Model initialized with 40,679,574 parameters
+Extracting embeddings...
+  embeddings: train (40000, 4800)  test (36945, 4800)
+  class weights (power=1.0): normal=1.00, abnormal=1.00
+Training head...
+
+Binary (positive class = 'abnormal'): ROC-AUC 0.7760  PR-AUC 0.7730
+
+Test accuracy 0.7123  macro-F1 0.7075  weighted-F1 0.7104
+              precision    recall  f1-score   support
+
+      normal     0.7131    0.7797    0.7449     19907
+    abnormal     0.7111    0.6335    0.6700     17038
+
+    accuracy                         0.7123     36945
+   macro avg     0.7121    0.7066    0.7075     36945
+weighted avg     0.7122    0.7123    0.7104     36945
+
+Confusion matrix ['normal', 'abnormal'] 
+ [[15522  4385]
+ [ 6245 10793]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/tuab10s_headonly_trainedhead_20260812_093150/
+########## TUAB 10s: FULL finetune ##########
+Device: cuda | unfreeze=all
+Classes (2): ['normal', 'abnormal']
+Loading data...
+  train (40000, 22, 2560)  test (36945, 22, 2560)
+  normalization: /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/tuab_10s/normalization
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 14,309,248
+  class weights (power=1.0): normal=1.00, abnormal=1.00
+Training...
+  epoch   1/30 | val macroF1 0.7493
+  epoch   2/30 | val macroF1 0.7972
+  epoch   3/30 | val macroF1 0.8405
+  epoch   4/30 | val macroF1 0.8477
+  epoch   5/30 | val macroF1 0.8698
+  epoch   6/30 | val macroF1 0.8845
+  epoch   7/30 | val macroF1 0.8900
+  epoch   8/30 | val macroF1 0.9040
+  epoch   9/30 | val macroF1 0.9138
+  epoch  10/30 | val macroF1 0.9175
+  epoch  11/30 | val macroF1 0.9081
+  epoch  12/30 | val macroF1 0.9233
+  epoch  13/30 | val macroF1 0.9253
+  epoch  14/30 | val macroF1 0.9301
+  epoch  15/30 | val macroF1 0.9286
+  epoch  16/30 | val macroF1 0.9180
+  epoch  17/30 | val macroF1 0.9297
+  epoch  18/30 | val macroF1 0.9308
+  epoch  19/30 | val macroF1 0.9335
+  epoch  20/30 | val macroF1 0.9337
+  epoch  21/30 | val macroF1 0.9365
+  epoch  22/30 | val macroF1 0.9387
+  epoch  23/30 | val macroF1 0.9386
+  epoch  24/30 | val macroF1 0.9368
+  epoch  25/30 | val macroF1 0.9413
+  epoch  26/30 | val macroF1 0.9391
+  epoch  27/30 | val macroF1 0.9403
+  epoch  28/30 | val macroF1 0.9388
+  epoch  29/30 | val macroF1 0.9405
+  epoch  30/30 | val macroF1 0.9403
+
+Test accuracy 0.7496  macro-F1 0.7475  weighted-F1 0.7493
+              precision    recall  f1-score   support
+
+      normal     0.7608    0.7809    0.7707     19907
+    abnormal     0.7358    0.7131    0.7243     17038
+
+    accuracy                         0.7496     36945
+   macro avg     0.7483    0.7470    0.7475     36945
+weighted avg     0.7493    0.7496    0.7493     36945
+
+Confusion matrix ['normal', 'abnormal'] 
+ [[15545  4362]
+ [ 4888 12150]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/tuab10s_finetuned_all_20260812_132603/
+===== TUAB 5s + 10s EVAL DONE =====

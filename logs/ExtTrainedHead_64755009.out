@@ -1,0 +1,30 @@
+===== Bonn (trained head, binary) =====
+Device: cuda
+Classes (2): ['normal', 'seizure']
+Loading raw data...
+  train (400, 22, 1280)  test (100, 22, 1280)
+Loading frozen backbone...
+Model initialized with 40,679,574 parameters
+Extracting embeddings...
+  embeddings: train (400, 4800)  test (100, 4800)
+Training head...
+  early stop @ epoch 31 (best val macroF1 1.0000)
+
+Binary (positive class = 'seizure'): ROC-AUC 0.9931  PR-AUC 0.9738
+
+Test accuracy 0.9300  macro-F1 0.9027  weighted-F1 0.9336
+              precision    recall  f1-score   support
+
+      normal     1.0000    0.9125    0.9542        80
+     seizure     0.7407    1.0000    0.8511        20
+
+    accuracy                         0.9300       100
+   macro avg     0.8704    0.9563    0.9027       100
+weighted avg     0.9481    0.9300    0.9336       100
+
+Confusion matrix ['normal', 'seizure'] 
+ [[73  7]
+ [ 0 20]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/bonn_trainedhead_20260706_080252/
+

@@ -1,0 +1,15 @@
+{
+  "dataset": "sleep_edfx",
+  "classes": [
+    "wake",
+    "n1",
+    "n2",
+    "n3",
+    "n4",
+    "rem"
+  ],
+  "k": 10,
+  "n_pooled": 30000,
+  "balanced_accuracy": 0.16716666666666669,
+  "chance": 0.16666666666666666
+}

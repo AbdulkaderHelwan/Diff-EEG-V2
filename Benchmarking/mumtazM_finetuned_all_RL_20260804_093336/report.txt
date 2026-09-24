@@ -1,0 +1,19 @@
+mumtazM FINETUNED+RL eval (backbone unfreeze=all + Categorical-RL head)
+classes: ['healthy', 'mdd']
+train n=5600  test n=1483
+trainable backbone params: 14,309,248
+
+Test accuracy 0.7896   macro-F1 0.7721   weighted-F1 0.7791
+
+              precision    recall  f1-score   support
+
+     healthy     0.9223    0.5758    0.7090       660
+         mdd     0.7386    0.9611    0.8353       823
+
+    accuracy                         0.7896      1483
+   macro avg     0.8304    0.7684    0.7721      1483
+weighted avg     0.8203    0.7896    0.7791      1483
+
+Confusion matrix ['healthy', 'mdd']:
+[[380 280]
+ [ 32 791]]

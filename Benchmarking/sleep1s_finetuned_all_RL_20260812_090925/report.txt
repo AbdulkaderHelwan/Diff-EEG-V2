@@ -1,0 +1,27 @@
+sleep1s FINETUNED+RL eval (backbone unfreeze=all + Categorical-RL head)
+classes: ['wake', 'n1', 'n2', 'n3', 'n4', 'rem']
+train n=72000  test n=72000
+trainable backbone params: 14,309,248
+
+Test accuracy 0.1667   macro-F1 0.0476   weighted-F1 0.0476
+
+              precision    recall  f1-score   support
+
+        wake     0.1667    1.0000    0.2857     12000
+          n1     0.0000    0.0000    0.0000     12000
+          n2     0.0000    0.0000    0.0000     12000
+          n3     0.0000    0.0000    0.0000     12000
+          n4     0.0000    0.0000    0.0000     12000
+         rem     0.0000    0.0000    0.0000     12000
+
+    accuracy                         0.1667     72000
+   macro avg     0.0278    0.1667    0.0476     72000
+weighted avg     0.0278    0.1667    0.0476     72000
+
+Confusion matrix ['wake', 'n1', 'n2', 'n3', 'n4', 'rem']:
+[[12000     0     0     0     0     0]
+ [12000     0     0     0     0     0]
+ [12000     0     0     0     0     0]
+ [12000     0     0     0     0     0]
+ [12000     0     0     0     0     0]
+ [11999     1     0     0     0     0]]

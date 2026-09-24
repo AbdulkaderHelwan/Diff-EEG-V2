@@ -1,0 +1,19 @@
+bonn TRAINED-HEAD eval (frozen backbone embedding + freshly trained MLP head)
+classes: ['normal', 'seizure']
+train n=400  test n=100
+
+Test accuracy 0.9300   macro-F1 0.9027   weighted-F1 0.9336
+ROC-AUC 0.9931   PR-AUC 0.9738
+
+              precision    recall  f1-score   support
+
+      normal     1.0000    0.9125    0.9542        80
+     seizure     0.7407    1.0000    0.8511        20
+
+    accuracy                         0.9300       100
+   macro avg     0.8704    0.9563    0.9027       100
+weighted avg     0.9481    0.9300    0.9336       100
+
+Confusion matrix ['normal', 'seizure']:
+[[73  7]
+ [ 0 20]]

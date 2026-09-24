@@ -1,0 +1,19 @@
+siena FINETUNED+RL eval (backbone unfreeze=all + Categorical-RL head)
+classes: ['normal', 'seizure']
+train n=82791  test n=18729
+trainable backbone params: 14,309,248
+
+Test accuracy 0.9918   macro-F1 0.6381   weighted-F1 0.9908
+
+              precision    recall  f1-score   support
+
+      normal     0.9945    0.9972    0.9959     18597
+     seizure     0.3659    0.2273    0.2804       132
+
+    accuracy                         0.9918     18729
+   macro avg     0.6802    0.6122    0.6381     18729
+weighted avg     0.9901    0.9918    0.9908     18729
+
+Confusion matrix ['normal', 'seizure']:
+[[18545    52]
+ [  102    30]]

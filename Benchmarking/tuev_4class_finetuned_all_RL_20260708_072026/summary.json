@@ -1,0 +1,42 @@
+{
+  "dataset": "tuev_4class",
+  "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/TUEV_v2.0.1/processed_TUEV_4class",
+  "unfreeze": "all",
+  "rl_weight": 0.1,
+  "classes": [
+    "artf",
+    "bckg",
+    "epileptiform",
+    "eyem"
+  ],
+  "n_train": 1796,
+  "n_test": 825,
+  "trainable_backbone_params": 14309248,
+  "best_val_macro_f1": 0.6711584468163415,
+  "test_accuracy": 0.6060606060606061,
+  "test_macro_f1": 0.499383220914265,
+  "test_weighted_f1": 0.6318050953598503,
+  "config": {
+    "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/TUEV_v2.0.1/processed_TUEV_4class",
+    "dataset_name": "tuev_4class",
+    "backbone_ckpt": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth",
+    "norm_stats_dir": "/scratch/linah03/EpilepticSeizureProject/Dataset/TUEV_v2.0.1/processed_TUEV_4class/normalization",
+    "out_root": "/home/abdulh/scratch/EEGdiff_V2/Benchmarking",
+    "unfreeze": "all",
+    "rl_weight": 0.1,
+    "epochs": 100,
+    "patience": 20,
+    "lr": 0.0005,
+    "backbone_lr_mult": 0.01,
+    "batch_size": 64,
+    "val_frac": 0.15,
+    "num_workers": 4,
+    "grad_checkpoint": true,
+    "seed": 42,
+    "classes": null,
+    "max_per_class": null,
+    "weight_power": 0.5,
+    "per_window_norm": false,
+    "pooled_random_split": false
+  }
+}

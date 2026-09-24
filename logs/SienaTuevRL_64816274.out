@@ -1,0 +1,141 @@
+===== Siena: FULL finetune (unfreeze=all) + RL =====
+Device: cuda | unfreeze=all | +RL (rl_weight=0.1)
+Classes (2): ['normal', 'seizure']
+Loading data...
+  train (82791, 22, 1280)  test (18729, 22, 1280)
+  normalization: /scratch/linah03/EpilepticSeizureProject/Dataset/Siena/processed_siena/normalization
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 14,309,248
+Training...
+  epoch   1/40 | val macroF1 0.5074
+  epoch   2/40 | val macroF1 0.5095
+  epoch   3/40 | val macroF1 0.5077
+  epoch   4/40 | val macroF1 0.5994
+  epoch   5/40 | val macroF1 0.6955
+  epoch   6/40 | val macroF1 0.6087
+  epoch   7/40 | val macroF1 0.7582
+  epoch   8/40 | val macroF1 0.7694
+  epoch   9/40 | val macroF1 0.8055
+  epoch  10/40 | val macroF1 0.7766
+  epoch  11/40 | val macroF1 0.7558
+  epoch  12/40 | val macroF1 0.7313
+  epoch  13/40 | val macroF1 0.8020
+  epoch  14/40 | val macroF1 0.7775
+  epoch  15/40 | val macroF1 0.7381
+  epoch  16/40 | val macroF1 0.7267
+  epoch  17/40 | val macroF1 0.7545
+  epoch  18/40 | val macroF1 0.7875
+  epoch  19/40 | val macroF1 0.8158
+  epoch  20/40 | val macroF1 0.8155
+  epoch  21/40 | val macroF1 0.8128
+  epoch  22/40 | val macroF1 0.8162
+  epoch  23/40 | val macroF1 0.8105
+  epoch  24/40 | val macroF1 0.8256
+  epoch  25/40 | val macroF1 0.8300
+  epoch  26/40 | val macroF1 0.8132
+  epoch  27/40 | val macroF1 0.8140
+  epoch  28/40 | val macroF1 0.8233
+  epoch  29/40 | val macroF1 0.8256
+  epoch  30/40 | val macroF1 0.8078
+  epoch  31/40 | val macroF1 0.8323
+  epoch  32/40 | val macroF1 0.8301
+  epoch  33/40 | val macroF1 0.8120
+  epoch  34/40 | val macroF1 0.8257
+  epoch  35/40 | val macroF1 0.8256
+  epoch  36/40 | val macroF1 0.8176
+  epoch  37/40 | val macroF1 0.8236
+  epoch  38/40 | val macroF1 0.8133
+  epoch  39/40 | val macroF1 0.8301
+  epoch  40/40 | val macroF1 0.8301
+
+Test accuracy 0.9918  macro-F1 0.6381  weighted-F1 0.9908
+              precision    recall  f1-score   support
+
+      normal     0.9945    0.9972    0.9959     18597
+     seizure     0.3659    0.2273    0.2804       132
+
+    accuracy                         0.9918     18729
+   macro avg     0.6802    0.6122    0.6381     18729
+weighted avg     0.9901    0.9918    0.9908     18729
+
+Confusion matrix ['normal', 'seizure'] 
+ [[18545    52]
+ [  102    30]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/siena_finetuned_all_RL_20260707_100303/
+
+===== TUEV: FULL finetune (unfreeze=all) + RL =====
+Device: cuda | unfreeze=all | +RL (rl_weight=0.1)
+Classes (6): ['artf', 'bckg', 'eyem', 'gped', 'pled', 'spsw']
+Loading data...
+  train (1796, 22, 1280)  test (825, 22, 1280)
+  normalization: /scratch/linah03/EpilepticSeizureProject/Dataset/TUEV_v2.0.1/processed_TUEV/normalization
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 14,309,248
+Training...
+  epoch   1/40 | val macroF1 0.1142
+  epoch   2/40 | val macroF1 0.1918
+  epoch   3/40 | val macroF1 0.2781
+  epoch   4/40 | val macroF1 0.2061
+  epoch   5/40 | val macroF1 0.2779
+  epoch   6/40 | val macroF1 0.1499
+  epoch   7/40 | val macroF1 0.3574
+  epoch   8/40 | val macroF1 0.3728
+  epoch   9/40 | val macroF1 0.4299
+  epoch  10/40 | val macroF1 0.4191
+  epoch  11/40 | val macroF1 0.4335
+  epoch  12/40 | val macroF1 0.3984
+  epoch  13/40 | val macroF1 0.3945
+  epoch  14/40 | val macroF1 0.4640
+  epoch  15/40 | val macroF1 0.4961
+  epoch  16/40 | val macroF1 0.4858
+  epoch  17/40 | val macroF1 0.4813
+  epoch  18/40 | val macroF1 0.4714
+  epoch  19/40 | val macroF1 0.5173
+  epoch  20/40 | val macroF1 0.5052
+  epoch  21/40 | val macroF1 0.5212
+  epoch  22/40 | val macroF1 0.5227
+  epoch  23/40 | val macroF1 0.5229
+  epoch  24/40 | val macroF1 0.5364
+  epoch  25/40 | val macroF1 0.4971
+  epoch  26/40 | val macroF1 0.5256
+  epoch  27/40 | val macroF1 0.5413
+  epoch  28/40 | val macroF1 0.5230
+  epoch  29/40 | val macroF1 0.5141
+  epoch  30/40 | val macroF1 0.5174
+  epoch  31/40 | val macroF1 0.5224
+  epoch  32/40 | val macroF1 0.5424
+  epoch  33/40 | val macroF1 0.5172
+  epoch  34/40 | val macroF1 0.5316
+  epoch  35/40 | val macroF1 0.5180
+  epoch  36/40 | val macroF1 0.5361
+  epoch  37/40 | val macroF1 0.5289
+  epoch  38/40 | val macroF1 0.5292
+  epoch  39/40 | val macroF1 0.5128
+  epoch  40/40 | val macroF1 0.5343
+
+Test accuracy 0.3358  macro-F1 0.3213  weighted-F1 0.3472
+              precision    recall  f1-score   support
+
+        artf     0.1200    0.1791    0.1437        67
+        bckg     0.3509    0.5556    0.4301       144
+        eyem     0.5254    0.8158    0.6392        76
+        gped     0.6967    0.3648    0.4789       233
+        pled     0.5077    0.1158    0.1886       285
+        spsw     0.0260    0.2500    0.0472        20
+
+    accuracy                         0.3358       825
+   macro avg     0.3711    0.3802    0.3213       825
+weighted avg     0.4922    0.3358    0.3472       825
+
+Confusion matrix ['artf', 'bckg', 'eyem', 'gped', 'pled', 'spsw'] 
+ [[12 30 14  0  2  9]
+ [ 7 80 23  4 12 18]
+ [ 1 11 62  0  1  1]
+ [25 25  8 85 16 74]
+ [48 80  7 32 33 85]
+ [ 7  2  4  1  1  5]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/tuev_finetuned_all_RL_20260707_100727/

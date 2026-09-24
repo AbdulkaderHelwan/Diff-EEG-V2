@@ -1,0 +1,124 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{codebg}{RGB}{247,247,249}
+\definecolor{kw}{RGB}{0,90,160}
+\definecolor{cmt}{RGB}{110,120,110}
+\definecolor{str}{RGB}{160,60,60}
+
+\lstset{
+  language=Python,
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{kw}\bfseries,
+  commentstyle=\color{cmt}\itshape,
+  stringstyle=\color{str},
+  numbers=none, frame=single, framesep=5pt, rulecolor=\color{gray!40},
+  breaklines=true, showstringspaces=false, columns=fullflexible,
+  xleftmargin=6pt, xrightmargin=6pt, aboveskip=8pt, belowskip=8pt,
+}
+
+\newtcolorbox{keybox}[1]{colback=blue!4,colframe=blue!45,title={#1},
+  fonttitle=\bfseries,boxrule=0.6pt,arc=2pt}
+
+\title{\vspace{-1.5cm}\textbf{How We Processed the Bonn Dataset}\\[2pt]
+\large Its 5 Subsets and How They Became a Binary Task}
+\author{EEGdiff\_V2 project}
+\date{\today}
+
+\begin{document}
+\maketitle
+\vspace{-0.6cm}
+
+\section{The Bonn dataset has 5 subsets}
+The classic Bonn University EEG database (Andrzejak et al., 2001) ships as
+\textbf{5 sets, labeled Z, O, N, F, S} --- 100 single-channel recordings each
+(23.6\,s / 4097 samples @ 173.61\,Hz), 500 recordings total. Each set is a
+different clinical condition:
+
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Set (file prefix) & What it actually is \\
+\midrule
+\textbf{Z} & Healthy volunteers, eyes \textbf{open}, scalp EEG \\
+\textbf{O} & Healthy volunteers, eyes \textbf{closed}, scalp EEG \\
+\textbf{N} & Epilepsy patients, \textbf{seizure-free interval}, intracranial electrodes in the \\
+           & hippocampus \textbf{opposite} to the epileptic focus \\
+\textbf{F} & Epilepsy patients, \textbf{seizure-free interval}, intracranial electrodes \textbf{at} the \\
+           & epileptic focus \\
+\textbf{S} & Epilepsy patients, recorded \textbf{during an actual seizure} (ictal activity) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+We verified this directly against the raw data: each of the 5 subset zip files
+(\texttt{z.zip}, \texttt{o.zip}, \texttt{n.zip}, \texttt{f.zip}, \texttt{s.zip})
+extracts to exactly 100 real \texttt{.txt} files (macOS resource-fork junk
+excluded), 500 files total.
+
+\section{How we mapped 5 subsets onto our binary task}
+Our task is binary seizure-vs-normal, so \texttt{prepare\_bonn()} in
+\texttt{dataset\_tools/prepare\_external\_eeg.py} collapses the 5 subsets into
+2 classes with one simple rule:
+
+\begin{lstlisting}
+label = "seizure" if stem.startswith("S") or parent.startswith("S") else "normal"
+\end{lstlisting}
+
+\begin{keybox}{In plain terms}
+Only \textbf{Set S} is labeled \texttt{"seizure"}. Sets \textbf{Z, O, N, and F}
+are all lumped together as \texttt{"normal"} --- regardless of whether they
+are healthy controls (Z, O) or epilepsy patients who simply are not seizing
+right now (N, F).
+\end{keybox}
+
+We verified the final counts directly from the processed metadata: each of the
+5 subsets contributed exactly 100 windows (matching the 100 raw files per
+set), and the resulting train/test split is:
+
+\begin{center}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Split & normal & seizure \\
+\midrule
+train & 320 & 80 \\
+test  & 80  & 20 \\
+\midrule
+\textbf{total} & \textbf{400} & \textbf{100} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+That 400/100 = 4:1 ratio is exactly ``4 non-seizure subsets (Z+O+N+F=400) vs.\
+1 seizure subset (S=100).''
+
+\section{Worth remembering}
+\begin{itemize}[nosep,leftmargin=1.4em]
+  \item Our \texttt{"normal"} class is actually a mix of three quite different
+  things: healthy eyes-open, healthy eyes-closed, and epilepsy patients who
+  are currently seizure-free (sets N and F) --- all treated identically as
+  \emph{not seizure}. Clinically, N and F are the \textbf{hardest negatives}
+  (epileptic brain tissue, just not actively seizing), so lumping them with
+  healthy controls is a real simplification of the task.
+  \item This is also why Bonn is a comparatively \textbf{easy} benchmark in
+  the literature: the actual discriminative signal (ictal S vs.\ everything
+  else) is quite large. Consistent with this, our own result on Bonn was very
+  strong (ROC-AUC 0.993).
+  \item Each Bonn recording is a \textbf{single channel} with no electrode
+  name at all (a separate fact from which subset it belongs to). It is placed
+  into cup \#1 (FP1) of our 22-channel frame, with the other 21 channels
+  zero-filled --- see the companion handout
+  \emph{How We Mapped Every EEG Dataset to 22 Channels}.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,75 @@
+===== sleep_edfx: FULL finetuning + RL =====
+Device: cuda | unfreeze=all | +RL (rl_weight=0.1)
+Classes (6): ['wake', 'n1', 'n2', 'n3', 'n4', 'rem']
+Loading data...
+  train (72000, 22, 1280)  test (72000, 22, 1280)
+  normalization: per-window
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 14,309,248
+  class weights (power=1.0): wake=1.00, n1=1.00, n2=1.00, n3=1.00, n4=1.00, rem=1.00
+Training...
+  epoch   1/40 | val macroF1 0.3031
+  epoch   2/40 | val macroF1 0.2773
+  epoch   3/40 | val macroF1 0.5212
+  epoch   4/40 | val macroF1 0.6059
+  epoch   5/40 | val macroF1 0.6418
+  epoch   6/40 | val macroF1 0.7346
+  epoch   7/40 | val macroF1 0.6639
+  epoch   8/40 | val macroF1 0.7020
+  epoch   9/40 | val macroF1 0.7644
+  epoch  10/40 | val macroF1 0.7652
+  epoch  11/40 | val macroF1 0.7212
+  epoch  12/40 | val macroF1 0.8013
+  epoch  13/40 | val macroF1 0.7839
+  epoch  14/40 | val macroF1 0.6792
+  epoch  15/40 | val macroF1 0.8010
+  epoch  16/40 | val macroF1 0.7999
+  epoch  17/40 | val macroF1 0.8279
+  epoch  18/40 | val macroF1 0.8292
+  epoch  19/40 | val macroF1 0.8398
+  epoch  20/40 | val macroF1 0.8343
+  epoch  21/40 | val macroF1 0.8431
+  epoch  22/40 | val macroF1 0.8412
+  epoch  23/40 | val macroF1 0.8469
+  epoch  24/40 | val macroF1 0.8316
+  epoch  25/40 | val macroF1 0.8083
+  epoch  26/40 | val macroF1 0.8437
+  epoch  27/40 | val macroF1 0.8371
+  epoch  28/40 | val macroF1 0.8477
+  epoch  29/40 | val macroF1 0.8479
+  epoch  30/40 | val macroF1 0.8484
+  epoch  31/40 | val macroF1 0.8527
+  epoch  32/40 | val macroF1 0.8525
+  epoch  33/40 | val macroF1 0.8503
+  epoch  34/40 | val macroF1 0.8518
+  epoch  35/40 | val macroF1 0.8535
+  epoch  36/40 | val macroF1 0.8518
+  epoch  37/40 | val macroF1 0.8531
+  epoch  38/40 | val macroF1 0.8536
+  epoch  39/40 | val macroF1 0.8526
+  epoch  40/40 | val macroF1 0.8537
+
+Test accuracy 0.5394  macro-F1 0.5394  weighted-F1 0.5394
+              precision    recall  f1-score   support
+
+        wake     0.9000    0.7721    0.8311     12000
+          n1     0.3773    0.4692    0.4182     12000
+          n2     0.4196    0.3048    0.3531     12000
+          n3     0.4392    0.4188    0.4287     12000
+          n4     0.6481    0.7226    0.6833     12000
+         rem     0.4974    0.5490    0.5219     12000
+
+    accuracy                         0.5394     72000
+   macro avg     0.5469    0.5394    0.5394     72000
+weighted avg     0.5469    0.5394    0.5394     72000
+
+Confusion matrix ['wake', 'n1', 'n2', 'n3', 'n4', 'rem'] 
+ [[9265 1730  135   26  179  665]
+ [ 534 5630 1757  772  134 3173]
+ [  89 2799 3657 2428  367 2660]
+ [  57  806 1975 5025 3984  153]
+ [  32   79  199 3012 8671    7]
+ [ 318 3879  993  178   44 6588]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/sleep_edfx_finetuned_all_RL_20260708_145647/

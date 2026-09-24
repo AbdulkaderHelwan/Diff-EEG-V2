@@ -1,0 +1,165 @@
+===== 1/3  Mumtaz2016 MATCHED: HEAD ONLY =====
+Device: cuda
+Classes (2): ['healthy', 'mdd']
+Loading raw data...
+  train (5600, 22, 1280)  test (1483, 22, 1280)
+  normalization: /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/mumtaz2016_matched/normalization
+Loading frozen backbone...
+Model initialized with 40,679,574 parameters
+Extracting embeddings...
+  embeddings: train (5600, 4800)  test (1483, 4800)
+  class weights (power=1.0): healthy=1.00, mdd=1.00
+Training head...
+  early stop @ epoch 85 (best val macroF1 0.9355)
+
+Binary (positive class = 'mdd'): ROC-AUC 0.9347  PR-AUC 0.9415
+
+Test accuracy 0.8287  macro-F1 0.8183  weighted-F1 0.8231
+              precision    recall  f1-score   support
+
+     healthy     0.9338    0.6621    0.7748       660
+         mdd     0.7803    0.9623    0.8618       823
+
+    accuracy                         0.8287      1483
+   macro avg     0.8570    0.8122    0.8183      1483
+weighted avg     0.8486    0.8287    0.8231      1483
+
+Confusion matrix ['healthy', 'mdd'] 
+ [[437 223]
+ [ 31 792]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/mumtazM_headonly_trainedhead_20260804_091018/
+
+===== 2/3  Mumtaz2016 MATCHED: FULL finetune (unfreeze=all, no RL) =====
+Device: cuda | unfreeze=all
+Classes (2): ['healthy', 'mdd']
+Loading data...
+  train (5600, 22, 1280)  test (1483, 22, 1280)
+  normalization: /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/mumtaz2016_matched/normalization
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 14,309,248
+  class weights (power=1.0): healthy=1.00, mdd=1.00
+Training...
+  epoch   1/40 | val macroF1 0.7845
+  epoch   2/40 | val macroF1 0.7624
+  epoch   3/40 | val macroF1 0.8874
+  epoch   4/40 | val macroF1 0.9273
+  epoch   5/40 | val macroF1 0.9270
+  epoch   6/40 | val macroF1 0.9321
+  epoch   7/40 | val macroF1 0.9376
+  epoch   8/40 | val macroF1 0.9381
+  epoch   9/40 | val macroF1 0.9619
+  epoch  10/40 | val macroF1 0.9618
+  epoch  11/40 | val macroF1 0.9606
+  epoch  12/40 | val macroF1 0.9476
+  epoch  13/40 | val macroF1 0.9559
+  epoch  14/40 | val macroF1 0.9642
+  epoch  15/40 | val macroF1 0.9678
+  epoch  16/40 | val macroF1 0.9571
+  epoch  17/40 | val macroF1 0.9619
+  epoch  18/40 | val macroF1 0.9595
+  epoch  19/40 | val macroF1 0.9666
+  epoch  20/40 | val macroF1 0.9738
+  epoch  21/40 | val macroF1 0.9714
+  epoch  22/40 | val macroF1 0.9726
+  epoch  23/40 | val macroF1 0.9750
+  epoch  24/40 | val macroF1 0.9714
+  epoch  25/40 | val macroF1 0.9750
+  epoch  26/40 | val macroF1 0.9690
+  epoch  27/40 | val macroF1 0.9773
+  epoch  28/40 | val macroF1 0.9750
+  epoch  29/40 | val macroF1 0.9738
+  epoch  30/40 | val macroF1 0.9726
+  epoch  31/40 | val macroF1 0.9750
+  epoch  32/40 | val macroF1 0.9726
+  epoch  33/40 | val macroF1 0.9738
+  epoch  34/40 | val macroF1 0.9726
+  epoch  35/40 | val macroF1 0.9726
+  epoch  36/40 | val macroF1 0.9750
+  epoch  37/40 | val macroF1 0.9714
+  early stop @ epoch 37
+
+Test accuracy 0.7903  macro-F1 0.7704  weighted-F1 0.7779
+              precision    recall  f1-score   support
+
+     healthy     0.9509    0.5576    0.7030       660
+         mdd     0.7336    0.9769    0.8379       823
+
+    accuracy                         0.7903      1483
+   macro avg     0.8422    0.7672    0.7704      1483
+weighted avg     0.8303    0.7903    0.7779      1483
+
+Confusion matrix ['healthy', 'mdd'] 
+ [[368 292]
+ [ 19 804]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/mumtazM_finetuned_all_20260804_092122/
+
+===== 3/3  Mumtaz2016 MATCHED: FULL finetune + RL =====
+Device: cuda | unfreeze=all | +RL (rl_weight=0.1)
+Classes (2): ['healthy', 'mdd']
+Loading data...
+  train (5600, 22, 1280)  test (1483, 22, 1280)
+  normalization: /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/mumtaz2016_matched/normalization
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 14,309,248
+  class weights (power=0.5): healthy=1.00, mdd=1.00
+Training...
+  epoch   1/40 | val macroF1 0.7354
+  epoch   2/40 | val macroF1 0.8011
+  epoch   3/40 | val macroF1 0.8980
+  epoch   4/40 | val macroF1 0.9108
+  epoch   5/40 | val macroF1 0.9321
+  epoch   6/40 | val macroF1 0.9381
+  epoch   7/40 | val macroF1 0.9452
+  epoch   8/40 | val macroF1 0.9535
+  epoch   9/40 | val macroF1 0.9500
+  epoch  10/40 | val macroF1 0.9642
+  epoch  11/40 | val macroF1 0.9630
+  epoch  12/40 | val macroF1 0.9678
+  epoch  13/40 | val macroF1 0.9607
+  epoch  14/40 | val macroF1 0.9690
+  epoch  15/40 | val macroF1 0.9654
+  epoch  16/40 | val macroF1 0.9702
+  epoch  17/40 | val macroF1 0.9678
+  epoch  18/40 | val macroF1 0.9678
+  epoch  19/40 | val macroF1 0.9726
+  epoch  20/40 | val macroF1 0.9666
+  epoch  21/40 | val macroF1 0.9714
+  epoch  22/40 | val macroF1 0.9726
+  epoch  23/40 | val macroF1 0.9726
+  epoch  24/40 | val macroF1 0.9714
+  epoch  25/40 | val macroF1 0.9726
+  epoch  26/40 | val macroF1 0.9738
+  epoch  27/40 | val macroF1 0.9702
+  epoch  28/40 | val macroF1 0.9738
+  epoch  29/40 | val macroF1 0.9726
+  epoch  30/40 | val macroF1 0.9726
+  epoch  31/40 | val macroF1 0.9738
+  epoch  32/40 | val macroF1 0.9738
+  epoch  33/40 | val macroF1 0.9750
+  epoch  34/40 | val macroF1 0.9726
+  epoch  35/40 | val macroF1 0.9750
+  epoch  36/40 | val macroF1 0.9750
+  epoch  37/40 | val macroF1 0.9750
+  epoch  38/40 | val macroF1 0.9750
+  epoch  39/40 | val macroF1 0.9714
+  epoch  40/40 | val macroF1 0.9750
+
+Test accuracy 0.7896  macro-F1 0.7721  weighted-F1 0.7791
+              precision    recall  f1-score   support
+
+     healthy     0.9223    0.5758    0.7090       660
+         mdd     0.7386    0.9611    0.8353       823
+
+    accuracy                         0.7896      1483
+   macro avg     0.8304    0.7684    0.7721      1483
+weighted avg     0.8203    0.7896    0.7791      1483
+
+Confusion matrix ['healthy', 'mdd'] 
+ [[380 280]
+ [ 32 791]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/mumtazM_finetuned_all_RL_20260804_093336/

@@ -1,0 +1,39 @@
+{
+  "dataset": "eegmmidb_2class_subjectwise",
+  "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/eegmmidb",
+  "unfreeze": "all",
+  "classes": [
+    "left_fist",
+    "right_fist"
+  ],
+  "n_train": 3349,
+  "n_test": 792,
+  "trainable_backbone_params": 14309248,
+  "best_val_macro_f1": 0.5812479145812479,
+  "test_accuracy": 0.61489898989899,
+  "test_macro_f1": 0.6148492545237992,
+  "test_weighted_f1": 0.6149818821909743,
+  "config": {
+    "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/eegmmidb",
+    "dataset_name": "eegmmidb_2class_subjectwise",
+    "backbone_ckpt": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth",
+    "norm_stats_dir": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/normalization",
+    "out_root": "/home/abdulh/scratch/EEGdiff_V2/Benchmarking",
+    "unfreeze": "all",
+    "epochs": 40,
+    "patience": 8,
+    "lr": 0.0005,
+    "backbone_lr_mult": 0.01,
+    "batch_size": 128,
+    "val_frac": 0.15,
+    "num_workers": 4,
+    "grad_checkpoint": true,
+    "seed": 42,
+    "classes": [
+      "left_fist",
+      "right_fist"
+    ],
+    "per_window_norm": true,
+    "pooled_random_split": false
+  }
+}

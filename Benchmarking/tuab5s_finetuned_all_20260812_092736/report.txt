@@ -1,0 +1,19 @@
+tuab5s FINETUNED eval (backbone unfreeze=all + trained head)
+classes: ['normal', 'abnormal']
+train n=40000  test n=40000
+trainable backbone params: 14,309,248
+
+Test accuracy 0.7316   macro-F1 0.7306   weighted-F1 0.7306
+
+              precision    recall  f1-score   support
+
+      normal     0.7067    0.7920    0.7469     20000
+    abnormal     0.7634    0.6713    0.7144     20000
+
+    accuracy                         0.7316     40000
+   macro avg     0.7350    0.7316    0.7306     40000
+weighted avg     0.7350    0.7316    0.7306     40000
+
+Confusion matrix ['normal', 'abnormal']:
+[[15839  4161]
+ [ 6574 13426]]

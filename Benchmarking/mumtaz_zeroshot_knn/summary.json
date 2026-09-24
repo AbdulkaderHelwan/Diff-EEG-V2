@@ -1,0 +1,11 @@
+{
+  "dataset": "mumtaz",
+  "classes": [
+    "healthy",
+    "mdd"
+  ],
+  "k": 10,
+  "n_pooled": 6483,
+  "balanced_accuracy": 0.7913288530537874,
+  "chance": 0.5
+}

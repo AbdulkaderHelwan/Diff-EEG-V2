@@ -1,0 +1,512 @@
+Testing model on cuda...
+
+Model initialized with 40,679,574 parameters
+Input shape: torch.Size([4, 22, 1280])
+Output shape: torch.Size([4, 22, 1280])
+✓ Forward pass successful!
+Loss: 1.1815
+✓ Training step successful!
+
+Parameters: 40,679,574
+
+============================================================
+Model test passed! Starting training...
+============================================================
+
+Using device: cuda
+THUSZ_non_seizure: 480 train files, 54 val files
+CHBMIT_non_seizure: 241 train files, 27 val files
+TUAB_train_normal: 163 train files, 19 val files
+TUAB_test_normal: 18 train files, 2 val files
+Training batch files: 902, Validation batch files: 102
+Loaded combined normalization stats from /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/normalization
+Found 902 batch files
+Total samples: 1445392
+Found 102 batch files
+Total samples: 161186
+Training samples: 1445392, Validation samples: 161186
+Model initialized with 40,679,574 parameters
+
+Starting training...
+============================================================
+Epoch 0 batch 1/5647 loss=1.310522 lr=5.00e-05
+Epoch 0 batch 2/5647 loss=1.268694 lr=5.00e-05
+Epoch 0 batch 3/5647 loss=1.239573 lr=5.00e-05
+Epoch 0 batch 4/5647 loss=1.224247 lr=5.00e-05
+Epoch 0 batch 5/5647 loss=1.204093 lr=5.00e-05
+Epoch 0 batch 565/5647 loss=0.553039 lr=4.84e-05
+Epoch 0 batch 1125/5647 loss=0.285269 lr=4.40e-05
+Epoch 0 batch 1686/5647 loss=0.217776 lr=3.73e-05
+Epoch 0 batch 2247/5647 loss=0.210253 lr=2.90e-05
+Epoch 0 batch 2783/5647 loss=0.169547 lr=2.06e-05
+Epoch 0 batch 3344/5647 loss=0.180515 lr=1.24e-05
+Epoch 0 batch 3905/5647 loss=0.165140 lr=5.78e-06
+Epoch 0 batch 4466/5647 loss=0.156989 lr=1.49e-06
+Epoch 0 batch 5027/5647 loss=0.172397 lr=5.00e-05
+Epoch 0 batch 5588/5647 loss=0.149088 lr=4.96e-05
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0000: Train=0.275181, Val=0.093533, Best Val=0.093533
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 1 batch 1/5647 loss=0.161087 lr=4.95e-05
+Epoch 1 batch 2/5647 loss=0.162137 lr=4.95e-05
+Epoch 1 batch 3/5647 loss=0.151117 lr=4.95e-05
+Epoch 1 batch 4/5647 loss=0.122974 lr=4.95e-05
+Epoch 1 batch 5/5647 loss=0.152208 lr=4.95e-05
+Epoch 1 batch 565/5647 loss=0.157773 lr=4.82e-05
+Epoch 1 batch 1126/5647 loss=0.123804 lr=4.62e-05
+Epoch 1 batch 1686/5647 loss=0.119727 lr=4.36e-05
+Epoch 1 batch 2246/5647 loss=0.102886 lr=4.04e-05
+Epoch 1 batch 2806/5647 loss=0.128016 lr=3.67e-05
+Epoch 1 batch 3366/5647 loss=0.123711 lr=3.27e-05
+Epoch 1 batch 3926/5647 loss=0.111303 lr=2.84e-05
+Epoch 1 batch 4487/5647 loss=0.126187 lr=2.40e-05
+Epoch 1 batch 5047/5647 loss=0.091765 lr=1.97e-05
+Epoch 1 batch 5608/5647 loss=0.114263 lr=1.55e-05
+Epoch 0001: Train=0.121642, Val=0.093533, Best Val=0.093533
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 2 batch 1/5647 loss=0.098923 lr=1.52e-05
+Epoch 2 batch 2/5647 loss=0.105218 lr=1.52e-05
+Epoch 2 batch 3/5647 loss=0.117779 lr=1.52e-05
+Epoch 2 batch 4/5647 loss=0.117965 lr=1.52e-05
+Epoch 2 batch 5/5647 loss=0.111929 lr=1.51e-05
+Epoch 2 batch 565/5647 loss=0.119072 lr=1.13e-05
+Epoch 2 batch 1125/5647 loss=0.099536 lr=7.86e-06
+Epoch 2 batch 1685/5647 loss=0.094971 lr=4.96e-06
+Epoch 2 batch 2245/5647 loss=0.106469 lr=2.68e-06
+Epoch 2 batch 2805/5647 loss=0.107129 lr=1.09e-06
+Epoch 2 batch 3365/5647 loss=0.100519 lr=2.43e-07
+Epoch 2 batch 3925/5647 loss=0.114328 lr=5.00e-05
+Epoch 2 batch 4484/5647 loss=0.115893 lr=4.98e-05
+Epoch 2 batch 5044/5647 loss=0.114112 lr=4.95e-05
+Epoch 2 batch 5604/5647 loss=0.134268 lr=4.89e-05
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0002: Train=0.105278, Val=0.060095, Best Val=0.060095
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 3 batch 1/5647 loss=0.106906 lr=4.88e-05
+Epoch 3 batch 2/5647 loss=0.103683 lr=4.88e-05
+Epoch 3 batch 3/5647 loss=0.111176 lr=4.88e-05
+Epoch 3 batch 4/5647 loss=0.089016 lr=4.88e-05
+Epoch 3 batch 5/5647 loss=0.115002 lr=4.88e-05
+Epoch 3 batch 564/5647 loss=0.078569 lr=4.81e-05
+Epoch 3 batch 1124/5647 loss=0.096361 lr=4.72e-05
+Epoch 3 batch 1685/5647 loss=0.090016 lr=4.61e-05
+Epoch 3 batch 2246/5647 loss=0.090727 lr=4.48e-05
+Epoch 3 batch 2805/5647 loss=0.090848 lr=4.34e-05
+Epoch 3 batch 3356/5647 loss=0.077780 lr=4.19e-05
+Epoch 3 batch 3917/5647 loss=0.089177 lr=4.02e-05
+Epoch 3 batch 4478/5647 loss=0.087679 lr=3.84e-05
+Epoch 3 batch 5039/5647 loss=0.092874 lr=3.64e-05
+Epoch 3 batch 5600/5647 loss=0.092446 lr=3.44e-05
+Epoch 0003: Train=0.090857, Val=0.060095, Best Val=0.060095
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 4 batch 1/5647 loss=0.092494 lr=3.43e-05
+Epoch 4 batch 2/5647 loss=0.095763 lr=3.43e-05
+Epoch 4 batch 3/5647 loss=0.090055 lr=3.43e-05
+Epoch 4 batch 4/5647 loss=0.102055 lr=3.43e-05
+Epoch 4 batch 5/5647 loss=0.102862 lr=3.43e-05
+Epoch 4 batch 566/5647 loss=0.088918 lr=3.22e-05
+Epoch 4 batch 1127/5647 loss=0.085720 lr=3.01e-05
+Epoch 4 batch 1687/5647 loss=0.080165 lr=2.79e-05
+Epoch 4 batch 2248/5647 loss=0.089381 lr=2.57e-05
+Epoch 4 batch 2809/5647 loss=0.086601 lr=2.35e-05
+Epoch 4 batch 3369/5647 loss=0.075960 lr=2.13e-05
+Epoch 4 batch 3930/5647 loss=0.092015 lr=1.92e-05
+Epoch 4 batch 4491/5647 loss=0.075708 lr=1.70e-05
+Epoch 4 batch 5052/5647 loss=0.083199 lr=1.50e-05
+Epoch 4 batch 5613/5647 loss=0.065743 lr=1.30e-05
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0004: Train=0.081794, Val=0.048472, Best Val=0.048472
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 5 batch 1/5647 loss=0.082024 lr=1.29e-05
+Epoch 5 batch 2/5647 loss=0.073158 lr=1.29e-05
+Epoch 5 batch 3/5647 loss=0.063792 lr=1.29e-05
+Epoch 5 batch 4/5647 loss=0.085527 lr=1.29e-05
+Epoch 5 batch 5/5647 loss=0.077404 lr=1.29e-05
+Epoch 5 batch 565/5647 loss=0.071411 lr=1.10e-05
+Epoch 5 batch 1125/5647 loss=0.072781 lr=9.27e-06
+Epoch 5 batch 1685/5647 loss=0.079571 lr=7.63e-06
+Epoch 5 batch 2245/5647 loss=0.082313 lr=6.13e-06
+Epoch 5 batch 2805/5647 loss=0.074407 lr=4.77e-06
+Epoch 5 batch 3272/5647 loss=0.069719 lr=3.76e-06
+Epoch 5 batch 3832/5647 loss=0.071730 lr=2.70e-06
+Epoch 5 batch 4389/5647 loss=0.088923 lr=1.82e-06
+Epoch 5 batch 4949/5647 loss=0.074368 lr=1.11e-06
+Epoch 5 batch 5509/5647 loss=0.079630 lr=5.84e-07
+Epoch 0005: Train=0.076789, Val=0.048472, Best Val=0.048472
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 6 batch 1/5647 loss=0.087121 lr=4.83e-07
+Epoch 6 batch 2/5647 loss=0.076237 lr=4.82e-07
+Epoch 6 batch 3/5647 loss=0.101591 lr=4.82e-07
+Epoch 6 batch 4/5647 loss=0.080754 lr=4.81e-07
+Epoch 6 batch 5/5647 loss=0.079401 lr=4.80e-07
+Epoch 6 batch 565/5647 loss=0.078263 lr=1.94e-07
+Epoch 6 batch 1124/5647 loss=0.114854 lr=5.00e-05
+Epoch 6 batch 1683/5647 loss=0.074581 lr=5.00e-05
+Epoch 6 batch 2243/5647 loss=0.067621 lr=4.99e-05
+Epoch 6 batch 2803/5647 loss=0.080105 lr=4.98e-05
+Epoch 6 batch 3363/5647 loss=0.067884 lr=4.96e-05
+Epoch 6 batch 3923/5647 loss=0.070446 lr=4.94e-05
+Epoch 6 batch 4475/5647 loss=0.065646 lr=4.91e-05
+Epoch 6 batch 5035/5647 loss=0.081417 lr=4.88e-05
+Epoch 6 batch 5595/5647 loss=0.073246 lr=4.85e-05
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0006: Train=0.077177, Val=0.047554, Best Val=0.047554
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 7 batch 1/5647 loss=0.085056 lr=4.84e-05
+Epoch 7 batch 2/5647 loss=0.053492 lr=4.84e-05
+Epoch 7 batch 3/5647 loss=0.072913 lr=4.84e-05
+Epoch 7 batch 4/5647 loss=0.092845 lr=4.84e-05
+Epoch 7 batch 5/5647 loss=0.061417 lr=4.84e-05
+Epoch 7 batch 564/5647 loss=0.057499 lr=4.80e-05
+Epoch 7 batch 1123/5647 loss=0.096201 lr=4.76e-05
+Epoch 7 batch 1681/5647 loss=0.057392 lr=4.71e-05
+Epoch 7 batch 2240/5647 loss=0.071312 lr=4.66e-05
+Epoch 7 batch 2799/5647 loss=0.085057 lr=4.60e-05
+Epoch 7 batch 3360/5647 loss=0.075078 lr=4.54e-05
+Epoch 7 batch 3921/5647 loss=0.061262 lr=4.47e-05
+Epoch 7 batch 4483/5647 loss=0.075026 lr=4.40e-05
+Epoch 7 batch 5045/5647 loss=0.073989 lr=4.33e-05
+Epoch 7 batch 5606/5647 loss=0.076709 lr=4.25e-05
+Epoch 0007: Train=0.072096, Val=0.047554, Best Val=0.047554
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 8 batch 1/5647 loss=0.062863 lr=4.24e-05
+Epoch 8 batch 2/5647 loss=0.099116 lr=4.24e-05
+Epoch 8 batch 3/5647 loss=0.053245 lr=4.24e-05
+Epoch 8 batch 4/5647 loss=0.075167 lr=4.24e-05
+Epoch 8 batch 5/5647 loss=0.054183 lr=4.24e-05
+Epoch 8 batch 567/5647 loss=0.084539 lr=4.16e-05
+Epoch 8 batch 1129/5647 loss=0.078976 lr=4.08e-05
+Epoch 8 batch 1690/5647 loss=0.060222 lr=3.99e-05
+Epoch 8 batch 2252/5647 loss=0.070700 lr=3.90e-05
+Epoch 8 batch 2814/5647 loss=0.063837 lr=3.81e-05
+Epoch 8 batch 3376/5647 loss=0.070707 lr=3.72e-05
+Epoch 8 batch 3938/5647 loss=0.069521 lr=3.62e-05
+Epoch 8 batch 4499/5647 loss=0.077329 lr=3.52e-05
+Epoch 8 batch 5061/5647 loss=0.073495 lr=3.42e-05
+Epoch 8 batch 5623/5647 loss=0.071728 lr=3.31e-05
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0008: Train=0.068327, Val=0.044597, Best Val=0.044597
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 9 batch 1/5647 loss=0.053625 lr=3.31e-05
+Epoch 9 batch 2/5647 loss=0.081666 lr=3.31e-05
+Epoch 9 batch 3/5647 loss=0.079506 lr=3.31e-05
+Epoch 9 batch 4/5647 loss=0.071467 lr=3.31e-05
+Epoch 9 batch 5/5647 loss=0.054637 lr=3.31e-05
+Epoch 9 batch 567/5647 loss=0.065244 lr=3.20e-05
+Epoch 9 batch 1129/5647 loss=0.065845 lr=3.10e-05
+Epoch 9 batch 1691/5647 loss=0.065478 lr=2.99e-05
+Epoch 9 batch 2253/5647 loss=0.062823 lr=2.88e-05
+Epoch 9 batch 2815/5647 loss=0.057877 lr=2.77e-05
+Epoch 9 batch 3377/5647 loss=0.060001 lr=2.66e-05
+Epoch 9 batch 3937/5647 loss=0.055694 lr=2.55e-05
+Epoch 9 batch 4498/5647 loss=0.072201 lr=2.44e-05
+Epoch 9 batch 5059/5647 loss=0.057963 lr=2.33e-05
+Epoch 9 batch 5621/5647 loss=0.061948 lr=2.22e-05
+Epoch 0009: Train=0.064836, Val=0.044597, Best Val=0.044597
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 10 batch 1/5647 loss=0.058766 lr=2.22e-05
+Epoch 10 batch 2/5647 loss=0.068412 lr=2.22e-05
+Epoch 10 batch 3/5647 loss=0.055413 lr=2.22e-05
+Epoch 10 batch 4/5647 loss=0.068433 lr=2.22e-05
+Epoch 10 batch 5/5647 loss=0.073576 lr=2.22e-05
+Epoch 10 batch 567/5647 loss=0.062103 lr=2.11e-05
+Epoch 10 batch 1115/5647 loss=0.057300 lr=2.00e-05
+Epoch 10 batch 1673/5647 loss=0.057616 lr=1.90e-05
+Epoch 10 batch 2235/5647 loss=0.063731 lr=1.79e-05
+Epoch 10 batch 2797/5647 loss=0.065273 lr=1.68e-05
+Epoch 10 batch 3359/5647 loss=0.056135 lr=1.58e-05
+Epoch 10 batch 3921/5647 loss=0.058559 lr=1.48e-05
+Epoch 10 batch 4483/5647 loss=0.054924 lr=1.38e-05
+Epoch 10 batch 5045/5647 loss=0.066615 lr=1.28e-05
+Epoch 10 batch 5607/5647 loss=0.063753 lr=1.19e-05
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0010: Train=0.062248, Val=0.039495, Best Val=0.039495
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 11 batch 1/5647 loss=0.059114 lr=1.18e-05
+Epoch 11 batch 2/5647 loss=0.054259 lr=1.18e-05
+Epoch 11 batch 3/5647 loss=0.074776 lr=1.18e-05
+Epoch 11 batch 4/5647 loss=0.064912 lr=1.18e-05
+Epoch 11 batch 5/5647 loss=0.071297 lr=1.18e-05
+Epoch 11 batch 567/5647 loss=0.063506 lr=1.09e-05
+Epoch 11 batch 1129/5647 loss=0.061691 lr=1.00e-05
+Epoch 11 batch 1691/5647 loss=0.047485 lr=9.13e-06
+Epoch 11 batch 2253/5647 loss=0.070645 lr=8.30e-06
+Epoch 11 batch 2815/5647 loss=0.049247 lr=7.50e-06
+Epoch 11 batch 3377/5647 loss=0.058262 lr=6.74e-06
+Epoch 11 batch 3939/5647 loss=0.061360 lr=6.01e-06
+Epoch 11 batch 4475/5647 loss=0.043580 lr=5.35e-06
+Epoch 11 batch 5037/5647 loss=0.056904 lr=4.69e-06
+Epoch 11 batch 5598/5647 loss=0.058628 lr=4.07e-06
+Epoch 0011: Train=0.060825, Val=0.039495, Best Val=0.039495
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 12 batch 1/5647 loss=0.070219 lr=4.02e-06
+Epoch 12 batch 2/5647 loss=0.060060 lr=4.02e-06
+Epoch 12 batch 3/5647 loss=0.061864 lr=4.02e-06
+Epoch 12 batch 4/5647 loss=0.051741 lr=4.02e-06
+Epoch 12 batch 5/5647 loss=0.044471 lr=4.02e-06
+Epoch 12 batch 565/5647 loss=0.055101 lr=3.45e-06
+Epoch 12 batch 1126/5647 loss=0.074909 lr=2.92e-06
+Epoch 12 batch 1686/5647 loss=0.066705 lr=2.43e-06
+Epoch 12 batch 2247/5647 loss=0.055760 lr=1.99e-06
+Epoch 12 batch 2807/5647 loss=0.043428 lr=1.59e-06
+Epoch 12 batch 3368/5647 loss=0.072521 lr=1.24e-06
+Epoch 12 batch 3929/5647 loss=0.061305 lr=9.37e-07
+Epoch 12 batch 4490/5647 loss=0.047784 lr=6.78e-07
+Epoch 12 batch 5051/5647 loss=0.044983 lr=4.66e-07
+Epoch 12 batch 5612/5647 loss=0.049525 lr=3.03e-07
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0012: Train=0.059819, Val=0.039084, Best Val=0.039084
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 13 batch 1/5647 loss=0.052257 lr=2.94e-07
+Epoch 13 batch 2/5647 loss=0.064579 lr=2.94e-07
+Epoch 13 batch 3/5647 loss=0.054181 lr=2.93e-07
+Epoch 13 batch 4/5647 loss=0.059357 lr=2.93e-07
+Epoch 13 batch 5/5647 loss=0.062176 lr=2.93e-07
+Epoch 13 batch 565/5647 loss=0.075840 lr=1.81e-07
+Epoch 13 batch 1126/5647 loss=0.059842 lr=1.16e-07
+Epoch 13 batch 1687/5647 loss=0.056503 lr=5.00e-05
+Epoch 13 batch 2248/5647 loss=0.046274 lr=5.00e-05
+Epoch 13 batch 2809/5647 loss=0.069450 lr=5.00e-05
+Epoch 13 batch 3369/5647 loss=0.054425 lr=4.99e-05
+Epoch 13 batch 3929/5647 loss=0.044590 lr=4.99e-05
+Epoch 13 batch 4490/5647 loss=0.067178 lr=4.98e-05
+Epoch 13 batch 5051/5647 loss=0.061266 lr=4.98e-05
+Epoch 13 batch 5612/5647 loss=0.056747 lr=4.97e-05
+Epoch 0013: Train=0.061671, Val=0.039084, Best Val=0.039084
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 14 batch 1/5647 loss=0.056620 lr=4.97e-05
+Epoch 14 batch 2/5647 loss=0.051047 lr=4.97e-05
+Epoch 14 batch 3/5647 loss=0.068128 lr=4.97e-05
+Epoch 14 batch 4/5647 loss=0.070916 lr=4.97e-05
+Epoch 14 batch 5/5647 loss=0.066331 lr=4.97e-05
+Epoch 14 batch 566/5647 loss=0.057338 lr=4.96e-05
+Epoch 14 batch 1127/5647 loss=0.065628 lr=4.95e-05
+Epoch 14 batch 1677/5647 loss=0.068360 lr=4.94e-05
+Epoch 14 batch 2229/5647 loss=0.073532 lr=4.92e-05
+Epoch 14 batch 2789/5647 loss=0.058140 lr=4.91e-05
+Epoch 14 batch 3345/5647 loss=0.059104 lr=4.90e-05
+Epoch 14 batch 3906/5647 loss=0.061544 lr=4.88e-05
+Epoch 14 batch 4464/5647 loss=0.063276 lr=4.86e-05
+Epoch 14 batch 5025/5647 loss=0.061306 lr=4.84e-05
+Epoch 14 batch 5587/5647 loss=0.064177 lr=4.82e-05
+Epoch 0014: Train=0.060536, Val=0.039472, Best Val=0.039084
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 15 batch 1/5647 loss=0.054288 lr=4.82e-05
+Epoch 15 batch 2/5647 loss=0.051728 lr=4.82e-05
+Epoch 15 batch 3/5647 loss=0.061705 lr=4.82e-05
+Epoch 15 batch 4/5647 loss=0.054503 lr=4.82e-05
+Epoch 15 batch 5/5647 loss=0.039352 lr=4.82e-05
+Epoch 15 batch 566/5647 loss=0.054667 lr=4.80e-05
+Epoch 15 batch 1127/5647 loss=0.054305 lr=4.78e-05
+Epoch 15 batch 1688/5647 loss=0.069753 lr=4.75e-05
+Epoch 15 batch 2249/5647 loss=0.061534 lr=4.73e-05
+Epoch 15 batch 2810/5647 loss=0.044803 lr=4.70e-05
+Epoch 15 batch 3369/5647 loss=0.076938 lr=4.68e-05
+Epoch 15 batch 3930/5647 loss=0.053793 lr=4.65e-05
+Epoch 15 batch 4488/5647 loss=0.060315 lr=4.62e-05
+Epoch 15 batch 5049/5647 loss=0.060726 lr=4.59e-05
+Epoch 15 batch 5610/5647 loss=0.075951 lr=4.56e-05
+Epoch 0015: Train=0.059540, Val=0.039472, Best Val=0.039084
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 16 batch 1/5647 loss=0.052770 lr=4.56e-05
+Epoch 16 batch 2/5647 loss=0.054719 lr=4.56e-05
+Epoch 16 batch 3/5647 loss=0.057031 lr=4.56e-05
+Epoch 16 batch 4/5647 loss=0.070579 lr=4.56e-05
+Epoch 16 batch 5/5647 loss=0.055356 lr=4.56e-05
+Epoch 16 batch 565/5647 loss=0.056787 lr=4.53e-05
+Epoch 16 batch 1125/5647 loss=0.056054 lr=4.50e-05
+Epoch 16 batch 1685/5647 loss=0.055499 lr=4.46e-05
+Epoch 16 batch 2245/5647 loss=0.055020 lr=4.43e-05
+Epoch 16 batch 2806/5647 loss=0.059797 lr=4.39e-05
+Epoch 16 batch 3367/5647 loss=0.076835 lr=4.36e-05
+Epoch 16 batch 3927/5647 loss=0.055003 lr=4.32e-05
+Epoch 16 batch 4487/5647 loss=0.064739 lr=4.28e-05
+Epoch 16 batch 5047/5647 loss=0.044527 lr=4.24e-05
+Epoch 16 batch 5606/5647 loss=0.071626 lr=4.20e-05
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0016: Train=0.058003, Val=0.038100, Best Val=0.038100
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 17 batch 1/5647 loss=0.055800 lr=4.20e-05
+Epoch 17 batch 2/5647 loss=0.062589 lr=4.20e-05
+Epoch 17 batch 3/5647 loss=0.054674 lr=4.20e-05
+Epoch 17 batch 4/5647 loss=0.061403 lr=4.20e-05
+Epoch 17 batch 5/5647 loss=0.062808 lr=4.20e-05
+Epoch 17 batch 566/5647 loss=0.063061 lr=4.16e-05
+Epoch 17 batch 1127/5647 loss=0.053916 lr=4.12e-05
+Epoch 17 batch 1688/5647 loss=0.060753 lr=4.07e-05
+Epoch 17 batch 2249/5647 loss=0.061951 lr=4.03e-05
+Epoch 17 batch 2810/5647 loss=0.064121 lr=3.99e-05
+Epoch 17 batch 3371/5647 loss=0.053137 lr=3.94e-05
+Epoch 17 batch 3932/5647 loss=0.055932 lr=3.90e-05
+Epoch 17 batch 4493/5647 loss=0.055722 lr=3.85e-05
+Epoch 17 batch 5053/5647 loss=0.069268 lr=3.80e-05
+Epoch 17 batch 5614/5647 loss=0.057372 lr=3.76e-05
+Epoch 0017: Train=0.057102, Val=0.038100, Best Val=0.038100
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 18 batch 1/5647 loss=0.056347 lr=3.75e-05
+Epoch 18 batch 2/5647 loss=0.058078 lr=3.75e-05
+Epoch 18 batch 3/5647 loss=0.078212 lr=3.75e-05
+Epoch 18 batch 4/5647 loss=0.048548 lr=3.75e-05
+Epoch 18 batch 5/5647 loss=0.057157 lr=3.75e-05
+Epoch 18 batch 566/5647 loss=0.061005 lr=3.71e-05
+Epoch 18 batch 1127/5647 loss=0.077943 lr=3.66e-05
+Epoch 18 batch 1687/5647 loss=0.054594 lr=3.61e-05
+Epoch 18 batch 2248/5647 loss=0.055205 lr=3.56e-05
+Epoch 18 batch 2809/5647 loss=0.050806 lr=3.51e-05
+Epoch 18 batch 3370/5647 loss=0.064712 lr=3.46e-05
+Epoch 18 batch 3853/5647 loss=0.047947 lr=3.41e-05
+Epoch 18 batch 4414/5647 loss=0.055004 lr=3.36e-05
+Epoch 18 batch 4975/5647 loss=0.066258 lr=3.31e-05
+Epoch 18 batch 5531/5647 loss=0.062144 lr=3.26e-05
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0018: Train=0.058424, Val=0.038076, Best Val=0.038076
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 19 batch 1/5647 loss=0.045238 lr=3.25e-05
+Epoch 19 batch 2/5647 loss=0.045949 lr=3.25e-05
+Epoch 19 batch 3/5647 loss=0.045206 lr=3.25e-05
+Epoch 19 batch 4/5647 loss=0.053567 lr=3.25e-05
+Epoch 19 batch 5/5647 loss=0.054798 lr=3.25e-05
+Epoch 19 batch 566/5647 loss=0.063381 lr=3.20e-05
+Epoch 19 batch 1128/5647 loss=0.064049 lr=3.14e-05
+Epoch 19 batch 1689/5647 loss=0.061158 lr=3.09e-05
+Epoch 19 batch 2205/5647 loss=0.050858 lr=3.04e-05
+Epoch 19 batch 2716/5647 loss=0.061271 lr=2.99e-05
+Epoch 19 batch 3221/5647 loss=0.062098 lr=2.94e-05
+Epoch 19 batch 3746/5647 loss=0.060223 lr=2.89e-05
+Epoch 19 batch 4230/5647 loss=0.056917 lr=2.84e-05
+Epoch 19 batch 4757/5647 loss=0.051912 lr=2.79e-05
+Epoch 19 batch 5284/5647 loss=0.069687 lr=2.74e-05
+Epoch 0019: Train=0.058751, Val=0.038076, Best Val=0.038076
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 20 batch 1/5647 loss=0.054382 lr=2.71e-05
+Epoch 20 batch 2/5647 loss=0.064776 lr=2.71e-05
+Epoch 20 batch 3/5647 loss=0.047619 lr=2.71e-05
+Epoch 20 batch 4/5647 loss=0.058183 lr=2.71e-05
+Epoch 20 batch 5/5647 loss=0.080642 lr=2.71e-05
+Epoch 20 batch 488/5647 loss=0.056246 lr=2.66e-05
+Epoch 20 batch 966/5647 loss=0.057879 lr=2.61e-05
+Epoch 20 batch 1428/5647 loss=0.046420 lr=2.57e-05
+Epoch 20 batch 1878/5647 loss=0.066252 lr=2.52e-05
+Epoch 20 batch 2388/5647 loss=0.074955 lr=2.47e-05
+Epoch 20 batch 2923/5647 loss=0.069319 lr=2.42e-05
+Epoch 20 batch 3449/5647 loss=0.059872 lr=2.37e-05
+Epoch 20 batch 3996/5647 loss=0.057705 lr=2.31e-05
+Epoch 20 batch 4533/5647 loss=0.066691 lr=2.26e-05
+Epoch 20 batch 5080/5647 loss=0.047606 lr=2.21e-05
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0020: Train=0.059709, Val=0.038046, Best Val=0.038046
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 21 batch 1/5647 loss=0.059191 lr=2.15e-05
+Epoch 21 batch 2/5647 loss=0.051601 lr=2.15e-05
+Epoch 21 batch 3/5647 loss=0.057675 lr=2.15e-05
+Epoch 21 batch 4/5647 loss=0.059545 lr=2.15e-05
+Epoch 21 batch 5/5647 loss=0.069444 lr=2.15e-05
+Epoch 21 batch 538/5647 loss=0.060572 lr=2.10e-05
+Epoch 21 batch 1053/5647 loss=0.055273 lr=2.04e-05
+Epoch 21 batch 1537/5647 loss=0.041432 lr=1.98e-05
+Epoch 21 batch 2012/5647 loss=0.066089 lr=1.91e-05
+Epoch 21 batch 2494/5647 loss=0.059046 lr=1.85e-05
+Epoch 21 batch 2955/5647 loss=0.075380 lr=1.79e-05
+Epoch 21 batch 3393/5647 loss=0.053933 lr=1.72e-05
+Epoch 21 batch 3809/5647 loss=0.055572 lr=1.66e-05
+Epoch 0021: Train=0.056937, Val=0.038046, Best Val=0.038046
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 22 batch 1/5647 loss=0.059992 lr=1.62e-05
+Epoch 22 batch 2/5647 loss=0.063502 lr=1.62e-05
+Epoch 22 batch 3/5647 loss=0.055500 lr=1.62e-05
+Epoch 22 batch 4/5647 loss=0.068173 lr=1.62e-05
+Epoch 22 batch 5/5647 loss=0.042630 lr=1.62e-05
+Epoch 22 batch 400/5647 loss=0.053677 lr=1.55e-05
+Epoch 22 batch 768/5647 loss=0.051715 lr=1.48e-05
+Epoch 22 batch 1140/5647 loss=0.063147 lr=1.41e-05
+Epoch 22 batch 1492/5647 loss=0.063229 lr=1.34e-05
+Epoch 22 batch 1855/5647 loss=0.052566 lr=1.27e-05
+Epoch 22 batch 2191/5647 loss=0.039457 lr=1.21e-05
+Epoch 22 batch 2517/5647 loss=0.048089 lr=1.14e-05
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0022: Train=0.054714, Val=0.037616, Best Val=0.037616
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 23 batch 1/5647 loss=0.048244 lr=1.13e-05
+Epoch 23 batch 2/5647 loss=0.061451 lr=1.13e-05
+Epoch 23 batch 3/5647 loss=0.041837 lr=1.13e-05
+Epoch 23 batch 4/5647 loss=0.064849 lr=1.13e-05
+Epoch 23 batch 5/5647 loss=0.052888 lr=1.13e-05
+Epoch 23 batch 321/5647 loss=0.059346 lr=1.06e-05
+Epoch 23 batch 598/5647 loss=0.063939 lr=9.88e-06
+Epoch 23 batch 880/5647 loss=0.057930 lr=9.20e-06
+Epoch 23 batch 1177/5647 loss=0.040999 lr=8.55e-06
+Epoch 23 batch 1468/5647 loss=0.063272 lr=7.91e-06
+Epoch 23 batch 1747/5647 loss=0.048496 lr=7.29e-06
+Epoch 0023: Train=0.053444, Val=0.037616, Best Val=0.037616
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 24 batch 1/5647 loss=0.056673 lr=7.05e-06
+Epoch 24 batch 2/5647 loss=0.044621 lr=7.04e-06
+Epoch 24 batch 3/5647 loss=0.045142 lr=7.04e-06
+Epoch 24 batch 4/5647 loss=0.050199 lr=7.04e-06
+Epoch 24 batch 5/5647 loss=0.058071 lr=7.03e-06
+Epoch 24 batch 246/5647 loss=0.049452 lr=6.41e-06
+Epoch 24 batch 442/5647 loss=0.040435 lr=5.78e-06
+Epoch 24 batch 585/5647 loss=0.057089 lr=5.14e-06
+Epoch 24 batch 688/5647 loss=0.053814 lr=4.51e-06
+Epoch 24 batch 758/5647 loss=0.041554 lr=3.89e-06
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0024: Train=0.052585, Val=0.037168, Best Val=0.037168
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 25 batch 1/5647 loss=0.055993 lr=3.68e-06
+Epoch 25 batch 2/5647 loss=0.048130 lr=3.65e-06
+Epoch 25 batch 3/5647 loss=0.060989 lr=3.65e-06
+Epoch 25 batch 4/5647 loss=0.058591 lr=3.63e-06
+Epoch 25 batch 5/5647 loss=0.065431 lr=3.62e-06
+Epoch 25 batch 80/5647 loss=0.057776 lr=3.08e-06
+Epoch 25 batch 124/5647 loss=0.053079 lr=2.56e-06
+Epoch 25 batch 172/5647 loss=0.051437 lr=2.09e-06
+Epoch 25 batch 217/5647 loss=0.043169 lr=1.66e-06
+Epoch 0025: Train=0.052481, Val=0.037168, Best Val=0.037168
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 26 batch 1/5647 loss=0.049703 lr=1.37e-06
+Epoch 26 batch 2/5647 loss=0.072493 lr=1.37e-06
+Epoch 26 batch 3/5647 loss=0.050269 lr=1.37e-06
+Epoch 26 batch 4/5647 loss=0.053706 lr=1.36e-06
+Epoch 26 batch 5/5647 loss=0.052558 lr=1.33e-06
+Epoch 26 batch 36/5647 loss=0.047729 lr=9.95e-07
+Epoch 26 batch 65/5647 loss=0.042425 lr=7.03e-07
+Epoch 26 batch 84/5647 loss=0.048422 lr=4.65e-07
+Epoch 26 batch 125/5647 loss=0.060263 lr=2.94e-07
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth
+Epoch 0026: Train=0.052924, Val=0.037143, Best Val=0.037143
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 27 batch 1/5647 loss=0.051804 lr=2.21e-07
+Epoch 27 batch 2/5647 loss=0.055894 lr=2.17e-07
+Epoch 27 batch 3/5647 loss=0.042442 lr=2.14e-07
+Epoch 27 batch 4/5647 loss=0.048205 lr=2.14e-07
+Epoch 27 batch 5/5647 loss=0.056206 lr=2.09e-07
+Epoch 27 batch 25/5647 loss=0.048135 lr=1.30e-07
+Epoch 27 batch 57/5647 loss=0.040795 lr=1.01e-07
+Epoch 27 batch 76/5647 loss=0.050170 lr=5.00e-05
+Epoch 0027: Train=0.053067, Val=0.037143, Best Val=0.037143
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 28 batch 1/5647 loss=0.063250 lr=4.99e-05
+Epoch 28 batch 2/5647 loss=0.057020 lr=4.99e-05
+Epoch 28 batch 3/5647 loss=0.066857 lr=4.99e-05
+Epoch 28 batch 4/5647 loss=0.066790 lr=4.99e-05
+Epoch 28 batch 5/5647 loss=0.051924 lr=4.99e-05
+Epoch 28 batch 21/5647 loss=0.109091 lr=4.96e-05
+Epoch 0028: Train=0.065645, Val=0.141453, Best Val=0.037143
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 29 batch 1/5647 loss=0.175691 lr=4.90e-05
+Epoch 0029: Train=0.175691, Val=0.141453, Best Val=0.037143
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 30 batch 1/5647 loss=0.243217 lr=4.81e-05
+Epoch 0030: Train=0.243217, Val=0.104030, Best Val=0.037143
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Epoch 31 batch 1/5647 loss=0.112529 lr=4.69e-05
+Epoch 0031: Train=0.112529, Val=0.104030, Best Val=0.037143
+Saved checkpoint to /home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/latest_checkpoint.pth
+Warning: every batch in epoch 32 produced NaN/Inf loss; skipping epoch.
+Epoch 0032: Train=nan, Val=0.070122, Best Val=0.037143
+NaN/Inf loss detected at epoch 32, stopping training.
+
+============================================================
+Training completed!
+
+Training completed successfully!

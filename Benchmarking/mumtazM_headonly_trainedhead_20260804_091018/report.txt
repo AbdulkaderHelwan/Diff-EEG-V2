@@ -1,0 +1,19 @@
+mumtazM_headonly TRAINED-HEAD eval (frozen backbone embedding + freshly trained MLP head)
+classes: ['healthy', 'mdd']
+train n=5600  test n=1483
+
+Test accuracy 0.8287   macro-F1 0.8183   weighted-F1 0.8231
+ROC-AUC 0.9347   PR-AUC 0.9415
+
+              precision    recall  f1-score   support
+
+     healthy     0.9338    0.6621    0.7748       660
+         mdd     0.7803    0.9623    0.8618       823
+
+    accuracy                         0.8287      1483
+   macro avg     0.8570    0.8122    0.8183      1483
+weighted avg     0.8486    0.8287    0.8231      1483
+
+Confusion matrix ['healthy', 'mdd']:
+[[437 223]
+ [ 31 792]]

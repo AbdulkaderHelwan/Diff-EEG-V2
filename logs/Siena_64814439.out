@@ -1,0 +1,48 @@
+===== Siena: zero-shot (THUSZ +RL classifier, no training) =====
+Model initialized with 40,679,574 parameters
+{
+  "threshold": 0.5,
+  "accuracy": 0.3268420015760409,
+  "precision": 0.007150138342798789,
+  "recall": 0.754224270352144,
+  "specificity": 0.3240837125380412,
+  "balanced_acc": 0.5391539914450926,
+  "roc_auc": 0.6260001965409075,
+  "pr_auc": 0.016112402025562887,
+  "tp": 491,
+  "tn": 32690,
+  "fp": 68179,
+  "fn": 160
+}
+Saved results to /home/abdulh/scratch/EEGdiff_V2/Benchmarking/siena_binary/run_20260707_063342
+
+===== Siena: trained head (frozen backbone + fresh head) =====
+Device: cuda
+Classes (2): ['normal', 'seizure']
+Loading raw data...
+  train (82791, 22, 1280)  test (18729, 22, 1280)
+  normalization: THUSZ global stats
+Loading frozen backbone...
+Model initialized with 40,679,574 parameters
+Extracting embeddings...
+  embeddings: train (82791, 4800)  test (18729, 4800)
+Training head...
+  early stop @ epoch 91 (best val macroF1 0.5772)
+
+Binary (positive class = 'seizure'): ROC-AUC 0.7338  PR-AUC 0.0349
+
+Test accuracy 0.9510  macro-F1 0.5275  weighted-F1 0.9685
+              precision    recall  f1-score   support
+
+      normal     0.9948    0.9556    0.9748     18597
+     seizure     0.0462    0.3030    0.0802       132
+
+    accuracy                         0.9510     18729
+   macro avg     0.5205    0.6293    0.5275     18729
+weighted avg     0.9882    0.9510    0.9685     18729
+
+Confusion matrix ['normal', 'seizure'] 
+ [[17772   825]
+ [   92    40]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/siena_trainedhead_20260707_063623/

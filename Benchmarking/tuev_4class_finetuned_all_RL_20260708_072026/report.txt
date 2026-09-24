@@ -1,0 +1,23 @@
+tuev_4class FINETUNED+RL eval (backbone unfreeze=all + Categorical-RL head)
+classes: ['artf', 'bckg', 'epileptiform', 'eyem']
+train n=1796  test n=825
+trainable backbone params: 14,309,248
+
+Test accuracy 0.6061   macro-F1 0.4994   weighted-F1 0.6318
+
+              precision    recall  f1-score   support
+
+        artf     0.1111    0.1194    0.1151        67
+        bckg     0.3569    0.7361    0.4807       144
+epileptiform     0.9088    0.6115    0.7311       538
+        eyem     0.6064    0.7500    0.6706        76
+
+    accuracy                         0.6061       825
+   macro avg     0.4958    0.5543    0.4994       825
+weighted avg     0.7199    0.6061    0.6318       825
+
+Confusion matrix ['artf', 'bckg', 'epileptiform', 'eyem']:
+[[  8  39  12   8]
+ [  6 106  21  11]
+ [ 55 136 329  18]
+ [  3  16   0  57]]

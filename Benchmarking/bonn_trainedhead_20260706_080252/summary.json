@@ -1,0 +1,30 @@
+{
+  "dataset": "bonn",
+  "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/bonn",
+  "backbone_ckpt": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth",
+  "classes": [
+    "normal",
+    "seizure"
+  ],
+  "n_train": 400,
+  "n_test": 100,
+  "best_val_macro_f1": 1.0,
+  "test_accuracy": 0.93,
+  "test_macro_f1": 0.902656097900153,
+  "test_weighted_f1": 0.9336114587679043,
+  "roc_auc": 0.993125,
+  "pr_auc": 0.9737982676601603,
+  "config": {
+    "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/bonn",
+    "backbone_ckpt": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth",
+    "norm_stats_dir": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/normalization",
+    "out_root": "/home/abdulh/scratch/EEGdiff_V2/Benchmarking",
+    "dataset_name": "bonn",
+    "epochs": 100,
+    "patience": 15,
+    "lr": 0.001,
+    "batch_size": 256,
+    "val_frac": 0.15,
+    "seed": 42
+  }
+}

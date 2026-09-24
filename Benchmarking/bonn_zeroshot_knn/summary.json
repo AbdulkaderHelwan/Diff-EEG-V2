@@ -1,0 +1,13 @@
+{
+  "dataset": "bonn",
+  "classes": [
+    "normal",
+    "seizure"
+  ],
+  "k": 10,
+  "n_train_ref": 400,
+  "n_test": 100,
+  "balanced_accuracy": 0.65,
+  "accuracy": 0.86,
+  "roc_auc": 0.965
+}

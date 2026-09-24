@@ -1,0 +1,19 @@
+tuab5s_headonly TRAINED-HEAD eval (frozen backbone embedding + freshly trained MLP head)
+classes: ['normal', 'abnormal']
+train n=40000  test n=40000
+
+Test accuracy 0.7047   macro-F1 0.7009   weighted-F1 0.7009
+ROC-AUC 0.7710   PR-AUC 0.7619
+
+              precision    recall  f1-score   support
+
+      normal     0.6669    0.8180    0.7348     20000
+    abnormal     0.7647    0.5915    0.6670     20000
+
+    accuracy                         0.7047     40000
+   macro avg     0.7158    0.7047    0.7009     40000
+weighted avg     0.7158    0.7047    0.7009     40000
+
+Confusion matrix ['normal', 'abnormal']:
+[[16360  3640]
+ [ 8170 11830]]

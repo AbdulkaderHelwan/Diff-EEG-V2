@@ -1,0 +1,107 @@
+===== [1] 2-class, OFFICIAL subject-wise split, per-window norm, NO finetuning =====
+Device: cuda
+Classes (2): ['left_fist', 'right_fist']
+Loading raw data...
+  train (3349, 22, 1280)  test (792, 22, 1280)
+  normalization: per-window
+Loading frozen backbone...
+Model initialized with 40,679,574 parameters
+Extracting embeddings...
+  embeddings: train (3349, 4800)  test (792, 4800)
+Training head...
+  early stop @ epoch 35 (best val macroF1 0.5789)
+
+Binary (positive class = 'right_fist'): ROC-AUC 0.5857  PR-AUC 0.5864
+
+Test accuracy 0.5316  macro-F1 0.5211  weighted-F1 0.5233
+              precision    recall  f1-score   support
+
+   left_fist     0.5369    0.6593    0.5919       408
+  right_fist     0.5223    0.3958    0.4504       384
+
+    accuracy                         0.5316       792
+   macro avg     0.5296    0.5276    0.5211       792
+weighted avg     0.5299    0.5316    0.5233       792
+
+Confusion matrix ['left_fist', 'right_fist'] 
+ [[269 139]
+ [232 152]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/eegmmidb_2class_subjectwise_trainedhead_20260707_052301/
+
+===== [2] 2-class, OFFICIAL subject-wise split, per-window norm, GENTLE finetuning =====
+Device: cuda | unfreeze=last_level
+Classes (2): ['left_fist', 'right_fist']
+Loading data...
+  train (3349, 22, 1280)  test (792, 22, 1280)
+  normalization: per-window
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 7,879,680
+Training...
+  epoch   1/40 | val macroF1 0.4656
+  epoch   2/40 | val macroF1 0.4825
+  epoch   3/40 | val macroF1 0.3897
+  epoch   4/40 | val macroF1 0.4019
+  epoch   5/40 | val macroF1 0.5345
+  epoch   6/40 | val macroF1 0.3521
+  epoch   7/40 | val macroF1 0.5234
+  epoch   8/40 | val macroF1 0.5696
+  epoch   9/40 | val macroF1 0.5320
+  epoch  10/40 | val macroF1 0.4045
+  epoch  11/40 | val macroF1 0.4239
+  epoch  12/40 | val macroF1 0.5436
+  epoch  13/40 | val macroF1 0.5538
+  epoch  14/40 | val macroF1 0.5337
+  epoch  15/40 | val macroF1 0.4945
+  epoch  16/40 | val macroF1 0.3484
+  early stop @ epoch 16
+
+Test accuracy 0.5720  macro-F1 0.5720  weighted-F1 0.5719
+              precision    recall  f1-score   support
+
+   left_fist     0.5910    0.5490    0.5693       408
+  right_fist     0.5545    0.5964    0.5747       384
+
+    accuracy                         0.5720       792
+   macro avg     0.5728    0.5727    0.5720       792
+weighted avg     0.5733    0.5720    0.5719       792
+
+Confusion matrix ['left_fist', 'right_fist'] 
+ [[224 184]
+ [155 229]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/eegmmidb_2class_subjectwise_finetuned_last_level_20260707_052435/
+
+===== [3] 2-class, POOLED RANDOM split (diagnostic), per-window norm, NO finetuning =====
+Device: cuda
+Classes (2): ['left_fist', 'right_fist']
+Loading raw data...
+  train (3349, 22, 1280)  test (792, 22, 1280)
+  ** POOLED RANDOM SPLIT (diagnostic, ignores official subject-wise split) **
+  re-split -> train (3313, 22, 1280)  test (828, 22, 1280)
+  normalization: per-window
+Loading frozen backbone...
+Model initialized with 40,679,574 parameters
+Extracting embeddings...
+  embeddings: train (3313, 4800)  test (828, 4800)
+Training head...
+  early stop @ epoch 58 (best val macroF1 0.5835)
+
+Binary (positive class = 'right_fist'): ROC-AUC 0.5794  PR-AUC 0.5880
+
+Test accuracy 0.5688  macro-F1 0.5684  weighted-F1 0.5690
+              precision    recall  f1-score   support
+
+   left_fist     0.5493    0.5617    0.5554       397
+  right_fist     0.5877    0.5754    0.5815       431
+
+    accuracy                         0.5688       828
+   macro avg     0.5685    0.5686    0.5684       828
+weighted avg     0.5693    0.5688    0.5690       828
+
+Confusion matrix ['left_fist', 'right_fist'] 
+ [[223 174]
+ [183 248]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/eegmmidb_2class_pooled_diagnostic_trainedhead_20260707_052448/

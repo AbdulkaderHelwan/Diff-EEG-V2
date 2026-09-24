@@ -1,0 +1,75 @@
+===== 1/2  extract per-window diffusion loss + embeddings =====
+Reconstructing the EXACT pretraining train/held-out file split...
+  THUSZ_non_seizure: 534 files -> train 480 / held-out 54
+  CHBMIT_non_seizure: 268 files -> train 241 / held-out 27
+  TUAB_train_normal: 182 files -> train 163 / held-out 19
+  TUAB_test_normal: 20 files -> train 18 / held-out 2
+  TOTAL: train files 902 | held-out files 102
+
+Sampling 4000 windows per group (seed=42)...
+  train-member: (4000, 22, 1280)   held-out: (4000, 22, 1280)
+  OOD-bonn: (500, 22, 1280)
+  OOD-siena: (1200, 22, 1280)
+  OOD-eegmmidb: (1200, 22, 1280)
+  OOD-sleep_edfx: (1200, 22, 1280)
+  OOD-tuev: (1200, 22, 1280)
+
+Loading frozen pretrained backbone + reproducing its exact noise schedule...
+Model initialized with 40,679,574 parameters
+
+[train_member] computing diffusion loss (k=8 draws) on RAW (unnormalized) input -- the model's own training convention -- and embeddings on NORMALIZED input...
+  loss: mean 0.05153  std 0.05569  (n=4000)
+
+[held_out] computing diffusion loss (k=8 draws) on RAW (unnormalized) input -- the model's own training convention -- and embeddings on NORMALIZED input...
+  loss: mean 0.03438  std 0.03381  (n=4000)
+
+[ood_bonn] computing diffusion loss (k=8 draws) on RAW (unnormalized) input -- the model's own training convention -- and embeddings on NORMALIZED input...
+  loss: mean 0.04012  std 0.04838  (n=500)
+
+[ood_siena] computing diffusion loss (k=8 draws) on RAW (unnormalized) input -- the model's own training convention -- and embeddings on NORMALIZED input...
+  loss: mean 0.01226  std 0.00563  (n=1200)
+
+[ood_eegmmidb] computing diffusion loss (k=8 draws) on RAW (unnormalized) input -- the model's own training convention -- and embeddings on NORMALIZED input...
+  loss: mean 0.01228  std 0.00552  (n=1200)
+
+[ood_sleep_edfx] computing diffusion loss (k=8 draws) on RAW (unnormalized) input -- the model's own training convention -- and embeddings on NORMALIZED input...
+  loss: mean 0.01226  std 0.00547  (n=1200)
+
+[ood_tuev] computing diffusion loss (k=8 draws) on RAW (unnormalized) input -- the model's own training convention -- and embeddings on NORMALIZED input...
+  loss: mean 0.01215  std 0.00504  (n=1200)
+
+Saved -> /home/abdulh/scratch/EEGdiff_V2/Memorization-Analysis/stats.npz
+
+===== 2/2  analyze: generalization gap, MIA, embedding NN test =====
+Loaded 13300 windows | groups: held_out=4000, ood_bonn=500, ood_eegmmidb=1200, ood_siena=1200, ood_sleep_edfx=1200, ood_tuev=1200, train_member=4000
+
+== TEST 1: denoising generalization gap ==
+  train-member loss : 0.05153 +/- 0.05569
+  held-out     loss : 0.03438 +/- 0.03381
+  gap ratio (held-out / train): 0.6672  (1.0 = no gap)
+  Mann-Whitney p-value: 0
+  ood_bonn       loss: 0.04012  (ratio vs train: 0.779)
+  ood_eegmmidb   loss: 0.01228  (ratio vs train: 0.238)
+  ood_siena      loss: 0.01226  (ratio vs train: 0.238)
+  ood_sleep_edfx loss: 0.01226  (ratio vs train: 0.238)
+  ood_tuev       loss: 0.01215  (ratio vs train: 0.236)
+
+== TEST 2: loss-based membership inference attack ==
+  attack AUC: 0.4022  (0.5 = no leakage, 1.0 = perfect membership prediction)
+  TPR@FPR=1%:  0.0010
+  TPR@FPR=5%:  0.0240
+
+== TEST 3: embedding-space nearest-neighbor distance ==
+  train query   -> nearest train-gallery dist: 5.0001 (median 3.2066)
+  held-out query-> nearest train-gallery dist: 4.8395 (median 3.1759)
+  ratio (held-out / train): 0.9679  (1.0 = indistinguishable)
+  Mann-Whitney p-value: 0.07258
+
+Figure saved -> /home/abdulh/scratch/EEGdiff_V2/Memorization-Analysis/fig_memorization.png
+
+== VERDICT ==
+  - Generalization gap ratio 0.67 is outside [0.9, 1.15] -- inspect further.
+  - MIA AUC 0.402 is close to chance (0.5): membership is not reliably detectable.
+  - Embedding NN-distance ratio is close to 1.0: no sign of memorized point-clusters.
+
+Summary saved -> /home/abdulh/scratch/EEGdiff_V2/Memorization-Analysis/memorization_summary.json

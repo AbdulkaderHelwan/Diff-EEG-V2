@@ -1,0 +1,38 @@
+{
+  "dataset": "mumtaz_headonly",
+  "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/mumtaz2016",
+  "backbone_ckpt": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth",
+  "classes": [
+    "healthy",
+    "mdd"
+  ],
+  "n_train": 11566,
+  "n_test": 3117,
+  "best_val_macro_f1": 0.9576413324009109,
+  "test_accuracy": 0.7767083734359962,
+  "test_macro_f1": 0.7577960953206905,
+  "test_weighted_f1": 0.7645055028265796,
+  "roc_auc": 0.8323422944701405,
+  "pr_auc": 0.8111809006216177,
+  "config": {
+    "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/mumtaz2016",
+    "backbone_ckpt": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth",
+    "norm_stats_dir": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/mumtaz2016/normalization",
+    "out_root": "/home/abdulh/scratch/EEGdiff_V2/Benchmarking",
+    "dataset_name": "mumtaz_headonly",
+    "epochs": 100,
+    "patience": 15,
+    "lr": 0.001,
+    "batch_size": 256,
+    "val_frac": 0.15,
+    "seed": 42,
+    "classes": [
+      "healthy",
+      "mdd"
+    ],
+    "max_per_class": null,
+    "weight_power": 1.0,
+    "per_window_norm": false,
+    "pooled_random_split": false
+  }
+}

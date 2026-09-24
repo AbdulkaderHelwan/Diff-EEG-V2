@@ -1,0 +1,15 @@
+{
+  "dataset": "tuev4",
+  "ssl_coef": 0.3,
+  "unfreeze": "all",
+  "classes": [
+    "artf",
+    "bckg",
+    "epileptiform",
+    "eyem"
+  ],
+  "accuracy": 0.6121212121212121,
+  "macro_f1": 0.5199419682856903,
+  "weighted_f1": 0.646461348956041,
+  "best_val_macro_f1": 0.6250995674427031
+}

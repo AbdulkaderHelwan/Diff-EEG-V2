@@ -1,0 +1,46 @@
+{
+  "checkpoint": "/home/abdulh/scratch/seizure_clf_20260629_084706/best_classifier.pth",
+  "epoch": 49,
+  "best_dev_auc": 0.8766657590579711,
+  "arch": {
+    "in_channels": 22,
+    "model_channels": 64,
+    "channel_multipliers": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "num_res_blocks": 3,
+    "time_emb_dim": 768,
+    "dropout": 0.1,
+    "attention_heads": 8
+  },
+  "f1_optimal_threshold": 0.7166153788566589,
+  "splits": {
+    "val": {
+      "roc_auc": 0.8766657590579711,
+      "pr_auc": 0.37898593967869265,
+      "thr_0.5": {
+        "seizure_f1": 0.38782214407995186,
+        "report": "              precision    recall  f1-score   support\n\n      Normal     0.9780    0.8758    0.9241     92000\n     Seizure     0.2684    0.6985    0.3878      6000\n\n    accuracy                         0.8650     98000\n   macro avg     0.6232    0.7872    0.6560     98000\nweighted avg     0.9346    0.8650    0.8913     98000\n"
+      },
+      "thr_optimal": {
+        "seizure_f1": 0.43432187798955035,
+        "report": "              precision    recall  f1-score   support\n\n      Normal     0.9663    0.9496    0.9579     92000\n     Seizure     0.3889    0.4918    0.4343      6000\n\n    accuracy                         0.9216     98000\n   macro avg     0.6776    0.7207    0.6961     98000\nweighted avg     0.9309    0.9216    0.9258     98000\n"
+      }
+    },
+    "eval": {
+      "roc_auc": 0.8363346428036856,
+      "pr_auc": 0.3693258514779986,
+      "thr_0.5": {
+        "seizure_f1": 0.3552872364077919,
+        "report": "              precision    recall  f1-score   support\n\n      Normal     0.9732    0.8466    0.9055    213306\n     Seizure     0.2409    0.6762    0.3553     15361\n\n    accuracy                         0.8351    228667\n   macro avg     0.6071    0.7614    0.6304    228667\nweighted avg     0.9240    0.8351    0.8685    228667\n"
+      },
+      "thr_optimal": {
+        "seizure_f1": 0.42578532923146395,
+        "report": "              precision    recall  f1-score   support\n\n      Normal     0.9625    0.9413    0.9518    213306\n     Seizure     0.3758    0.4910    0.4258     15361\n\n    accuracy                         0.9110    228667\n   macro avg     0.6692    0.7162    0.6888    228667\nweighted avg     0.9231    0.9110    0.9164    228667\n"
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+########## TUAB 5s ##########
+train/normal: 1371 recordings -> split 'train'
+  train/normal: 200/1371 done (22/22 ch, missing [])
+  train/normal: 400/1371 done (22/22 ch, missing [])
+  train/normal: 600/1371 done (22/22 ch, missing [])
+  train/normal: 800/1371 done (22/22 ch, missing [])
+  train/normal: 1000/1371 done (22/22 ch, missing [])
+  train/normal: 1200/1371 done (22/22 ch, missing [])
+train/abnormal: 1346 recordings -> split 'train'
+  train/abnormal: 200/1346 done (22/22 ch, missing [])
+  train/abnormal: 400/1346 done (22/22 ch, missing [])
+  train/abnormal: 600/1346 done (22/22 ch, missing [])
+  train/abnormal: 800/1346 done (21/22 ch, missing ['ROC'])
+  train/abnormal: 1000/1346 done (22/22 ch, missing [])
+  train/abnormal: 1200/1346 done (22/22 ch, missing [])
+eval/normal: 150 recordings -> split 'test'
+eval/abnormal: 126 recordings -> split 'test'
+
+Window counts:
+  test-abnormal :   34134
+  test-normal   :   39876
+  train-abnormal :  378216
+  train-normal   :  368079
+Normalization -> /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/tuab_5s/normalization  mean[:3]=[-5.e-07 -2.e-07 -6.e-07] std[:3]=[0.0001768 0.0001524 0.0001692]
+Saved -> /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/tuab_5s/
+########## TUAB 10s ##########
+train/normal: 1371 recordings -> split 'train'
+  train/normal: 200/1371 done (22/22 ch, missing [])
+  train/normal: 400/1371 done (22/22 ch, missing [])
+  train/normal: 600/1371 done (22/22 ch, missing [])
+  train/normal: 800/1371 done (22/22 ch, missing [])
+  train/normal: 1000/1371 done (22/22 ch, missing [])
+  train/normal: 1200/1371 done (22/22 ch, missing [])
+train/abnormal: 1346 recordings -> split 'train'
+  train/abnormal: 200/1346 done (22/22 ch, missing [])
+  train/abnormal: 400/1346 done (22/22 ch, missing [])
+  train/abnormal: 600/1346 done (22/22 ch, missing [])
+  train/abnormal: 800/1346 done (21/22 ch, missing ['ROC'])
+  train/abnormal: 1000/1346 done (22/22 ch, missing [])
+  train/abnormal: 1200/1346 done (22/22 ch, missing [])
+eval/normal: 150 recordings -> split 'test'
+eval/abnormal: 126 recordings -> split 'test'
+
+Window counts:
+  test-abnormal :   17038
+  test-normal   :   19907
+  train-abnormal :  188801
+  train-normal   :  183709
+Normalization -> /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/tuab_10s/normalization  mean[:3]=[-5.e-07 -2.e-07 -6.e-07] std[:3]=[0.0001768 0.0001523 0.0001692]
+Saved -> /scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/tuab_10s/
+===== TUAB 5s + 10s PROCESSING DONE =====

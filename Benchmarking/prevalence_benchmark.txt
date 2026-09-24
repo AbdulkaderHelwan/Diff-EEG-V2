@@ -1,0 +1,19 @@
+PREVALENCE-MATCHED BENCHMARKING (THUSZ seizure, frozen probes reused)
+Reference: BioSerenity-E1 (TUH-Seizure) -> AUROC 0.926, AUPRC 0.83 (at 29% prevalence)
+
+[FROZEN]  (natural prevalence 6.72%)
+  prev=6.72% | n=228,667 | AUROC 0.8363+/-0.0000 | AUPRC 0.3693+/-0.0000 (baseline 0.067)
+        @0.5: seizureF1 0.355  wF1 0.869  sens 0.676  spec 0.847  bAcc 0.761
+  prev=29.00% | n= 52,969 | AUROC 0.8363+/-0.0008 | AUPRC 0.7119+/-0.0023 (baseline 0.290)
+        @0.5: seizureF1 0.659  wF1 0.799  sens 0.676  spec 0.846  bAcc 0.761
+  prev=49.00% | n= 31,349 | AUROC 0.8362+/-0.0014 | AUPRC 0.8375+/-0.0020 (baseline 0.490)
+        @0.5: seizureF1 0.737  wF1 0.761  sens 0.676  spec 0.846  bAcc 0.761
+
+[UNFROZEN]  (natural prevalence 6.72%)
+  prev=6.72% | n=228,667 | AUROC 0.8407+/-0.0000 | AUPRC 0.4837+/-0.0000 (baseline 0.067)
+        @0.5: seizureF1 0.473  wF1 0.921  sens 0.572  spec 0.939  bAcc 0.756
+  prev=29.00% | n= 52,969 | AUROC 0.8407+/-0.0007 | AUPRC 0.7615+/-0.0016 (baseline 0.290)
+        @0.5: seizureF1 0.665  wF1 0.824  sens 0.572  spec 0.939  bAcc 0.756
+  prev=49.00% | n= 31,349 | AUROC 0.8406+/-0.0011 | AUPRC 0.8618+/-0.0015 (baseline 0.490)
+        @0.5: seizureF1 0.700  wF1 0.750  sens 0.572  spec 0.939  bAcc 0.756
+

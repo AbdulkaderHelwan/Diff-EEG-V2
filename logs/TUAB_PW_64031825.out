@@ -1,0 +1,61 @@
+Device: cuda
+======================================================================
+INDEXING TRAIN (lazy / memory-mapped)
+======================================================================
+======================================================================
+INDEXING TEST
+======================================================================
+
+✓ Train 698,643 | Val 36,771 | Test 72,291
+  Train class balance: normal=345,358 abnormal=353,285
+Outputs -> tuab_clf_20260625_075423/
+
+======================================================================
+EXPERIMENT: head_only  (n_down=0, stem=False)
+======================================================================
+Model initialized with 40,679,574 parameters
+  ✓ Backbone checkpoint loaded
+  Unfrozen backbone params: 0
+  Epoch   1 | tr_loss 0.6328 acc 0.667 | val F2:0.7244 F1:0.7061 Acc:0.6897 Rec:0.7372 Prec:0.6776 Spec:0.6411 ROC:0.7613 PR:0.7707
+  Epoch   2 | tr_loss 0.5940 acc 0.698 | val F2:0.7481 F1:0.7034 Acc:0.6669 Rec:0.7811 Prec:0.6398 Spec:0.5501 ROC:0.7557 PR:0.7812
+  Epoch   3 | tr_loss 0.5824 acc 0.707 | val F2:0.7945 F1:0.7194 Acc:0.6633 Rec:0.8538 Prec:0.6216 Spec:0.4683 ROC:0.7827 PR:0.7925
+  Epoch   4 | tr_loss 0.5866 acc 0.714 | val F2:0.7573 F1:0.7281 Acc:0.7061 Rec:0.7781 Prec:0.6841 Spec:0.6324 ROC:0.7917 PR:0.8039
+  Epoch   5 | tr_loss 0.5818 acc 0.721 | val F2:0.5458 F1:0.6298 Acc:0.7020 Rec:0.5012 Prec:0.8469 Spec:0.9073 ROC:0.7934 PR:0.8058
+  Epoch   6 | tr_loss 0.5733 acc 0.726 | val F2:0.7159 F1:0.7282 Acc:0.7328 Rec:0.7080 Prec:0.7497 Spec:0.7582 ROC:0.8028 PR:0.8132
+  Epoch   7 | tr_loss 0.5695 acc 0.731 | val F2:0.6830 F1:0.7179 Acc:0.7371 Rec:0.6616 Prec:0.7847 Spec:0.8143 ROC:0.8067 PR:0.8214
+  Epoch   8 | tr_loss 0.5616 acc 0.735 | val F2:0.8043 F1:0.7244 Acc:0.6659 Rec:0.8681 Prec:0.6215 Spec:0.4592 ROC:0.7950 PR:0.8089
+  Epoch   9 | tr_loss 0.5565 acc 0.739 | val F2:0.7639 F1:0.7457 Acc:0.7321 Rec:0.7765 Prec:0.7171 Spec:0.6867 ROC:0.8152 PR:0.8303
+  Epoch  10 | tr_loss 0.5483 acc 0.741 | val F2:0.7844 F1:0.7447 Acc:0.7180 Rec:0.8134 Prec:0.6867 Spec:0.6205 ROC:0.8105 PR:0.8262
+  Epoch  11 | tr_loss 0.5426 acc 0.744 | val F2:0.6225 F1:0.6924 Acc:0.7380 Rec:0.5833 Prec:0.8519 Spec:0.8962 ROC:0.8252 PR:0.8377
+  Epoch  12 | tr_loss 0.5401 acc 0.746 | val F2:0.6539 F1:0.7086 Acc:0.7413 Rec:0.6220 Prec:0.8231 Spec:0.8633 ROC:0.8192 PR:0.8314
+  Epoch  13 | tr_loss 0.5325 acc 0.749 | val F2:0.7849 F1:0.7536 Acc:0.7330 Rec:0.8074 Prec:0.7065 Spec:0.6569 ROC:0.8222 PR:0.8325
+  Epoch  14 | tr_loss 0.5276 acc 0.750 | val F2:0.7495 F1:0.7551 Acc:0.7554 Rec:0.7458 Prec:0.7646 Spec:0.7651 ROC:0.8329 PR:0.8459
+  Epoch  15 | tr_loss 0.5229 acc 0.752 | val F2:0.7185 F1:0.7474 Acc:0.7605 Rec:0.7005 Prec:0.8009 Spec:0.8219 ROC:0.8338 PR:0.8544
+  Epoch  16 | tr_loss 0.5173 acc 0.754 | val F2:0.6993 F1:0.7374 Acc:0.7566 Rec:0.6760 Prec:0.8112 Spec:0.8391 ROC:0.8307 PR:0.8479
+  Early stopping at epoch 16
+
+  >>> head_only TEST @0.5  : F2:0.7800 F1:0.6898 Acc:0.6453 Rec:0.8545 Prec:0.5783 Spec:0.4660 ROC:0.7758 PR:0.7557
+  >>> head_only TEST @0.05 : F2:0.8101 F1:0.6312 Acc:0.4614 Rec:0.9988 Prec:0.4614 Spec:0.0009 ROC:0.7758 PR:0.7557
+
+======================================================================
+EXPERIMENT: unfreeze_1  (n_down=1, stem=False)
+======================================================================
+Model initialized with 40,679,574 parameters
+  ✓ Backbone checkpoint loaded
+  Unfrozen backbone params: 7,879,680
+  Epoch   1 | tr_loss 0.5064 acc 0.759 | val F2:0.7719 F1:0.7935 Acc:0.8004 Rec:0.7581 Prec:0.8323 Spec:0.8437 ROC:0.8750 PR:0.8861
+  Epoch   2 | tr_loss 0.4043 acc 0.820 | val F2:0.8058 F1:0.8292 Acc:0.8353 Rec:0.7908 Prec:0.8716 Spec:0.8808 ROC:0.9112 PR:0.9248
+  Epoch   3 | tr_loss 0.3578 acc 0.844 | val F2:0.7821 F1:0.8291 Acc:0.8429 Rec:0.7536 Prec:0.9214 Spec:0.9342 ROC:0.9262 PR:0.9368
+  Epoch   4 | tr_loss 0.3335 acc 0.858 | val F2:0.7433 F1:0.8098 Acc:0.8326 Rec:0.7047 Prec:0.9518 Spec:0.9635 ROC:0.9328 PR:0.9425
+  Epoch   5 | tr_loss 0.2930 acc 0.874 | val F2:0.8286 F1:0.8608 Acc:0.8678 Rec:0.8085 Prec:0.9204 Spec:0.9284 ROC:0.9452 PR:0.9527
+  Epoch   6 | tr_loss 0.2589 acc 0.889 | val F2:0.8836 F1:0.8779 Acc:0.8752 Rec:0.8875 Prec:0.8686 Spec:0.8626 ROC:0.9531 PR:0.9600
+  Epoch   7 | tr_loss 0.2283 acc 0.903 | val F2:0.8839 F1:0.8872 Acc:0.8866 Rec:0.8817 Prec:0.8928 Spec:0.8917 ROC:0.9586 PR:0.9643
+  Epoch   8 | tr_loss 0.2026 acc 0.916 | val F2:0.8693 F1:0.8888 Acc:0.8915 Rec:0.8568 Prec:0.9232 Spec:0.9271 ROC:0.9623 PR:0.9671
+  Epoch   9 | tr_loss 0.1755 acc 0.927 | val F2:0.8786 F1:0.8926 Acc:0.8942 Rec:0.8695 Prec:0.9170 Spec:0.9195 ROC:0.9617 PR:0.9667
+  Epoch  10 | tr_loss 0.1515 acc 0.938 | val F2:0.9038 F1:0.8967 Acc:0.8942 Rec:0.9085 Prec:0.8852 Spec:0.8795 ROC:0.9635 PR:0.9683
+  Epoch  11 | tr_loss 0.1316 acc 0.947 | val F2:0.9130 F1:0.8987 Acc:0.8948 Rec:0.9229 Prec:0.8757 Spec:0.8660 ROC:0.9655 PR:0.9700
+  Epoch  12 | tr_loss 0.1113 acc 0.955 | val F2:0.8924 F1:0.8985 Acc:0.8985 Rec:0.8884 Prec:0.9087 Spec:0.9087 ROC:0.9651 PR:0.9698
+  Epoch  13 | tr_loss 0.0928 acc 0.963 | val F2:0.8717 F1:0.8958 Acc:0.8993 Rec:0.8563 Prec:0.9391 Spec:0.9432 ROC:0.9669 PR:0.9709
+  Epoch  14 | tr_loss 0.0779 acc 0.969 | val F2:0.9074 F1:0.8994 Acc:0.8967 Rec:0.9129 Prec:0.8863 Spec:0.8802 ROC:0.9656 PR:0.9706
+  Epoch  15 | tr_loss 0.0648 acc 0.975 | val F2:0.8884 F1:0.9023 Acc:0.9038 Rec:0.8794 Prec:0.9266 Spec:0.9287 ROC:0.9674 PR:0.9716
+  Epoch  16 | tr_loss 0.0534 acc 0.979 | val F2:0.8390 F1:0.8808 Acc:0.8887 Rec:0.8133 Prec:0.9606 Spec:0.9659 ROC:0.9672 PR:0.9715

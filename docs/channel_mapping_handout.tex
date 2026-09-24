@@ -1,0 +1,294 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{codebg}{RGB}{247,247,249}
+\definecolor{kw}{RGB}{0,90,160}
+\definecolor{cmt}{RGB}{110,120,110}
+\definecolor{str}{RGB}{160,60,60}
+
+\lstset{
+  language=Python,
+  backgroundcolor=\color{codebg},
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{kw}\bfseries,
+  commentstyle=\color{cmt}\itshape,
+  stringstyle=\color{str},
+  numbers=none, frame=single, framesep=5pt, rulecolor=\color{gray!40},
+  breaklines=true, showstringspaces=false, columns=fullflexible,
+  xleftmargin=6pt, xrightmargin=6pt, aboveskip=8pt, belowskip=8pt,
+}
+
+\newtcolorbox{keybox}[1]{colback=blue!4,colframe=blue!45,title={#1},
+  fonttitle=\bfseries,boxrule=0.6pt,arc=2pt}
+
+\title{\vspace{-1.5cm}\textbf{How We Mapped Every EEG Dataset to 22 Channels}\\[2pt]
+\large A Student Guide to the DiffEEG Data Pipeline}
+\author{EEGdiff\_V2 project}
+\date{\today}
+
+\begin{document}
+\maketitle
+\vspace{-0.6cm}
+
+% ------------------------------------------------------------------
+\section{The problem in one sentence}
+Our model was born speaking \textbf{one exact ``language''}: every EEG clip it
+reads must be \textbf{22 channels $\times$ 1280 numbers, at 256\,Hz (5 seconds)},
+with the 22 electrodes always in the \textbf{same order}. Every public dataset
+speaks a \emph{different} language --- different electrode count, names, order,
+and sampling rate. \emph{Processing} means translating each dataset into the
+model's one language.
+
+% ------------------------------------------------------------------
+\section{The 22-channel ``frame'' (the key idea)}
+Picture a \textbf{muffin tin with 22 labeled cups}, in a fixed order:
+\begin{center}\ttfamily\small
+FP1 FP2 F3 F4 C3 C4 P3 P4 O1 O2 F7 F8 T3 T4 T5 T6 A1 A2 FZ CZ PZ ROC
+\end{center}
+The model learned ``cup \#13 is always T3.'' For any new dataset we must drop
+each electrode into the \textbf{correct cup}. If an electrode is missing, we
+leave that cup \textbf{empty (all zeros)}. If we put an electrode in the
+\emph{wrong} cup, there is \textbf{no error message} --- the model just silently
+produces bad results. That is why the \emph{order} matters as much as the names.
+
+% ------------------------------------------------------------------
+\section{The universal 4-step recipe}
+Almost every dataset goes through the same four steps
+(\texttt{dataset\_tools/prepare\_external\_eeg.py}).
+
+\paragraph{Step A --- clean the electrode name} so that \texttt{"EEG T7-REF"}
+and \texttt{"t7"} both become \texttt{"T7"}:
+\begin{lstlisting}
+def canonical_channel(name):
+    cleaned = re.sub(r"[^A-Za-z0-9]", "", name.upper())  # drop spaces/dashes
+    cleaned = cleaned.replace("EEG", "")                 # drop the "EEG" prefix
+    return ALIASES.get(cleaned, cleaned)                 # apply the alias table
+\end{lstlisting}
+
+\paragraph{Step B --- the alias table} because different labs use different
+names for the \emph{same} spot on the head:
+\begin{lstlisting}
+TARGET_CHANNELS = ["FP1","FP2","F3","F4","C3","C4","P3","P4","O1","O2","F7",
+                   "F8","T3","T4","T5","T6","A1","A2","FZ","CZ","PZ","ROC"]
+ALIASES = {
+    "T7":"T3", "T8":"T4", "P7":"T5", "P8":"T6",   # modern name -> old name
+    "TP9":"A1", "TP10":"A2", "FPZ":"FP1",
+    "FPZCZ":"FZ", "PZOZ":"PZ",                     # sleep-EDF's bipolar pairs
+}
+\end{lstlisting}
+
+\paragraph{Step C --- place into the 22 cups, zero-fill the rest.} This is the
+actual ``mapping'':
+\begin{lstlisting}
+def project_channels(data, names):
+    out = np.zeros((22, data.shape[1]), dtype=np.float32)   # start all-zero
+    present = {}
+    for i, name in enumerate(names):
+        c = canonical_channel(name)
+        if c in TARGET_CHANNELS and c not in present:
+            present[c] = i                                  # this electrode is cup c
+    for j, target in enumerate(TARGET_CHANNELS):
+        if target in present:
+            out[j] = data[present[target]]                  # copy signal into its cup
+    return out, sorted(set(TARGET_CHANNELS) - set(present)) # + list of empty cups
+\end{lstlisting}
+
+\paragraph{Step D --- resample to 256\,Hz and cut into 5-second windows:}
+\begin{lstlisting}
+def resample_full(data, sfreq, target_sfreq):     # e.g. 512 Hz -> 256 Hz
+    up, down = int(target_sfreq), int(round(sfreq))
+    return resample_poly(data, up, down, axis=-1)
+# then slide a 1280-sample window across the recording
+\end{lstlisting}
+
+That is the whole trick. Below is what was \textbf{special} for each dataset.
+
+% ------------------------------------------------------------------
+\section{The processing script for every dataset}
+
+\subsection*{TUSZ \& TUAB --- the ``home'' datasets (exact-name match)}
+These use the same clinical montage the model was trained on, so the names
+already match (\texttt{EEG FP1-REF} $\rightarrow$ \texttt{FP1}) --- no aliases,
+just extract the 22 by name, resample $250\!\rightarrow\!256$\,Hz, and window.
+(Processed by a collaborator; the recipe is recorded in
+\texttt{TUAB/processed\_tuab/tuab\_processing\_report.json}.)
+\textbf{Result: 22/22 cups filled.}
+
+\subsection*{Bonn --- only one electrode exists}
+Bonn is a text file with a \textbf{single} signal (no electrode name), 173.61\,Hz.
+We put it in cup \#1 (FP1) and leave the other 21 empty.
+\begin{lstlisting}
+def prepare_bonn(raw_root, writer, args):
+    for txt in txt_files:
+        label = "seizure" if stem.startswith("S") else "normal"
+        data = np.loadtxt(txt)[None, :]                      # one channel
+        data = resample_to_target(data, 173.61, 256, ...)    # -> 256 Hz
+        framed = np.zeros((22, data.shape[1]))               # 22 empty cups
+        framed[0] = data[0]                                  # put signal in FP1
+        writer.add(split_name(stem), label, framed)
+\end{lstlisting}
+\textbf{Result: 1/22 cups filled.}
+
+\subsection*{EEGMMIDB (motor imagery) --- 64 electrodes, keep 19}
+A 64-electrode cap, 160\,Hz. The alias table maps 19 of them onto our frame;
+the 3 clinical channels it lacks (A1, A2, ROC) stay empty. Labels come from the
+EDF \emph{annotations} (T1 = left fist, T2 = right fist).
+\begin{lstlisting}
+def prepare_eegmmidb(raw_root, writer, args):
+    for edf in ...:
+        spans = [(onset, onset+dur, t1_or_t2_label) for each annotation]
+        window_edf(edf, writer, "eegmmidb", subject, spans, "rest", args)
+        # window_edf does: project_channels -> resample_full -> slide window,
+        # tagging each window by which annotation its center falls in
+\end{lstlisting}
+\textbf{Result: 19/22 cups filled.}
+
+\subsection*{TUEV (event types) --- same montage, but tiny event labels}
+Channel mapping is the same \texttt{project\_channels}. The special part is
+\emph{windowing}, and the confusing bit is worth stating clearly.
+
+\begin{keybox}{The problem: it is the \emph{labels} that are 1 second, not the input}
+The EEG \textbf{recordings} are long and normal (e.g.\ 10 minutes). What is short
+is the \textbf{labels}: TUEV annotates the data in tiny \textbf{1-second,
+per-channel} chunks. Each \texttt{.rec} line is
+\texttt{channel, start\_sec, stop\_sec, label} --- e.g.\
+\texttt{14, 1.4, 2.4, 5} means ``on channel 14, seconds 1.4--2.4, label 5
+(artifact).'' So ``1 second'' is the \emph{granularity of the annotations}, not
+the size of the input we feed the model (which is still 5\,s).
+\end{keybox}
+
+\noindent\textbf{Why that breaks the naive approach.} Our model eats
+\textbf{5-second} windows.
+\begin{itemize}[nosep,leftmargin=1.4em]
+  \item \textbf{TUSZ / TUAB} label \emph{continuously} --- a whole recording (or
+  a long span) is ``seizure''/``normal.'' So you chop it into a fixed grid
+  (0--5\,s, 5--10\,s, \dots) and every window inherits a clear label. Easy.
+  \item \textbf{TUEV} labels are \emph{sparse 1-second events} scattered through
+  a 10-minute recording. Tile that same fixed 5-second grid and ask ``is there an
+  event at this window's center?'' --- the little 1-second markers almost never
+  line up with the grid cells, so you throw away $\sim$98\% of windows.
+\end{itemize}
+
+\noindent\textbf{The fix (event-driven windowing).} Instead of a fixed grid, take
+each event and grab the \textbf{5 seconds centered on it}, labeling that window
+with the event. Every labeled event then becomes exactly one usable 5-second
+training window. (Because TUEV annotates \emph{per channel}, the same event
+appears on several channels at once, so we first run \texttt{merge\_events} to
+collapse those per-channel 1-second markers into single spans.)
+\begin{lstlisting}
+def extract_event_windows(events, total_sec, window_sec):
+    spans = merge_events(events)                 # join touching same-label events
+    for s0, s1, lab in spans:
+        if (s1 - s0) <= window_sec:
+            start = center the window on the event   # event-driven, not a grid
+    ...
+# then: projected, missing = project_channels(data, raw.ch_names)  # same 22 cups
+\end{lstlisting}
+\textbf{Result: 22/22 cups (with per-session exceptions).}
+
+\subsection*{Sleep-EDFx --- only 2 bipolar channels}
+The hardest case: only \textbf{2} EEG channels, both \emph{bipolar pairs}
+(\texttt{Fpz-Cz}, \texttt{Pz-Oz}) that match nothing in a normal montage. The two
+aliases \texttt{FPZCZ$\rightarrow$FZ} and \texttt{PZOZ$\rightarrow$PZ} rescue it
+--- without them, \emph{all 22 cups end up empty} (which happened once and
+produced garbage until we caught it). Sleep-stage labels come from a separate
+Hypnogram file, paired by shared filename prefix.
+\begin{lstlisting}
+def prepare_sleep_edfx(raw_root, writer, args):
+    for psg in psgs:
+        hyp = next(psg.parent.glob(psg.name[:7] + "*Hypnogram.edf"), None)  # pair
+        spans = [(onset, onset+dur, sleep_stage) for each annotation]
+        window_edf(psg, writer, "sleep_edfx", subject, spans, "sleep", args)
+        # project_channels maps Fpz-Cz -> FZ, Pz-Oz -> PZ, the rest stay zero
+\end{lstlisting}
+\textbf{Result: 2/22 cups filled.}
+
+% ------------------------------------------------------------------
+\section{Siena --- the special case (processed by Yehya)}
+Siena is different from all the others: it was \textbf{not} run through our
+pipeline. Our collaborator \textbf{Yehya} had already processed it, and his
+output \emph{already matched our model's spec}: 22 channels, in the right order,
+at 256\,Hz, in 1280-sample (5\,s) windows. So there was \textbf{no channel
+mapping and no resampling to do}. Our script
+\texttt{dataset\_tools/convert\_siena\_npz.py} only re-packages his \texttt{.npz}
+files into our folder layout, with a clean \emph{patient-wise} train/test split.
+\begin{lstlisting}
+for patient, recs in by_patient.items():
+    split = "test" if patient in test_patients else "train"   # no patient in both
+    for f in recs:
+        d = np.load(f); X, Y = d["signals"], d["labels"]
+        for x, y in zip(X, Y):
+            label = "seizure" if y == 1 else "normal"
+            buffers[(split, label)].append(x)                 # x is already 22x1280
+\end{lstlisting}
+
+\begin{keybox}{Did we change the volts? (short answer: no)}
+Yehya's Siena data is stored in \textbf{volts}, so the numbers are tiny
+(standard deviation $\approx 2\times10^{-4}$). Our model was trained on a
+different scale (standard deviation $\approx 230$, about a \textbf{million times
+bigger}). \textbf{We did \emph{not} rescale or convert the volts} --- we kept
+Yehya's raw values exactly as they were.
+
+The fix happens at \textbf{normalization time}. Before the model sees a signal
+we always z-score it: $\;x_{\text{norm}} = (x - \text{mean}) / \text{std}$. The
+trick is \emph{which} mean and std we use:
+\begin{itemize}[nosep,leftmargin=1.4em]
+  \item \textbf{What we do (correct):} use \textbf{Siena's own} mean/std, which
+  are also in volts ($\text{std}\approx 2\times10^{-4}$). Dividing volts by a
+  volts-scale std cancels the unit and gives a clean signal with
+  $\text{std}\approx 1$ --- exactly what the model expects.
+  \item \textbf{What would break it (the bug we avoided):} using \emph{THUSZ's}
+  microvolt-scale std ($\approx 230$) on Siena's volt data would give
+  $2\times10^{-4}/230 \approx 10^{-6}$ --- an essentially flat, dead signal, and
+  the model would predict garbage.
+\end{itemize}
+\textbf{In one line:} we did not touch the volts; we just normalized Siena with
+\emph{its own} statistics, which makes the physical unit irrelevant. When running
+any eval/finetune script on Siena, point \texttt{-{}-norm-stats-dir} at
+\texttt{Siena/processed\_siena/normalization} (Yehya's stats), \emph{never} at
+the THUSZ normalization folder.
+\end{keybox}
+
+\textbf{Result: 19/22 cups filled} (A1, A2, ROC are absent in Siena's montage).
+
+% ------------------------------------------------------------------
+\section{Summary}
+\begin{center}
+\small
+\begin{tabular}{@{}llcl@{}}
+\toprule
+Dataset & Special handling & Cups filled & Script \\
+\midrule
+TUSZ / TUAB & exact-name match & 22/22 & collaborator's (see report) \\
+Bonn        & single trace $\rightarrow$ FP1 & 1/22 & \texttt{prepare\_bonn} \\
+EEGMMIDB    & alias 19; labels from annotations & 19/22 & \texttt{prepare\_eegmmidb} \\
+Siena       & re-package; keep volts, use own stats & 19/22 & \texttt{convert\_siena\_npz.py} \\
+TUEV        & event-centered windows & 22/22 & \texttt{prepare\_tuev.py} \\
+Sleep-EDFx  & bipolar $\rightarrow$ midline aliases & 2/22 & \texttt{prepare\_sleep\_edfx} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent\textbf{The three golden rules to remember:}
+\begin{enumerate}[nosep,leftmargin=1.5em]
+  \item \textbf{Order matters as much as names.} A right-set-wrong-order montage
+  fails silently.
+  \item \textbf{Normalize with each dataset's own statistics.} That is what makes
+  Siena's volts (or any scale) work without touching the raw numbers.
+  \item \textbf{Split so the test set is genuinely unseen ---
+  and so it matches whatever you compare against.} Patient-wise for clinical
+  datasets (Siena, TUSZ); subject-wise for EEGMMIDB. A random window split leaks
+  the same person --- and often the same recording --- into both sides and
+  inflates the result.
+\end{enumerate}
+
+\end{document}

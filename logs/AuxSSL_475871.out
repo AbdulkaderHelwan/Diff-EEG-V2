@@ -1,0 +1,178 @@
+
+############## aux-SSL fine-tune: ssl_coef=0.0 ##############
+Device: cuda | unfreeze=all | ssl_coef=0.0
+Classes (4): ['artf', 'bckg', 'epileptiform', 'eyem']
+  train (1796, 22, 1280)  test (825, 22, 1280)
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 14,309,248
+Training...
+  epoch   1/40 | CE 1.3977 | SSL 0.0000 | val macroF1 0.2985
+  epoch   2/40 | CE 1.3122 | SSL 0.0000 | val macroF1 0.3127
+  epoch   3/40 | CE 1.2874 | SSL 0.0000 | val macroF1 0.2563
+  epoch   4/40 | CE 1.1712 | SSL 0.0000 | val macroF1 0.4291
+  epoch   5/40 | CE 1.0288 | SSL 0.0000 | val macroF1 0.4559
+  epoch   6/40 | CE 0.9427 | SSL 0.0000 | val macroF1 0.5050
+  epoch   7/40 | CE 0.8873 | SSL 0.0000 | val macroF1 0.4773
+  epoch   8/40 | CE 0.8521 | SSL 0.0000 | val macroF1 0.5494
+  epoch   9/40 | CE 0.7977 | SSL 0.0000 | val macroF1 0.6025
+  epoch  10/40 | CE 0.8101 | SSL 0.0000 | val macroF1 0.4575
+  epoch  11/40 | CE 0.7990 | SSL 0.0000 | val macroF1 0.5760
+  epoch  12/40 | CE 0.7462 | SSL 0.0000 | val macroF1 0.6027
+  epoch  13/40 | CE 0.7612 | SSL 0.0000 | val macroF1 0.5692
+  epoch  14/40 | CE 0.7376 | SSL 0.0000 | val macroF1 0.6138
+  epoch  15/40 | CE 0.7176 | SSL 0.0000 | val macroF1 0.6131
+  epoch  16/40 | CE 0.6671 | SSL 0.0000 | val macroF1 0.6088
+  epoch  17/40 | CE 0.6471 | SSL 0.0000 | val macroF1 0.5710
+  epoch  18/40 | CE 0.6684 | SSL 0.0000 | val macroF1 0.5843
+  epoch  19/40 | CE 0.6188 | SSL 0.0000 | val macroF1 0.5743
+  epoch  20/40 | CE 0.6336 | SSL 0.0000 | val macroF1 0.5891
+  epoch  21/40 | CE 0.5988 | SSL 0.0000 | val macroF1 0.5823
+  epoch  22/40 | CE 0.5618 | SSL 0.0000 | val macroF1 0.5731
+  epoch  23/40 | CE 0.5367 | SSL 0.0000 | val macroF1 0.5907
+  epoch  24/40 | CE 0.5049 | SSL 0.0000 | val macroF1 0.5885
+  early stop @ epoch 24
+
+[ssl_coef=0.0] Test accuracy 0.6279  macro-F1 0.5302  weighted-F1 0.6509
+              precision    recall  f1-score   support
+
+        artf     0.1831    0.1940    0.1884        67
+        bckg     0.3547    0.6528    0.4597       144
+epileptiform     0.8943    0.6450    0.7495       538
+        eyem     0.6337    0.8421    0.7232        76
+
+    accuracy                         0.6279       825
+   macro avg     0.5165    0.5835    0.5302       825
+weighted avg     0.7184    0.6279    0.6509       825
+
+Confusion matrix ['artf', 'bckg', 'epileptiform', 'eyem'] 
+ [[ 13  33  13   8]
+ [ 11  94  27  12]
+ [ 43 131 347  17]
+ [  4   7   1  64]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/tuev4_auxssl_0.0_20260808_063817
+
+############## aux-SSL fine-tune: ssl_coef=0.1 ##############
+Device: cuda | unfreeze=all | ssl_coef=0.1
+Classes (4): ['artf', 'bckg', 'epileptiform', 'eyem']
+  train (1796, 22, 1280)  test (825, 22, 1280)
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 14,309,248
+Training...
+  epoch   1/40 | CE 1.4167 | SSL 0.0760 | val macroF1 0.3204
+  epoch   2/40 | CE 1.3199 | SSL 0.0676 | val macroF1 0.2287
+  epoch   3/40 | CE 1.2870 | SSL 0.0659 | val macroF1 0.1955
+  epoch   4/40 | CE 1.2083 | SSL 0.0688 | val macroF1 0.3362
+  epoch   5/40 | CE 1.1244 | SSL 0.0790 | val macroF1 0.3381
+  epoch   6/40 | CE 1.0419 | SSL 0.0777 | val macroF1 0.3377
+  epoch   7/40 | CE 1.0194 | SSL 0.0749 | val macroF1 0.4704
+  epoch   8/40 | CE 0.9667 | SSL 0.0721 | val macroF1 0.4045
+  epoch   9/40 | CE 0.9487 | SSL 0.0709 | val macroF1 0.5124
+  epoch  10/40 | CE 0.8993 | SSL 0.0722 | val macroF1 0.4702
+  epoch  11/40 | CE 0.8629 | SSL 0.0693 | val macroF1 0.5602
+  epoch  12/40 | CE 0.8661 | SSL 0.0736 | val macroF1 0.4875
+  epoch  13/40 | CE 0.8364 | SSL 0.0810 | val macroF1 0.4987
+  epoch  14/40 | CE 0.8554 | SSL 0.0739 | val macroF1 0.4433
+  epoch  15/40 | CE 0.8194 | SSL 0.0661 | val macroF1 0.5047
+  epoch  16/40 | CE 0.8167 | SSL 0.0723 | val macroF1 0.4473
+  epoch  17/40 | CE 0.7814 | SSL 0.0782 | val macroF1 0.5049
+  epoch  18/40 | CE 0.7905 | SSL 0.0711 | val macroF1 0.5142
+  epoch  19/40 | CE 0.7938 | SSL 0.0775 | val macroF1 0.5207
+  epoch  20/40 | CE 0.7657 | SSL 0.0729 | val macroF1 0.5808
+  epoch  21/40 | CE 0.7793 | SSL 0.0738 | val macroF1 0.4718
+  epoch  22/40 | CE 0.7802 | SSL 0.0763 | val macroF1 0.5422
+  epoch  23/40 | CE 0.7828 | SSL 0.0779 | val macroF1 0.5203
+  epoch  24/40 | CE 0.7942 | SSL 0.0767 | val macroF1 0.5164
+  epoch  25/40 | CE 0.7843 | SSL 0.0728 | val macroF1 0.5483
+  epoch  26/40 | CE 0.7962 | SSL 0.0735 | val macroF1 0.5276
+  epoch  27/40 | CE 0.7810 | SSL 0.0708 | val macroF1 0.5341
+  epoch  28/40 | CE 0.7939 | SSL 0.0757 | val macroF1 0.5209
+  epoch  29/40 | CE 0.7732 | SSL 0.0769 | val macroF1 0.4983
+  epoch  30/40 | CE 0.7583 | SSL 0.0705 | val macroF1 0.5367
+  early stop @ epoch 30
+
+[ssl_coef=0.1] Test accuracy 0.6218  macro-F1 0.4699  weighted-F1 0.6329
+              precision    recall  f1-score   support
+
+        artf     0.1212    0.0597    0.0800        67
+        bckg     0.3734    0.6042    0.4615       144
+epileptiform     0.8911    0.6543    0.7546       538
+        eyem     0.4268    0.9211    0.5833        76
+
+    accuracy                         0.6218       825
+   macro avg     0.4531    0.5598    0.4699       825
+weighted avg     0.6955    0.6218    0.6329       825
+
+Confusion matrix ['artf', 'bckg', 'epileptiform', 'eyem'] 
+ [[  4  33  14  16]
+ [  4  87  28  25]
+ [ 24 109 352  53]
+ [  1   4   1  70]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/tuev4_auxssl_0.1_20260808_064512
+
+############## aux-SSL fine-tune: ssl_coef=0.3 ##############
+Device: cuda | unfreeze=all | ssl_coef=0.3
+Classes (4): ['artf', 'bckg', 'epileptiform', 'eyem']
+  train (1796, 22, 1280)  test (825, 22, 1280)
+Loading backbone...
+Model initialized with 40,679,574 parameters
+  trainable backbone params: 14,309,248
+Training...
+  epoch   1/40 | CE 1.4262 | SSL 0.0676 | val macroF1 0.3503
+  epoch   2/40 | CE 1.3352 | SSL 0.0771 | val macroF1 0.3931
+  epoch   3/40 | CE 1.2551 | SSL 0.0770 | val macroF1 0.2308
+  epoch   4/40 | CE 1.2276 | SSL 0.0720 | val macroF1 0.3573
+  epoch   5/40 | CE 1.1381 | SSL 0.0764 | val macroF1 0.4188
+  epoch   6/40 | CE 1.0518 | SSL 0.0697 | val macroF1 0.4414
+  epoch   7/40 | CE 1.0230 | SSL 0.0702 | val macroF1 0.3930
+  epoch   8/40 | CE 0.9452 | SSL 0.0746 | val macroF1 0.5212
+  epoch   9/40 | CE 0.9086 | SSL 0.0793 | val macroF1 0.4541
+  epoch  10/40 | CE 0.8641 | SSL 0.0717 | val macroF1 0.5804
+  epoch  11/40 | CE 0.8352 | SSL 0.0759 | val macroF1 0.5761
+  epoch  12/40 | CE 0.7989 | SSL 0.0749 | val macroF1 0.5375
+  epoch  13/40 | CE 0.7384 | SSL 0.0691 | val macroF1 0.5665
+  epoch  14/40 | CE 0.7181 | SSL 0.0694 | val macroF1 0.5988
+  epoch  15/40 | CE 0.7264 | SSL 0.0749 | val macroF1 0.5828
+  epoch  16/40 | CE 0.7195 | SSL 0.0682 | val macroF1 0.6033
+  epoch  17/40 | CE 0.6905 | SSL 0.0678 | val macroF1 0.5859
+  epoch  18/40 | CE 0.6919 | SSL 0.0713 | val macroF1 0.5844
+  epoch  19/40 | CE 0.6542 | SSL 0.0754 | val macroF1 0.6104
+  epoch  20/40 | CE 0.6549 | SSL 0.0717 | val macroF1 0.6150
+  epoch  21/40 | CE 0.6568 | SSL 0.0767 | val macroF1 0.6106
+  epoch  22/40 | CE 0.6299 | SSL 0.0771 | val macroF1 0.6251
+  epoch  23/40 | CE 0.6206 | SSL 0.0764 | val macroF1 0.5963
+  epoch  24/40 | CE 0.6147 | SSL 0.0746 | val macroF1 0.5810
+  epoch  25/40 | CE 0.5843 | SSL 0.0689 | val macroF1 0.5487
+  epoch  26/40 | CE 0.5960 | SSL 0.0702 | val macroF1 0.5744
+  epoch  27/40 | CE 0.5720 | SSL 0.0767 | val macroF1 0.6087
+  epoch  28/40 | CE 0.5793 | SSL 0.0715 | val macroF1 0.6016
+  epoch  29/40 | CE 0.5620 | SSL 0.0721 | val macroF1 0.5982
+  epoch  30/40 | CE 0.5636 | SSL 0.0702 | val macroF1 0.5851
+  epoch  31/40 | CE 0.5371 | SSL 0.0703 | val macroF1 0.6013
+  epoch  32/40 | CE 0.5535 | SSL 0.0692 | val macroF1 0.5910
+  early stop @ epoch 32
+
+[ssl_coef=0.3] Test accuracy 0.6121  macro-F1 0.5199  weighted-F1 0.6465
+              precision    recall  f1-score   support
+
+        artf     0.1316    0.2239    0.1657        67
+        bckg     0.3780    0.6667    0.4824       144
+epileptiform     0.9135    0.6283    0.7445       538
+        eyem     0.6437    0.7368    0.6871        76
+
+    accuracy                         0.6121       825
+   macro avg     0.5167    0.5639    0.5199       825
+weighted avg     0.7317    0.6121    0.6465       825
+
+Confusion matrix ['artf', 'bckg', 'epileptiform', 'eyem'] 
+ [[ 15  35  11   6]
+ [ 13  96  21  14]
+ [ 81 108 338  11]
+ [  5  15   0  56]]
+
+✓ saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/tuev4_auxssl_0.3_20260808_065238
+
+===== AUX-SSL SWEEP (0.0 / 0.1 / 0.3) DONE =====

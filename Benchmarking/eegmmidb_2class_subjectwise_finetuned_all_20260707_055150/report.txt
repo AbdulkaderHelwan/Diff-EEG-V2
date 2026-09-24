@@ -1,0 +1,19 @@
+eegmmidb_2class_subjectwise FINETUNED eval (backbone unfreeze=all + trained head)
+classes: ['left_fist', 'right_fist']
+train n=3349  test n=792
+trainable backbone params: 14,309,248
+
+Test accuracy 0.6149   macro-F1 0.6148   weighted-F1 0.6150
+
+              precision    recall  f1-score   support
+
+   left_fist     0.6310    0.6078    0.6192       408
+  right_fist     0.5990    0.6224    0.6105       384
+
+    accuracy                         0.6149       792
+   macro avg     0.6150    0.6151    0.6148       792
+weighted avg     0.6155    0.6149    0.6150       792
+
+Confusion matrix ['left_fist', 'right_fist']:
+[[248 160]
+ [145 239]]

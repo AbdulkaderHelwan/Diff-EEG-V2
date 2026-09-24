@@ -1,0 +1,32 @@
+
+########## eegmmidb ##########
+[eegmmidb] classes(2): ['left_fist', 'right_fist']
+Model initialized with 40,679,574 parameters
+  train: embedded (3349, 4800)
+  test: embedded (792, 4800)
+  pooled embedding (4141, 4800)  (k=10, 5-fold CV bal-acc)
+
+[eegmmidb] zero-shot kNN (no training)  balanced-acc 0.4996   chance 0.5000
+  saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/eegmmidb_zeroshot_knn
+
+########## sleep_edfx ##########
+[sleep_edfx] classes(6): ['wake', 'n1', 'n2', 'n3', 'n4', 'rem']
+Model initialized with 40,679,574 parameters
+  train: embedded (15000, 4800)
+  test: embedded (15000, 4800)
+  pooled embedding (30000, 4800)  (k=10, 5-fold CV bal-acc)
+
+[sleep_edfx] zero-shot kNN (no training)  balanced-acc 0.1672   chance 0.1667
+  saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/sleep_edfx_zeroshot_knn
+
+########## mumtaz ##########
+[mumtaz] classes(2): ['healthy', 'mdd']
+Model initialized with 40,679,574 parameters
+  train: embedded (5000, 4800)
+  test: embedded (1483, 4800)
+  pooled embedding (6483, 4800)  (k=10, 5-fold CV bal-acc)
+
+[mumtaz] zero-shot kNN (no training)  balanced-acc 0.7913   chance 0.5000
+  saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/mumtaz_zeroshot_knn
+
+===== ZERO-SHOT kNN (eegmmidb, sleep, mumtaz) DONE =====

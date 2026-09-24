@@ -1,0 +1,73 @@
+Results dir: /home/abdulh/scratch/EEGdiff_V2/TUHSZ_Res/run_20260702_042547
+Using device: cuda
+
+Loading checkpoint: /home/abdulh/scratch/seizure_clf_20260629_084706/best_classifier.pth
+  epoch=49  best_dev_auc=0.8767
+  arch={'in_channels': 22, 'model_channels': 64, 'channel_multipliers': [1, 2, 4, 8], 'num_res_blocks': 3, 'time_emb_dim': 768, 'dropout': 0.1, 'attention_heads': 8}
+Model initialized with 40,679,574 parameters
+  ✓ weights loaded
+
+Val  samples: 98,000   Eval samples: 228,667
+
+Scoring val...
+Scoring eval...
+
+F1-optimal threshold (chosen on val): 0.7166  (val seizure F1=0.4343)
+
+============================================================
+VAL RESULTS
+============================================================
+ROC-AUC: 0.8767    PR-AUC: 0.3790
+
+-- threshold = 0.50 (default) --
+seizure F1: 0.3878
+              precision    recall  f1-score   support
+
+      Normal     0.9780    0.8758    0.9241     92000
+     Seizure     0.2684    0.6985    0.3878      6000
+
+    accuracy                         0.8650     98000
+   macro avg     0.6232    0.7872    0.6560     98000
+weighted avg     0.9346    0.8650    0.8913     98000
+
+-- threshold = 0.7166 (F1-optimal, from val) --
+seizure F1: 0.4343
+              precision    recall  f1-score   support
+
+      Normal     0.9663    0.9496    0.9579     92000
+     Seizure     0.3889    0.4918    0.4343      6000
+
+    accuracy                         0.9216     98000
+   macro avg     0.6776    0.7207    0.6961     98000
+weighted avg     0.9309    0.9216    0.9258     98000
+
+
+============================================================
+EVAL RESULTS
+============================================================
+ROC-AUC: 0.8363    PR-AUC: 0.3693
+
+-- threshold = 0.50 (default) --
+seizure F1: 0.3553
+              precision    recall  f1-score   support
+
+      Normal     0.9732    0.8466    0.9055    213306
+     Seizure     0.2409    0.6762    0.3553     15361
+
+    accuracy                         0.8351    228667
+   macro avg     0.6071    0.7614    0.6304    228667
+weighted avg     0.9240    0.8351    0.8685    228667
+
+-- threshold = 0.7166 (F1-optimal, from val) --
+seizure F1: 0.4258
+              precision    recall  f1-score   support
+
+      Normal     0.9625    0.9413    0.9518    213306
+     Seizure     0.3758    0.4910    0.4258     15361
+
+    accuracy                         0.9110    228667
+   macro avg     0.6692    0.7162    0.6888    228667
+weighted avg     0.9231    0.9110    0.9164    228667
+
+
+✓ Eval complete. Results saved to /home/abdulh/scratch/EEGdiff_V2/TUHSZ_Res/run_20260702_042547/

@@ -1,0 +1,25 @@
+sleep1s_headonly TRAINED-HEAD eval (frozen backbone embedding + freshly trained MLP head)
+classes: ['wake', 'n1', 'n2', 'n3', 'n4', 'rem']
+train n=72000  test n=72000
+
+Test accuracy 0.1676   macro-F1 0.0495   weighted-F1 0.0495
+              precision    recall  f1-score   support
+
+        wake     0.0000    0.0000    0.0000     12000
+          n1     0.0000    0.0000    0.0000     12000
+          n2     0.0000    0.0000    0.0000     12000
+          n3     0.0000    0.0000    0.0000     12000
+          n4     0.1669    1.0000    0.2860     12000
+         rem     1.0000    0.0054    0.0108     12000
+
+    accuracy                         0.1676     72000
+   macro avg     0.1945    0.1676    0.0495     72000
+weighted avg     0.1945    0.1676    0.0495     72000
+
+Confusion matrix ['wake', 'n1', 'n2', 'n3', 'n4', 'rem']:
+[[    0     0     0     0 12000     0]
+ [    0     0     1     0 11999     0]
+ [    0     0     0     0 12000     0]
+ [    0     0     0     0 12000     0]
+ [    0     0     0     0 12000     0]
+ [    0     0    16     0 11919    65]]

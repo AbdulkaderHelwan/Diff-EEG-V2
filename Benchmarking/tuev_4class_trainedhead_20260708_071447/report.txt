@@ -1,0 +1,21 @@
+tuev_4class TRAINED-HEAD eval (frozen backbone embedding + freshly trained MLP head)
+classes: ['artf', 'bckg', 'epileptiform', 'eyem']
+train n=1796  test n=825
+
+Test accuracy 0.5600   macro-F1 0.4450   weighted-F1 0.5877
+              precision    recall  f1-score   support
+
+        artf     0.1235    0.1493    0.1351        67
+        bckg     0.3498    0.6389    0.4521       144
+epileptiform     0.8683    0.5762    0.6927       538
+        eyem     0.4032    0.6579    0.5000        76
+
+    accuracy                         0.5600       825
+   macro avg     0.4362    0.5056    0.4450       825
+weighted avg     0.6745    0.5600    0.5877       825
+
+Confusion matrix ['artf', 'bckg', 'epileptiform', 'eyem']:
+[[ 10  29  14  14]
+ [  8  92  27  17]
+ [ 59 126 310  43]
+ [  4  16   6  50]]

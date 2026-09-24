@@ -1,0 +1,66 @@
+{
+  "script": "EEGdiff_V2/Diff_EEG_train_v2.py",
+  "model_size": "large",
+  "model_config": {
+    "model_channels": 64,
+    "channel_multipliers": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "num_res_blocks": 3,
+    "time_emb_dim": 768,
+    "dropout": 0.1,
+    "attention_heads": 8
+  },
+  "sources": [
+    {
+      "name": "THUSZ_non_seizure",
+      "path": "/scratch/linah03/EpilepticSeizureProject/Dataset/THUSZ/edf/segment_5_eeg_all/Pretraining_data/non_seizure_batches",
+      "pattern": "non_seizure_batch_*.npy",
+      "train_fraction": 0.9,
+      "num_files": 534,
+      "train_files": 480,
+      "val_files": 54
+    },
+    {
+      "name": "CHBMIT_non_seizure",
+      "path": "/scratch/linah03/EpilepticSeizureProject/Dataset/CHBMIT/processed_chbmit/non-seizure",
+      "pattern": "non-seizure_batch_*.npy",
+      "train_fraction": 0.9,
+      "num_files": 268,
+      "train_files": 241,
+      "val_files": 27
+    },
+    {
+      "name": "TUAB_train_normal",
+      "path": "/scratch/linah03/EpilepticSeizureProject/Dataset/TUAB/processed_tuab/train-normal",
+      "pattern": "normal_batch_*.npy",
+      "train_fraction": 0.9,
+      "num_files": 182,
+      "train_files": 163,
+      "val_files": 19
+    },
+    {
+      "name": "TUAB_test_normal",
+      "path": "/scratch/linah03/EpilepticSeizureProject/Dataset/TUAB/processed_tuab/test-normal",
+      "pattern": "normal_batch_*.npy",
+      "train_fraction": 0.9,
+      "num_files": 20,
+      "train_files": 18,
+      "val_files": 2
+    }
+  ],
+  "train_batch_files": 902,
+  "val_batch_files": 102,
+  "train_samples": 1445392,
+  "val_samples": 161186,
+  "batch_size": 256,
+  "val_batch_size": 64,
+  "lr": 5e-05,
+  "epochs": 1000,
+  "normalization_dir": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/normalization",
+  "pretraining_scope": "non_seizure_or_normal_only",
+  "data_parallel": true
+}

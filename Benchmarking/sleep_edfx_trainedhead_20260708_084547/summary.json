@@ -1,0 +1,46 @@
+{
+  "dataset": "sleep_edfx",
+  "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/sleep_edfx",
+  "backbone_ckpt": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth",
+  "classes": [
+    "wake",
+    "n1",
+    "n2",
+    "n3",
+    "n4",
+    "rem"
+  ],
+  "n_train": 72000,
+  "n_test": 72000,
+  "best_val_macro_f1": 0.7396284680432813,
+  "test_accuracy": 0.534625,
+  "test_macro_f1": 0.5304069503942975,
+  "test_weighted_f1": 0.5304069503942976,
+  "roc_auc": null,
+  "pr_auc": null,
+  "config": {
+    "processed_root": "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/sleep_edfx",
+    "backbone_ckpt": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/best_EEGDIFF_V2.pth",
+    "norm_stats_dir": "/home/abdulh/scratch/EEGdiff_V2/training_diffusion_v2/normalization",
+    "out_root": "/home/abdulh/scratch/EEGdiff_V2/Benchmarking",
+    "dataset_name": "sleep_edfx",
+    "epochs": 100,
+    "patience": 15,
+    "lr": 0.001,
+    "batch_size": 256,
+    "val_frac": 0.15,
+    "seed": 42,
+    "classes": [
+      "wake",
+      "n1",
+      "n2",
+      "n3",
+      "n4",
+      "rem"
+    ],
+    "max_per_class": 12000,
+    "weight_power": 1.0,
+    "per_window_norm": true,
+    "pooled_random_split": false
+  }
+}

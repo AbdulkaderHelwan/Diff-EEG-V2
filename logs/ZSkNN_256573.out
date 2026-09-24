@@ -1,0 +1,33 @@
+
+########## bonn ##########
+[bonn] classes(2): ['normal', 'seizure']
+  raw train (400, 22, 1280)  test (100, 22, 1280)
+Model initialized with 40,679,574 parameters
+  embed train (400, 4800)  test (100, 4800)
+  kNN reference (400, 4800)  query (100, 4800)  (k=10)
+
+[bonn] kNN (no training)  balanced-acc 0.6500  acc 0.8600  ROC-AUC 0.9650
+  saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/bonn_zeroshot_knn
+
+########## siena ##########
+[siena] classes(2): ['normal', 'seizure']
+  raw train (82791, 22, 1280)  test (18729, 22, 1280)
+Model initialized with 40,679,574 parameters
+  embed train (82791, 4800)  test (18729, 4800)
+  kNN reference (20000, 4800)  query (10000, 4800)  (k=10)
+
+[siena] kNN (no training)  balanced-acc 0.5000  acc 0.9930  ROC-AUC 0.5238
+  saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/siena_zeroshot_knn
+
+########## eegmmidb ##########
+[eegmmidb] classes(2): ['left_fist', 'right_fist']
+  raw train (3349, 22, 1280)  test (792, 22, 1280)
+Model initialized with 40,679,574 parameters
+  embed train (3349, 4800)  test (792, 4800)
+  kNN reference (3349, 4800)  query (792, 4800)  (k=10)
+
+[eegmmidb] kNN (no training)  balanced-acc 0.4692  acc 0.4722  ROC-AUC 0.4615
+  saved -> /home/abdulh/scratch/EEGdiff_V2/Benchmarking/eegmmidb_zeroshot_knn
+
+########## sleep_edfx ##########
+[sleep_edfx] classes(6): ['wake', 'n1', 'n2', 'n3', 'n4', 'rem']

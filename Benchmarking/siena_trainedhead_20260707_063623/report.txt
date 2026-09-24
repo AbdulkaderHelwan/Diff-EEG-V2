@@ -1,0 +1,19 @@
+siena TRAINED-HEAD eval (frozen backbone embedding + freshly trained MLP head)
+classes: ['normal', 'seizure']
+train n=82791  test n=18729
+
+Test accuracy 0.9510   macro-F1 0.5275   weighted-F1 0.9685
+ROC-AUC 0.7338   PR-AUC 0.0349
+
+              precision    recall  f1-score   support
+
+      normal     0.9948    0.9556    0.9748     18597
+     seizure     0.0462    0.3030    0.0802       132
+
+    accuracy                         0.9510     18729
+   macro avg     0.5205    0.6293    0.5275     18729
+weighted avg     0.9882    0.9510    0.9685     18729
+
+Confusion matrix ['normal', 'seizure']:
+[[17772   825]
+ [   92    40]]

@@ -1,0 +1,11 @@
+{
+  "dataset": "eegmmidb",
+  "classes": [
+    "left_fist",
+    "right_fist"
+  ],
+  "k": 10,
+  "n_pooled": 4141,
+  "balanced_accuracy": 0.4996317519488903,
+  "chance": 0.5
+}

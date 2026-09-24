@@ -1,0 +1,73 @@
+Results dir: /home/abdulh/scratch/EEGdiff_V2/Binary_finetune_unfrozen/run_20260702_071240
+Using device: cuda
+
+Loading checkpoint: /home/abdulh/scratch/EEGdiff_V2/Binary_finetune_unfrozen/run_last_two_levels_20260630_083121/best_classifier.pth
+  epoch=22  best_dev_auc=0.9450
+  arch={'in_channels': 22, 'model_channels': 64, 'channel_multipliers': [1, 2, 4, 8], 'num_res_blocks': 3, 'time_emb_dim': 768, 'dropout': 0.1, 'attention_heads': 8}
+Model initialized with 40,679,574 parameters
+  ✓ weights loaded
+
+Val  samples: 98,000   Eval samples: 228,667
+
+Scoring val...
+Scoring eval...
+
+F1-optimal threshold (chosen on val): 0.9698  (val seizure F1=0.7512)
+
+============================================================
+VAL RESULTS
+============================================================
+ROC-AUC: 0.9450    PR-AUC: 0.7682
+
+-- threshold = 0.50 (default) --
+seizure F1: 0.7039
+              precision    recall  f1-score   support
+
+      Normal     0.9891    0.9648    0.9768     92000
+     Seizure     0.6076    0.8365    0.7039      6000
+
+    accuracy                         0.9569     98000
+   macro avg     0.7983    0.9006    0.8403     98000
+weighted avg     0.9657    0.9569    0.9601     98000
+
+-- threshold = 0.9698 (F1-optimal, from val) --
+seizure F1: 0.7512
+              precision    recall  f1-score   support
+
+      Normal     0.9835    0.9843    0.9839     92000
+     Seizure     0.7564    0.7462    0.7512      6000
+
+    accuracy                         0.9697     98000
+   macro avg     0.8699    0.8652    0.8676     98000
+weighted avg     0.9696    0.9697    0.9696     98000
+
+
+============================================================
+EVAL RESULTS
+============================================================
+ROC-AUC: 0.8407    PR-AUC: 0.4837
+
+-- threshold = 0.50 (default) --
+seizure F1: 0.4728
+              precision    recall  f1-score   support
+
+      Normal     0.9682    0.9389    0.9533    213306
+     Seizure     0.4027    0.5724    0.4728     15361
+
+    accuracy                         0.9142    228667
+   macro avg     0.6855    0.7556    0.7131    228667
+weighted avg     0.9303    0.9142    0.9210    228667
+
+-- threshold = 0.9698 (F1-optimal, from val) --
+seizure F1: 0.4962
+              precision    recall  f1-score   support
+
+      Normal     0.9601    0.9767    0.9683    213306
+     Seizure     0.5744    0.4367    0.4962     15361
+
+    accuracy                         0.9404    228667
+   macro avg     0.7673    0.7067    0.7323    228667
+weighted avg     0.9342    0.9404    0.9366    228667
+
+
+✓ Eval complete. Results saved to /home/abdulh/scratch/EEGdiff_V2/Binary_finetune_unfrozen/run_20260702_071240/
