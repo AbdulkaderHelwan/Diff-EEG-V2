@@ -4,7 +4,8 @@
 Why this exists
 ---------------
 `EEGdiff_V2/dataset_tools/prepare_tuev.py` merged the per-channel annotation rows
-into spans and emitted ONE window per span, yielding 2,621 windows in total. The
+into spans and emitted ONE window per span, yielding 2,665 windows (2,621 used
+in V2 fine-tuning). The
 protocol every published TUEV number uses (BIOT's `BuildEvents`, inherited by
 LaBraM, CBraMod and EEGDM) emits one sample PER ANNOTATION ROW:
 
@@ -72,7 +73,7 @@ TCP_MONTAGE = [
 ]
 
 DEFAULT_INPUT_ROOT = "/scratch/linah03/EpilepticSeizureProject/Dataset/TUEV_v2.0.1/edf"
-DEFAULT_OUTPUT_ROOT = "/scratch/linah03/EpilepticSeizureProject/Dataset/TUEV_v2.0.1/processed_TUEV_events"
+DEFAULT_OUTPUT_ROOT = "/scratch/linah03/EpilepticSeizureProject/Dataset/external_processed/processed_TUEV_events"
 
 PRE_SEC, POST_SEC = 2.0, 2.0     # BIOT: [start - 2, stop + 2]
 
