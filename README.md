@@ -32,8 +32,6 @@ scripts expect it.
 | Pre-trained backbone (epoch 26, best validation loss) | 466 MB | `training_diffusion_v2/best_EEGDIFF_V2.pth` | ADD_ONEDRIVE_LINK |
 | TUH Seizure detection, last two levels unfrozen, with RL | 187 MB | `Binary_finetune_unfrozen/run_last_two_levels_20260630_083121/best_classifier.pth` | ADD_ONEDRIVE_LINK |
 | TUAB abnormal detection, `unfreeze_3` | 187 MB | `TUAB_Res/run_20260702_034225/unfreeze_3/best.pth` | ADD_ONEDRIVE_LINK |
-| Siena seizure detection, full fine-tune, with RL | 187 MB | `Benchmarking/siena_finetuned_all_RL_20260707_100303/best_classifier.pth` | ADD_ONEDRIVE_LINK |
-| TUEV 4-class, full fine-tune, with RL | 187 MB | `Benchmarking/tuev_4class_finetuned_all_RL_20260708_072026/best_classifier.pth` | ADD_ONEDRIVE_LINK |
 
 ## Results
 
